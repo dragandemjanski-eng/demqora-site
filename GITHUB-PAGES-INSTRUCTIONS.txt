@@ -1,0 +1,35 @@
+DEMQORA TECHNOLOGIES — GITHUB PAGES SETUP
+
+1. Open https://github.com and sign in.
+2. Click the + button in the top-right corner -> New repository.
+3. Repository name: demqora-site
+4. Set the repository to Public.
+5. Leave "Add a README file" OFF because this package already contains a README.
+6. Click Create repository.
+7. In the new empty repository, choose "uploading an existing file".
+8. Open the extracted DemQora website folder on your computer.
+9. Upload ALL website files and folders from inside the folder, including:
+   index.html
+   404.html
+   assets/
+   products/
+   documentation/
+   about/
+   contact/
+   README.md
+10. Commit the uploaded files to the main branch.
+11. Open repository Settings -> Pages.
+12. Under Build and deployment:
+    Source: Deploy from a branch
+    Branch: main
+    Folder: / (root)
+13. Click Save.
+14. Wait a few minutes. GitHub will show the public website URL in Settings -> Pages.
+
+Typical project-site address:
+https://YOUR-GITHUB-USERNAME.github.io/demqora-site/
+
+IMPORTANT BEFORE FINAL PUBLIC LAUNCH
+- Send the exact Facebook, Instagram, LinkedIn, X and YouTube public URLs so the Contact page links can be activated.
+- When MS 1.1 is published, replace "Coming Soon on MQL5 Market" with the official MQL5 product URL.
+- Add the final company/support email when ready.
