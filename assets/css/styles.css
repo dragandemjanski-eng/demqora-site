@@ -195,3 +195,10 @@ h3 { font-size:1.25rem; }
 /* Softer Home flash text */
 .company-hero h1 { font-size: clamp(1.15rem, 1.55vw, 1.85rem) !important; line-height: 1.18 !important; font-weight: 500 !important; letter-spacing: .01em !important; color: rgba(190, 224, 220, .52) !important; text-shadow: none !important; max-width: 460px !important; }
 .company-hero .lead { margin-top: 8px !important; font-size: .72rem !important; line-height: 1.4 !important; font-weight: 400 !important; letter-spacing: .12em !important; color: rgba(130, 190, 183, .46) !important; text-transform: none !important; }
+
+/* Refined Home text placement */
+.company-hero-overlay { align-items: flex-start !important; padding-top: clamp(78px, 11vh, 126px) !important; padding-bottom: 0 !important; }
+.company-hero .hero-copy { display: block !important; max-width: 430px !important; margin-left: 0 !important; }
+.company-hero h1 { max-width: 430px !important; margin: 0 0 12px !important; font-size: clamp(1.12rem, 1.5vw, 1.7rem) !important; line-height: 1.2 !important; font-weight: 500 !important; color: rgba(190, 224, 220, .46) !important; }
+.company-hero .lead { max-width: 360px !important; margin: 0 !important; font-size: .68rem !important; line-height: 1.4 !important; letter-spacing: .1em !important; color: rgba(130, 190, 183, .38) !important; }
+@media (max-width: 900px) { .company-hero-overlay { padding-top: 58px !important; } .company-hero .hero-copy { max-width: 360px !important; } }
