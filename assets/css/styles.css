@@ -144,3 +144,13 @@ h3 { font-size:1.25rem; }
 .social-card:nth-child(3)::before { content:'in'; font-family:Arial,sans-serif; font-size:1.55rem; }
 .social-card:nth-child(4)::before { content:'𝕏'; }
 .social-card:nth-child(5)::before { content:'▶'; font-size:1.65rem; }
+
+.social-card { border:0; padding:14px 10px; background:transparent; font-size:0; min-height:72px; display:grid; place-items:center; }
+.social-card:hover { border:0; background:transparent; transform:translateY(-3px); }
+.social-card::before { font-size:2.5rem; line-height:1; font-weight:800; transition:transform .2s ease, filter .2s ease; }
+.social-card:hover::before { filter:brightness(1.2); }
+.social-card:nth-child(1)::before { content:'f'; color:#1877F2; font-family:Arial,sans-serif; }
+.social-card:nth-child(2)::before { content:'◎'; color:#E4405F; background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF,#515BD4); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+.social-card:nth-child(3)::before { content:'in'; color:#0A66C2; font-family:Arial,sans-serif; font-size:1.95rem; }
+.social-card:nth-child(4)::before { content:'𝕏'; color:#fff; }
+.social-card:nth-child(5)::before { content:'▶'; color:#FF0000; font-size:2rem; }
