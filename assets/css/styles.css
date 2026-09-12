@@ -136,3 +136,11 @@ h3 { font-size:1.25rem; }
   .doc-row { align-items:flex-start; flex-direction:column; }
   .footer-row { flex-direction:column; }
 }
+
+.social-card { font-size:0; min-height:72px; display:grid; place-items:center; }
+.social-card::before { font-size:2rem; line-height:1; font-weight:800; }
+.social-card:nth-child(1)::before { content:'f'; font-family:Arial,sans-serif; }
+.social-card:nth-child(2)::before { content:'◎'; }
+.social-card:nth-child(3)::before { content:'in'; font-family:Arial,sans-serif; font-size:1.55rem; }
+.social-card:nth-child(4)::before { content:'𝕏'; }
+.social-card:nth-child(5)::before { content:'▶'; font-size:1.65rem; }
