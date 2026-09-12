@@ -57,10 +57,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .company-hero-media { position:absolute; inset:0; z-index:-2; }
 .company-hero-media img { width:100%; height:100%; object-fit:cover; opacity:.72; filter:saturate(.92) contrast(.96); }
 .company-hero-media::after { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at center, transparent 38%, rgba(3,9,9,.18) 68%, #030909 100%), linear-gradient(90deg,rgba(3,9,9,.82),rgba(3,9,9,.2) 58%,rgba(3,9,9,.7)); }
-.company-hero-overlay { min-height:inherit; display:flex; align-items:center; }
-.company-hero .hero-copy { max-width:600px; margin-left:52%; }
-.company-hero h1 { max-width:600px; font-size:clamp(2.35rem,4.1vw,4.9rem); line-height:.98; letter-spacing:-.045em; }
-.company-hero .lead { max-width:560px; font-size:clamp(1rem,1.35vw,1.25rem); }
+.company-hero-overlay { min-height:inherit; display:flex; align-items:flex-end; padding-bottom:clamp(34px,6vh,70px); }
+.company-hero .hero-copy { max-width:540px; margin-left:0; }
+.company-hero h1 { max-width:540px; font-size:clamp(2.2rem,3.15vw,4rem); line-height:1.02; letter-spacing:-.04em; }
+.company-hero .lead { max-width:500px; font-size:clamp(.95rem,1.05vw,1.12rem); }
 .hero-visual { position:relative; overflow:hidden; border:0; border-radius:24px; box-shadow:var(--shadow); min-height:430px; background:#020606; }
 .home-banner { overflow:hidden; border:0; border-radius:24px; margin-bottom:28px; box-shadow:0 24px 80px rgba(0,0,0,.28); }
 .home-banner img { width:100%; display:block; }
@@ -147,6 +147,9 @@ h3 { font-size:1.25rem; }
 .footer-row { display:flex; gap:24px; justify-content:space-between; align-items:flex-start; }
 .footer-links { display:flex; gap:14px; flex-wrap:wrap; }
 .footer-links a:hover { color:var(--cyan-2); }
+.footer-social { display:flex; gap:8px; align-items:center; }
+.footer-social .social-card { min-height:34px; width:34px; padding:0; }
+.footer-social .social-card::before { font-size:1.35rem; }
 .small { font-size:.9rem; color:var(--muted); }
 .tag { display:inline-flex; padding:6px 9px; border-radius:999px; border:1px solid var(--line); color:var(--cyan-2); font-size:.76rem; margin:4px 6px 4px 0; }
 @media (max-width: 900px) {
