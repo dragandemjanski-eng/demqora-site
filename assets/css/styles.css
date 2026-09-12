@@ -219,3 +219,11 @@ h3 { font-size:1.25rem; }
 .site-footer .footer-row { justify-content: flex-start !important; }
 .site-footer .footer-social { margin-left: auto !important; }
 @media (max-width: 640px) { .site-footer > .container { padding-left: 20px !important; padding-right: 20px !important; } }
+
+/* Monochrome social icons */
+.footer-social .social-card::before {
+  filter: grayscale(1) brightness(.82) opacity(.62) !important;
+}
+.footer-social .social-card:hover::before {
+  filter: grayscale(1) brightness(.92) opacity(.78) !important;
+}
