@@ -209,3 +209,13 @@ h3 { font-size:1.25rem; }
 .company-hero h1 { max-width: 430px !important; margin: 0 0 12px !important; font-size: clamp(1.12rem, 1.5vw, 1.7rem) !important; line-height: 1.2 !important; font-weight: 500 !important; color: rgba(190, 224, 220, .46) !important; }
 .company-hero .lead { max-width: 360px !important; margin: 0 !important; font-size: .68rem !important; line-height: 1.4 !important; letter-spacing: .1em !important; color: rgba(130, 190, 183, .38) !important; }
 @media (max-width: 900px) { .company-hero-overlay { padding-top: 58px !important; } .company-hero .hero-copy { max-width: 360px !important; } }
+
+/* Header logo and footer alignment */
+.site-header .navbar { justify-content: flex-end !important; }
+.site-header .brand { margin-left: auto !important; }
+.site-header .brand span { display: none !important; }
+.site-header .brand img { width: 46px !important; height: 46px !important; }
+.site-footer > .container { width: 100% !important; max-width: none !important; margin: 0 !important; padding-left: 32px !important; padding-right: 32px !important; }
+.site-footer .footer-row { justify-content: flex-start !important; }
+.site-footer .footer-social { margin-left: auto !important; }
+@media (max-width: 640px) { .site-footer > .container { padding-left: 20px !important; padding-right: 20px !important; } }
