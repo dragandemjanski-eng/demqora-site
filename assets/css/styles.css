@@ -187,3 +187,7 @@ h3 { font-size:1.25rem; }
   .panel-card img { aspect-ratio:auto; }
   .preset-grid { grid-template-columns:1fr; }
 }
+
+/* Home flash treatment */
+.company-hero h1 { max-width: 620px; color: rgba(224,247,243,.78); font-size: clamp(1.65rem,2.35vw,3rem); line-height: 1.08; letter-spacing: -.035em; text-shadow: 0 0 26px rgba(111,239,226,.14); }
+.company-hero .lead { grid-column: 1; max-width: 500px; margin: 12px 0 0; color: rgba(118,227,215,.78); font-size: clamp(.9rem,1vw,1.05rem); letter-spacing: .06em; text-transform: uppercase; text-align: left; }
