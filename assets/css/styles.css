@@ -326,3 +326,17 @@ h3 { font-size:1.25rem; }
 .site-header .navbar { justify-content: space-between !important; }
 .site-header .nav-links { margin-right: 0 !important; }
 .site-header .brand { position: static !important; order: 0 !important; margin: 0 !important; transform: none !important; }
+
+/* Compact Contact page */
+.contact-page { min-height: calc(100vh - 74px - 74px); display: flex; align-items: center; padding: 24px 0 !important; }
+.contact-page .contact-panel { width: min(760px, 100%); margin: 0 auto; text-align: center; }
+.contact-page .eyebrow { font-size: .68rem !important; letter-spacing: .18em; }
+.contact-page h1 { font-size: clamp(1.8rem, 3.8vw, 3rem) !important; margin: 0 0 8px !important; }
+.contact-page .contact-intro { margin: 0 auto 22px !important; color: var(--muted); font-size: .82rem !important; }
+.contact-page .social-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+.contact-page .social-card { min-height: 54px !important; width: auto !important; }
+@media (max-width: 700px) {
+  .contact-page { min-height: calc(100vh - 74px - 74px); padding: 18px 0 !important; }
+  .contact-page .social-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+  .contact-page .social-card { min-height: 44px !important; }
+}
