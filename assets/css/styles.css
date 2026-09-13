@@ -647,3 +647,54 @@ h3 { font-size:1.25rem; }
 /* Keep About background drawing above the section color */
 .about-page .about-intro::before { z-index: 0; }
 .about-page .about-intro > .container { position: relative; z-index: 1; }
+
+
+
+/* Professional About page redesign */
+.about-page { background: #030909; color: #d7e8e7; overflow: hidden; }
+.about-page .about-hero { position: relative; min-height: min(760px, calc(100vh - 74px)); display: flex; align-items: center; background: #030909; isolation: isolate; }
+.about-page .about-hero::before { content: ""; position: absolute; inset: 0; z-index: -2; background-image: linear-gradient(90deg, rgba(3,9,9,.94) 0%, rgba(3,9,9,.8) 34%, rgba(3,9,9,.32) 67%, rgba(3,9,9,.72) 100%), url('../img/about-visual-clean.png'); background-repeat: no-repeat; background-position: center, center right; background-size: cover, min(1180px, 82vw) auto; opacity: .9; }
+.about-page .about-hero::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(3,9,9,.05), rgba(3,9,9,.28) 70%, #030909 100%); pointer-events: none; }
+.about-page .about-hero-inner { width: 100%; }
+.about-page .about-hero-copy { max-width: 650px; padding: 7rem 0 6rem; }
+.about-page .about-kicker { margin: 0 0 1.4rem; color: #53eee1; font-size: .68rem; font-weight: 800; letter-spacing: .2em; line-height: 1.2; text-transform: uppercase; }
+.about-page h1, .about-page h2, .about-page h3 { color: #effaf8; }
+.about-page h1 { max-width: 11ch; margin: 0 0 1.8rem; font-size: clamp(2.8rem, 5.4vw, 5.7rem) !important; line-height: .98 !important; letter-spacing: -.055em; }
+.about-page .about-hero-copy p:not(.about-kicker):not(.about-brand-statement) { max-width: 590px; margin: 0 0 1.15rem; color: rgba(211,232,230,.78); font-size: 1.05rem; line-height: 1.7; }
+.about-page .about-hero-copy .about-hero-lead { color: #e6f5f2 !important; font-size: 1.22rem !important; line-height: 1.55 !important; }
+.about-page .about-brand-statement { max-width: 530px; margin: 2.2rem 0 0; padding-top: 1.2rem; border-top: 1px solid rgba(83,238,225,.34); color: #53eee1; font-size: .88rem; font-weight: 700; letter-spacing: .05em; line-height: 1.6; }
+.about-page .about-section { position: relative; padding: 8rem 0; border-top: 1px solid rgba(83,238,225,.13); }
+.about-page .about-section-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 3.5rem; }
+.about-page .about-section-heading .about-kicker { margin: 0; }
+.about-page h2 { max-width: 10ch; margin: 0; font-size: clamp(2.2rem, 4.4vw, 4.8rem); line-height: .98; letter-spacing: -.05em; }
+.about-page h3 { margin: 0 0 .7rem; font-size: 1.25rem; letter-spacing: -.02em; text-transform: uppercase; }
+.about-page p { color: rgba(211,232,230,.72); line-height: 1.7; }
+.about-page .about-principles { background: linear-gradient(180deg, rgba(13,38,36,.22), transparent); }
+.about-page .about-principles-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(83,238,225,.26); border-bottom: 1px solid rgba(83,238,225,.18); }
+.about-page .about-principles-grid article { min-height: 235px; padding: 2rem 2rem 2rem 0; border-right: 1px solid rgba(83,238,225,.18); }
+.about-page .about-principles-grid article + article { padding-left: 2rem; }
+.about-page .about-principles-grid article:last-child { border-right: 0; }
+.about-page .about-index { display: block; margin-bottom: 4rem; color: #53eee1; font-size: .72rem; font-weight: 800; letter-spacing: .16em; }
+.about-page .about-principles-grid p { max-width: 250px; margin: 0; font-size: .98rem; }
+.about-page .about-clarity-section { background: radial-gradient(circle at 85% 45%, rgba(36,118,111,.16), transparent 30%); }
+.about-page .about-narrow-content { max-width: 900px; margin-left: max(0px, 8vw); }
+.about-page .about-narrow-content h2 { max-width: 12ch; margin-bottom: 2.2rem; }
+.about-page .about-narrow-content p:not(.about-kicker) { max-width: 700px; margin: 0 0 1.2rem; font-size: 1.08rem; }
+.about-page .about-narrow-content .about-large-copy { color: #e7f5f2; font-size: clamp(1.35rem, 2.2vw, 2rem) !important; line-height: 1.35 !important; }
+.about-page .about-method-list { border-top: 1px solid rgba(83,238,225,.25); }
+.about-page .about-method-list article { display: grid; grid-template-columns: 90px 1fr; gap: 2rem; padding: 2rem 0; border-bottom: 1px solid rgba(83,238,225,.16); }
+.about-page .about-method-list .about-index { margin: .15rem 0 0; }
+.about-page .about-method-list h3 { font-size: 1rem; letter-spacing: .1em; }
+.about-page .about-method-list p { max-width: 650px; margin: 0; font-size: 1.02rem; }
+.about-page .about-philosophy-section { background: linear-gradient(135deg, rgba(9,28,27,.6), rgba(3,9,9,.2)); }
+.about-page .about-philosophy-inner { max-width: 1100px; }
+.about-page blockquote { max-width: 1000px; margin: 0 0 3rem; color: #effaf8; font-size: clamp(2.1rem, 4.5vw, 5rem); font-weight: 700; line-height: 1.03; letter-spacing: -.055em; }
+.about-page .about-philosophy-copy { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3rem; max-width: 760px; margin-left: auto; }
+.about-page .about-philosophy-copy p { margin: 0; font-size: 1.04rem; }
+.about-page .about-direction-inner { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: 6rem 8vw; align-items: end; }
+.about-page .about-direction-inner h2 { margin-bottom: 2rem; }
+.about-page .about-direction-inner p:not(.about-kicker):not(.about-direction-principle):not(.about-closing) { max-width: 600px; margin: 0 0 1rem; }
+.about-page .about-direction-principle { margin: 0; padding-left: 1.5rem; border-left: 2px solid #53eee1; color: #e7f5f2 !important; font-size: clamp(1.3rem, 2.5vw, 2.2rem); line-height: 1.25 !important; }
+.about-page .about-closing { grid-column: 1 / -1; margin: 2rem 0 0; padding-top: 2.2rem; border-top: 1px solid rgba(83,238,225,.25); color: #53eee1 !important; font-size: clamp(1.8rem, 4vw, 4rem); font-weight: 700; line-height: 1.05 !important; letter-spacing: -.045em; }
+@media (max-width: 900px) { .about-page .about-hero::before { background-position: center, 62% center; background-size: cover, 1050px auto; } .about-page .about-direction-inner { gap: 4rem; } }
+@media (max-width: 700px) { .about-page .about-hero { min-height: auto; } .about-page .about-hero::before { background-image: linear-gradient(90deg, rgba(3,9,9,.95), rgba(3,9,9,.62)), url('../img/about-visual-clean.png'); background-position: center, 68% center; background-size: cover, auto 560px; opacity: .78; } .about-page .about-hero-copy { padding: 5rem 0 4.5rem; } .about-page h1 { max-width: 12ch; font-size: clamp(2.65rem, 12vw, 4.2rem) !important; } .about-page .about-section { padding: 5rem 0; } .about-page .about-section-heading { display: block; margin-bottom: 2.4rem; } .about-page .about-section-heading h2 { margin-top: 1.2rem; } .about-page .about-principles-grid { display: block; } .about-page .about-principles-grid article, .about-page .about-principles-grid article + article { min-height: auto; padding: 1.5rem 0; border-right: 0; } .about-page .about-index { margin-bottom: 1.4rem; } .about-page .about-method-list article { grid-template-columns: 42px 1fr; gap: 1rem; } .about-page .about-philosophy-copy { display: block; margin-left: 0; } .about-page .about-philosophy-copy p + p { margin-top: 1rem; } .about-page .about-direction-inner { display: block; } .about-page .about-direction-principle { margin-top: 2rem; } .about-page .about-closing { margin-top: 3rem; } }
