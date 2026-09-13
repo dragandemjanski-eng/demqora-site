@@ -891,3 +891,34 @@ h3 { font-size:1.25rem; }
   .about-page .about-method-list article { padding: .85rem 0; border-right: 0; border-bottom: 1px solid rgba(83,238,225,.14); }
   .about-page .about-section { padding: 2.2rem 0; }
 }
+
+
+
+/* Match supplied About reference: restrained editorial composition */
+.about-page { background: #030909 url('../img/hero-banner.png') center center / cover fixed no-repeat; }
+.about-page::before { background: linear-gradient(180deg, rgba(3,9,9,.62), rgba(3,9,9,.78)), linear-gradient(90deg, rgba(3,9,9,.72), rgba(3,9,9,.36) 55%, rgba(3,9,9,.66)); }
+.about-page .container { max-width: 1080px; }
+.about-page .about-hero { min-height: auto; }
+.about-page .about-hero-copy { max-width: 560px; padding: 4rem 0 3.25rem; }
+.about-page h1 { max-width: 13ch; font-size: clamp(2rem, 3.2vw, 3.5rem) !important; font-weight: 500; line-height: 1.03 !important; letter-spacing: -.04em; }
+.about-page h2 { font-size: clamp(1.65rem, 2.5vw, 2.7rem) !important; font-weight: 500; }
+.about-page h3 { font-size: .8rem; font-weight: 700; }
+.about-page .about-section { padding: 3.2rem 0; background: rgba(3,9,9,.16) !important; }
+.about-page .about-section + .about-section { background: rgba(3,9,9,.2) !important; }
+.about-page .about-section-heading { margin-bottom: 1.8rem; }
+.about-page .about-principles-grid { gap: 2rem; border-top: 1px solid rgba(83,238,225,.24); }
+.about-page .about-principles-grid article, .about-page .about-principles-grid article + article { min-height: 0; padding: 1.2rem 0 0; border: 0; }
+.about-page .about-principles-grid p { max-width: 230px; font-size: .82rem; }
+.about-page .about-narrow-content { max-width: 860px; }
+.about-page .about-narrow-content h2 { margin-bottom: 1.2rem; }
+.about-page .about-narrow-content p:not(.about-kicker) { max-width: 690px; margin-bottom: .65rem; font-size: .9rem; }
+.about-page .about-narrow-content .about-large-copy { font-size: 1.22rem !important; }
+.about-page .about-method-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.6rem; border-top: 1px solid rgba(83,238,225,.24); }
+.about-page .about-method-list article { padding: 1.2rem 1rem 0 0; border: 0; }
+.about-page .about-method-list p { font-size: .82rem; }
+.about-page .about-philosophy-inner { max-width: 1080px; }
+.about-page blockquote { max-width: 700px; margin-bottom: 1.5rem; font-size: clamp(1.7rem, 2.8vw, 3rem); font-weight: 500; }
+.about-page .about-philosophy-copy { max-width: 690px; }
+.about-page .about-direction-inner { grid-template-columns: 1fr 1fr; gap: 2rem 5rem; }
+.about-page .about-closing { font-size: clamp(1.25rem, 1.9vw, 2rem) !important; font-weight: 500; }
+@media (max-width: 700px) { .about-page .about-section { padding: 2.4rem 0; } .about-page .about-method-list { display: block; } .about-page .about-direction-inner { display: block; } .about-page .about-hero-copy { padding: 3rem 0 2.5rem; } }
