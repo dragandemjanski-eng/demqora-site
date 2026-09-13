@@ -287,3 +287,10 @@ h3 { font-size:1.25rem; }
 /* Keep the header logo at the far left */
 .site-header .navbar { justify-content: space-between !important; }
 .site-header .brand { margin-left: 0 !important; margin-right: auto !important; }
+
+/* Final header and hero visibility correction */
+.company-hero-media img { opacity: 1 !important; }
+.site-header .navbar { position: relative !important; justify-content: flex-start !important; }
+.site-header .nav-links { margin-right: 72px !important; }
+.site-header .brand { position: absolute !important; right: 0 !important; top: 50% !important; transform: translateY(-50%) !important; margin: 0 !important; }
+@media (max-width: 900px) { .site-header .nav-links { margin-right: 0 !important; } .site-header .brand { right: 0 !important; } }
