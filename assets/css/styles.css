@@ -710,3 +710,8 @@ h3 { font-size:1.25rem; }
   .about-page h1 { max-width: 12ch; font-size: clamp(2.45rem, 11vw, 3.8rem) !important; }
   .about-page .about-hero-copy .about-hero-lead { font-size: 1.08rem !important; }
 }
+
+
+
+/* Keep About content inside the viewport */
+.about-page .container { width: 100%; max-width: 1180px; box-sizing: border-box; padding-left: clamp(1rem, 3vw, 2rem) !important; padding-right: clamp(1rem, 3vw, 2rem) !important; }
