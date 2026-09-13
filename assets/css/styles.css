@@ -722,3 +722,49 @@ h3 { font-size:1.25rem; }
 .about-page .about-hero-copy { margin-left: 0 !important; padding-left: clamp(1rem, 3vw, 2rem) !important; }
 .about-page h1 { font-size: clamp(2.45rem, 3.7vw, 4rem) !important; }
 @media (max-width: 700px) { .about-page .about-hero-copy { padding-left: 0 !important; } .about-page h1 { font-size: clamp(2.35rem, 10.5vw, 3.45rem) !important; } }
+
+
+
+/* About fixed central artwork and softer page transitions */
+.about-page {
+  position: relative;
+  isolation: isolate;
+  background: #030909 url('../img/about-visual-clean.png') center center / min(1180px, 82vw) auto no-repeat fixed;
+}
+.about-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(3,9,9,.9) 0%, rgba(3,9,9,.66) 42%, rgba(3,9,9,.32) 72%, rgba(3,9,9,.72) 100%), linear-gradient(180deg, rgba(3,9,9,.32), rgba(3,9,9,.76));
+}
+.about-page .about-hero {
+  min-height: min(700px, calc(100vh - 74px));
+  background: transparent;
+}
+.about-page .about-hero::before,
+.about-page .about-hero::after { display: none; }
+.about-page .about-section {
+  border-top: 0;
+  background: linear-gradient(180deg, rgba(3,9,9,.12), rgba(3,9,9,.28));
+}
+.about-page .about-section + .about-section {
+  background: linear-gradient(180deg, rgba(3,9,9,.28), rgba(3,9,9,.12));
+}
+.about-page h1 {
+  max-width: 15ch;
+  font-size: clamp(2rem, 2.65vw, 3.05rem) !important;
+  line-height: 1.04 !important;
+}
+.about-page h2 { font-size: clamp(1.7rem, 2.45vw, 2.85rem); }
+.about-page blockquote { font-size: clamp(1.8rem, 2.85vw, 3.35rem); }
+.about-page .about-closing { font-size: clamp(1.5rem, 2.55vw, 2.7rem); }
+.about-page .about-hero-copy { padding-top: 5rem; padding-bottom: 5rem; }
+@media (max-width: 700px) {
+  .about-page { background-size: auto 620px; background-position: center 42%; }
+  .about-page::before { background: linear-gradient(90deg, rgba(3,9,9,.94), rgba(3,9,9,.6)), linear-gradient(180deg, rgba(3,9,9,.34), rgba(3,9,9,.78)); }
+  .about-page h1 { max-width: 14ch; font-size: clamp(1.9rem, 8.2vw, 2.8rem) !important; }
+  .about-page h2 { font-size: clamp(1.65rem, 7vw, 2.45rem); }
+  .about-page blockquote { font-size: clamp(1.7rem, 7vw, 2.65rem); }
+}
