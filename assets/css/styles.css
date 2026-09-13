@@ -768,3 +768,8 @@ h3 { font-size:1.25rem; }
   .about-page h2 { font-size: clamp(1.65rem, 7vw, 2.45rem); }
   .about-page blockquote { font-size: clamp(1.7rem, 7vw, 2.65rem); }
 }
+
+
+
+/* Restore natural About page scrolling */
+.about-page { overflow-x: hidden; overflow-y: visible; }
