@@ -375,3 +375,31 @@ h3 { font-size:1.25rem; }
 .about-copy h1 { font-size: clamp(2.15rem, 4.8vw, 4.1rem) !important; line-height: 1.02 !important; }
 .about-copy .about-principles-copy { max-width: 820px; margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(31,238,218,.16); color: var(--muted); font-size: 1rem; line-height: 1.75; }
 .about-copy .about-principles-copy strong { color: var(--cyan-2); font-weight: 700; }
+
+
+/* About visual companion */
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(360px, 1.1fr);
+  align-items: center;
+  gap: clamp(28px, 5vw, 86px);
+}
+.about-copy { max-width: none; }
+.about-visual {
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: .72;
+  filter: drop-shadow(0 0 28px rgba(22,234,215,.13));
+}
+.about-visual img {
+  width: 100%;
+  max-width: 680px;
+  height: auto;
+  mix-blend-mode: screen;
+}
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; gap: 28px; }
+  .about-visual { order: 2; max-width: 620px; margin: 0 auto; }
+}
