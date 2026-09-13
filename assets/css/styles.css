@@ -370,3 +370,8 @@ h3 { font-size:1.25rem; }
   .about-principles { padding-top: 28px; padding-bottom: 48px; }
   .about-principles .card { min-height: 0; }
 }
+
+/* Refine About hierarchy */
+.about-copy h1 { font-size: clamp(2.15rem, 4.8vw, 4.1rem) !important; line-height: 1.02 !important; }
+.about-copy .about-principles-copy { max-width: 820px; margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(31,238,218,.16); color: var(--muted); font-size: 1rem; line-height: 1.75; }
+.about-copy .about-principles-copy strong { color: var(--cyan-2); font-weight: 700; }
