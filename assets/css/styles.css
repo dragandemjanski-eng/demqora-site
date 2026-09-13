@@ -642,3 +642,8 @@ h3 { font-size:1.25rem; }
     opacity: .68;
   }
 }
+
+
+/* Keep About background drawing above the section color */
+.about-page .about-intro::before { z-index: 0; }
+.about-page .about-intro > .container { position: relative; z-index: 1; }
