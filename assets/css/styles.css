@@ -312,3 +312,9 @@ h3 { font-size:1.25rem; }
 
 /* Raise the complete Home hero artwork */
 .company-hero-media { transform: translateY(-72px) !important; height: calc(100% + 72px) !important; }
+
+/* Match footer height to the header */
+.site-footer { margin-top: 0 !important; padding: 0 !important; min-height: 74px !important; }
+.site-footer > .container.footer-row { min-height: 74px !important; align-items: center !important; }
+.site-footer > .container.footer-row > div:first-child { font-size: .7rem !important; line-height: 1.25 !important; }
+.site-footer > .container.footer-row > div:first-child .small { font-size: .68rem !important; }
