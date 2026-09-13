@@ -844,3 +844,50 @@ h3 { font-size:1.25rem; }
   .about-page .about-principles-grid article, .about-page .about-principles-grid article + article { padding: 1rem 0; }
   .about-page blockquote { font-size: clamp(1.35rem, 6.2vw, 2rem); }
 }
+
+
+
+/* Compact poster-style About composition */
+.about-page {
+  background: #030909 url('../img/hero-banner.png') center center / cover fixed no-repeat;
+}
+.about-page::before {
+  background: linear-gradient(180deg, rgba(3,9,9,.62), rgba(3,9,9,.72)), linear-gradient(90deg, rgba(3,9,9,.72), rgba(3,9,9,.38) 55%, rgba(3,9,9,.64));
+}
+.about-page .about-hero { min-height: auto; }
+.about-page .about-hero-copy { max-width: 600px; padding: 4rem 0 3rem; }
+.about-page h1 { max-width: 14ch; margin-bottom: 1rem; font-size: clamp(2rem, 3vw, 3.25rem) !important; line-height: 1.02 !important; }
+.about-page .about-hero-copy p:not(.about-kicker):not(.about-brand-statement) { margin-bottom: .55rem; font-size: .91rem; line-height: 1.42; }
+.about-page .about-hero-copy .about-hero-lead { font-size: 1rem !important; line-height: 1.42 !important; }
+.about-page .about-brand-statement { margin-top: 1rem; padding-top: .65rem; font-size: .76rem; }
+.about-page .about-section { padding: 2.75rem 0; border-top: 1px solid rgba(83,238,225,.16); background: rgba(3,9,9,.18) !important; }
+.about-page .about-section-heading { display: block; margin-bottom: 1.35rem; }
+.about-page h2 { max-width: 16ch; font-size: clamp(1.45rem, 2vw, 2.15rem) !important; line-height: 1.06; }
+.about-page h3 { margin-bottom: .35rem; font-size: .82rem; letter-spacing: .08em; }
+.about-page .about-principles-grid { grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(83,238,225,.22); border-bottom: 0; }
+.about-page .about-principles-grid article, .about-page .about-principles-grid article + article { min-height: 0; padding: 1rem 1rem 0 0; border-right: 1px solid rgba(83,238,225,.16); }
+.about-page .about-principles-grid article:last-child { border-right: 0; padding-right: 0; }
+.about-page .about-principles-grid p { margin: 0; font-size: .78rem; line-height: 1.4; }
+.about-page .about-narrow-content { max-width: 760px; margin-left: 0; }
+.about-page .about-narrow-content h2 { margin-bottom: 1rem; }
+.about-page .about-narrow-content p:not(.about-kicker) { max-width: 670px; margin-bottom: .6rem; font-size: .88rem; line-height: 1.42; }
+.about-page .about-narrow-content .about-large-copy { font-size: 1.08rem !important; line-height: 1.32 !important; }
+.about-page .about-method-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; border-top: 1px solid rgba(83,238,225,.22); }
+.about-page .about-method-list article { display: block; padding: 1rem 1rem 0 0; border-bottom: 0; border-right: 1px solid rgba(83,238,225,.16); }
+.about-page .about-method-list article:last-child { border-right: 0; }
+.about-page .about-method-list p { margin: 0; font-size: .78rem; line-height: 1.4; }
+.about-page blockquote { max-width: 720px; margin-bottom: 1.2rem; font-size: clamp(1.45rem, 2.35vw, 2.55rem); line-height: 1.08; }
+.about-page .about-philosophy-copy { gap: 1.5rem; }
+.about-page .about-philosophy-copy p { margin: 0; font-size: .82rem; line-height: 1.4; }
+.about-page .about-direction-inner { gap: 1.7rem 4vw; }
+.about-page .about-direction-inner p:not(.about-kicker):not(.about-direction-principle):not(.about-closing) { margin-bottom: .55rem; font-size: .86rem; line-height: 1.4; }
+.about-page .about-direction-principle { font-size: 1.12rem; }
+.about-page .about-closing { margin-top: 1rem; padding-top: 1rem; font-size: clamp(1.1rem, 1.6vw, 1.65rem) !important; }
+@media (max-width: 700px) {
+  .about-page .about-hero-copy { padding: 3rem 0 2.5rem; }
+  .about-page .about-principles-grid, .about-page .about-method-list { display: block; }
+  .about-page .about-principles-grid article, .about-page .about-principles-grid article + article { padding: .85rem 0; border-right: 0; border-bottom: 1px solid rgba(83,238,225,.14); }
+  .about-page .about-principles-grid article:last-child, .about-page .about-method-list article:last-child { border-bottom: 0; }
+  .about-page .about-method-list article { padding: .85rem 0; border-right: 0; border-bottom: 1px solid rgba(83,238,225,.14); }
+  .about-page .about-section { padding: 2.2rem 0; }
+}
