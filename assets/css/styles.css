@@ -283,3 +283,7 @@ h3 { font-size:1.25rem; }
   border-left-color: #58fff0 !important;
   opacity: .3 !important;
 }
+
+/* Keep the header logo at the far left */
+.site-header .navbar { justify-content: space-between !important; }
+.site-header .brand { margin-left: 0 !important; margin-right: auto !important; }
