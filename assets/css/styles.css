@@ -340,3 +340,8 @@ h3 { font-size:1.25rem; }
   .contact-page .social-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
   .contact-page .social-card { min-height: 44px !important; }
 }
+
+/* Contact icon treatment */
+.contact-page .social-card::before { filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1010%) hue-rotate(124deg) brightness(94%) contrast(88%) drop-shadow(0 0 7px rgba(22,234,215,.2)) !important; opacity: .62 !important; }
+.contact-page .social-card:hover::before { filter: brightness(0) saturate(100%) invert(91%) sepia(35%) saturate(1260%) hue-rotate(123deg) brightness(103%) contrast(92%) drop-shadow(0 0 10px rgba(22,234,215,.34)) !important; opacity: .8 !important; }
+.contact-page .social-card { min-height: 54px !important; padding: 10px 8px !important; }
