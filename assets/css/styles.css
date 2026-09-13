@@ -318,3 +318,11 @@ h3 { font-size:1.25rem; }
 .site-footer > .container.footer-row { min-height: 74px !important; align-items: center !important; }
 .site-footer > .container.footer-row > div:first-child { font-size: .7rem !important; line-height: 1.25 !important; }
 .site-footer > .container.footer-row > div:first-child .small { font-size: .68rem !important; }
+
+/* Restore the original hero artwork and left logo placement */
+.company-hero-media { transform: none !important; height: 100% !important; }
+.company-hero-media img { opacity: 1 !important; filter: none !important; object-position: center center !important; }
+.company-hero-media::after { background: transparent !important; }
+.site-header .navbar { justify-content: space-between !important; }
+.site-header .nav-links { margin-right: 0 !important; }
+.site-header .brand { position: static !important; order: 0 !important; margin: 0 !important; transform: none !important; }
