@@ -261,3 +261,25 @@ h3 { font-size:1.25rem; }
 .footer-social .social-card:nth-child(3)::before { transform: scale(1.12); }
 .footer-social .social-card:nth-child(4)::before { transform: scale(1.08); }
 .footer-social .social-card:nth-child(5)::before { transform: scale(.9); }
+
+/* Subtle outlined YouTube icon and unified opacity */
+.footer-social .social-card::before { opacity: .3 !important; }
+.footer-social .social-card:hover::before { opacity: .3 !important; }
+.footer-social .social-card:nth-child(5)::before {
+  content: '' !important;
+  width: 36px !important;
+  height: 25px !important;
+  background: transparent !important;
+  border: 2px solid #58fff0 !important;
+  border-radius: 8px !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  filter: none !important;
+}
+.footer-social .social-card:nth-child(5)::after {
+  border-top-width: 5px !important;
+  border-bottom-width: 5px !important;
+  border-left-width: 8px !important;
+  border-left-color: #58fff0 !important;
+  opacity: .3 !important;
+}
