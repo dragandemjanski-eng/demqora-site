@@ -571,3 +571,46 @@ h3 { font-size:1.25rem; }
   .about-page .about-orbit img { width: 72%; }
   .about-page .orbit-tag { padding: 6px 9px; font-size: .57rem; }
 }
+
+
+/* About background drawing composition */
+.about-page .about-intro {
+  min-height: calc(100vh - 150px);
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(90deg, rgba(3,9,9,.96) 0%, rgba(3,9,9,.76) 38%, rgba(3,9,9,.26) 72%, rgba(3,9,9,.52) 100%), url('../img/about-visual-transparent.png');
+  background-repeat: no-repeat;
+  background-position: center, 68% 50%;
+  background-size: cover, min(920px, 72vw) auto;
+}
+.about-page .about-layout {
+  display: block;
+}
+.about-page .about-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 610px;
+  padding: 3rem 0;
+}
+.about-page .about-copy h1 {
+  max-width: 13ch;
+  font-size: clamp(2rem, 3.4vw, 3.35rem) !important;
+  line-height: 1.04 !important;
+}
+.about-page .about-copy .lead,
+.about-page .about-copy > p:not(.about-principles-copy) {
+  max-width: 560px;
+}
+.about-page .about-principles-copy {
+  max-width: 590px;
+}
+@media (max-width: 760px) {
+  .about-page .about-intro {
+    min-height: calc(100vh - 110px);
+    background-position: center, 70% 48%;
+    background-size: cover, 145vw auto;
+  }
+  .about-page .about-copy {
+    padding: 2.5rem 0;
+  }
+}
