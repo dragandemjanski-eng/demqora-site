@@ -227,3 +227,13 @@ h3 { font-size:1.25rem; }
 .footer-social .social-card:hover::before {
   filter: grayscale(1) brightness(.92) opacity(.78) !important;
 }
+
+/* DemQora cyan social icon system */
+.footer-social .social-card::before {
+  filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1010%) hue-rotate(124deg) brightness(94%) contrast(88%) drop-shadow(0 0 7px rgba(22,234,215,.2)) !important;
+  opacity: .9 !important;
+}
+.footer-social .social-card:hover::before {
+  filter: brightness(0) saturate(100%) invert(91%) sepia(35%) saturate(1260%) hue-rotate(123deg) brightness(103%) contrast(92%) drop-shadow(0 0 11px rgba(22,234,215,.42)) !important;
+  opacity: 1 !important;
+}
