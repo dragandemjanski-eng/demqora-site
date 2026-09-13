@@ -505,3 +505,69 @@ h3 { font-size:1.25rem; }
     font-size: clamp(1.9rem, 8vw, 2.55rem) !important;
   }
 }
+
+
+/* About orbit composition */
+.about-page .about-visual {
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+  opacity: 1;
+  filter: none;
+}
+.about-page .about-orbit {
+  position: relative;
+  width: min(100%, 700px);
+  aspect-ratio: 1 / .86;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+.about-page .about-orbit::before,
+.about-page .about-orbit::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(88,255,240,.16);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.about-page .about-orbit::before { inset: 8% 7%; }
+.about-page .about-orbit::after { inset: 20% 15%; border-color: rgba(88,255,240,.1); }
+.about-page .about-orbit img {
+  position: relative;
+  z-index: 2;
+  width: 74%;
+  max-width: none;
+  margin: 0;
+  opacity: .9;
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 0 24px rgba(22,234,215,.18));
+}
+.about-page .orbit-tag {
+  position: absolute;
+  z-index: 3;
+  padding: 7px 12px;
+  border: 1px solid rgba(88,255,240,.28);
+  border-radius: 999px;
+  background: rgba(3,9,9,.72);
+  box-shadow: 0 0 18px rgba(22,234,215,.08);
+  color: rgba(222,255,249,.78);
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.about-page .orbit-tag--top { top: 2%; left: 50%; transform: translateX(-50%); }
+.about-page .orbit-tag--right-top { top: 22%; right: 0; }
+.about-page .orbit-tag--right-bottom { right: 1%; bottom: 17%; }
+.about-page .orbit-tag--bottom { bottom: 1%; left: 50%; transform: translateX(-50%); }
+.about-page .orbit-tag--left-bottom { bottom: 17%; left: 0; }
+.about-page .orbit-tag--left-top { top: 22%; left: 0; }
+@media (max-width: 760px) {
+  .about-page .about-visual { min-height: 370px; }
+  .about-page .about-orbit { width: min(100%, 600px); }
+  .about-page .about-orbit img { width: 72%; }
+  .about-page .orbit-tag { padding: 6px 9px; font-size: .57rem; }
+}
