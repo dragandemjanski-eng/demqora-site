@@ -614,3 +614,31 @@ h3 { font-size:1.25rem; }
     padding: 2.5rem 0;
   }
 }
+
+
+/* Strengthen About background drawing */
+.about-page .about-intro {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #030909;
+}
+.about-page .about-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(90deg, rgba(3,9,9,.88) 0%, rgba(3,9,9,.54) 42%, rgba(3,9,9,.16) 100%), url('../img/about-visual-clean.png');
+  background-repeat: no-repeat;
+  background-position: center, 68% 50%;
+  background-size: cover, min(1180px, 92vw) auto;
+  opacity: .82;
+}
+.about-page .about-copy { max-width: 600px; }
+@media (max-width: 760px) {
+  .about-page .about-intro::before {
+    background-position: center, 66% 48%;
+    background-size: cover, 150vw auto;
+    opacity: .68;
+  }
+}
