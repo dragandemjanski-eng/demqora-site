@@ -807,3 +807,40 @@ h3 { font-size:1.25rem; }
   .about-page .about-hero { min-height: auto; }
   .about-page .about-hero-copy { padding-top: 3rem; padding-bottom: 3rem; }
 }
+
+
+
+/* Compact About typography and spacing */
+.about-page .about-hero { min-height: min(500px, calc(100vh - 74px)); }
+.about-page .about-hero-copy { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+.about-page h1 { max-width: 16ch; font-size: clamp(1.8rem, 2.35vw, 2.7rem) !important; line-height: 1.06 !important; margin-bottom: 1.1rem; }
+.about-page h2 { font-size: clamp(1.35rem, 1.75vw, 2rem) !important; line-height: 1.08; }
+.about-page h3 { font-size: .95rem; }
+.about-page .about-section { padding-top: 3rem; padding-bottom: 3rem; }
+.about-page p { line-height: 1.45; }
+.about-page .about-hero-copy p:not(.about-kicker):not(.about-brand-statement) { margin-bottom: .7rem; font-size: .92rem; line-height: 1.5; }
+.about-page .about-hero-copy .about-hero-lead { font-size: 1rem !important; line-height: 1.45 !important; }
+.about-page .about-brand-statement { margin-top: 1.2rem; padding-top: .75rem; font-size: .75rem; line-height: 1.35; }
+.about-page .about-section-heading { margin-bottom: 1.8rem; }
+.about-page .about-principles-grid article { min-height: 150px; padding: 1.2rem 1.2rem 1.2rem 0; }
+.about-page .about-principles-grid article + article { padding-left: 1.2rem; }
+.about-page .about-principles-grid p { font-size: .88rem; line-height: 1.45; }
+.about-page .about-narrow-content p:not(.about-kicker) { margin-bottom: .75rem; font-size: .92rem; line-height: 1.5; }
+.about-page .about-narrow-content .about-large-copy { font-size: 1.15rem !important; line-height: 1.35 !important; }
+.about-page .about-method-list article { padding: 1.15rem 0; }
+.about-page .about-method-list p { font-size: .9rem; line-height: 1.45; }
+.about-page blockquote { max-width: 850px; margin-bottom: 1.6rem; font-size: clamp(1.4rem, 2.05vw, 2.25rem); line-height: 1.08; }
+.about-page .about-philosophy-copy { gap: 2rem; }
+.about-page .about-philosophy-copy p { font-size: .9rem; line-height: 1.45; }
+.about-page .about-direction-inner { gap: 2rem 5vw; }
+.about-page .about-direction-inner p:not(.about-kicker):not(.about-direction-principle):not(.about-closing) { margin-bottom: .65rem; font-size: .9rem; line-height: 1.45; }
+.about-page .about-direction-principle { font-size: 1.2rem; line-height: 1.25 !important; }
+.about-page .about-closing { margin-top: 1.3rem; padding-top: 1.2rem; font-size: clamp(1.15rem, 1.65vw, 1.75rem) !important; line-height: 1.15 !important; }
+@media (max-width: 700px) {
+  .about-page .about-section { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .about-page .about-hero-copy { padding-top: 2.2rem; padding-bottom: 2.2rem; }
+  .about-page .about-hero { min-height: auto; }
+  .about-page .about-section-heading { margin-bottom: 1.4rem; }
+  .about-page .about-principles-grid article, .about-page .about-principles-grid article + article { padding: 1rem 0; }
+  .about-page blockquote { font-size: clamp(1.35rem, 6.2vw, 2rem); }
+}
