@@ -247,3 +247,10 @@ h3 { font-size:1.25rem; }
 .footer-social .social-card:nth-child(4)::before { font-size: 1.55rem !important; }
 .footer-social .social-card:nth-child(5)::before { width: 36px !important; height: 25px !important; }
 .footer-social .social-card:nth-child(5)::after { border-top-width: 5px !important; border-bottom-width: 5px !important; border-left-width: 8px !important; }
+
+/* Optical size correction for equal visual weight */
+.footer-social .social-card:nth-child(1)::before { transform: scale(1.28); }
+.footer-social .social-card:nth-child(2)::before { transform: scale(.88); }
+.footer-social .social-card:nth-child(3)::before { transform: scale(1.12); }
+.footer-social .social-card:nth-child(4)::before { transform: scale(1.08); }
+.footer-social .social-card:nth-child(5)::before { transform: scale(.9); }
