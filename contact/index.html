@@ -1053,4 +1053,16 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer { margin: 
 }
 .contact-page .contact-panel { position: relative; z-index: 1; }
 </style>
+
+<style id="contact-title-cloud">
+.contact-page .contact-panel { position: relative; isolation: isolate; }
+.contact-page .contact-panel::before {
+  content: ""; position: absolute; inset: -2.2rem -3.5rem; z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(2, 8, 8, .9) 0%, rgba(2, 8, 8, .68) 48%, rgba(2, 8, 8, 0) 82%);
+  filter: blur(18px); pointer-events: none;
+}
+.contact-page h1 { font-size: clamp(1.5rem, 2vw, 2rem) !important; line-height: 1.08 !important; }
+.contact-page .contact-intro { position: relative; z-index: 1; }
+.contact-page .social-grid { position: relative; z-index: 1; }
+</style>
 </head><body><header class="site-header"><div class="container navbar"><a class="brand" href="../"><img src="../assets/img/demqora-logo.png" alt="DemQora DQ logo"><span>DemQora Technologies</span></a><button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button><nav id="main-nav" class="nav-links"><a href="../">Home</a><div class="nav-products"><a href="../products/">Products</a><div class="submenu"><a href="../products/ms-1-1/">MS 1.1 — Market Structure Multi-Timeframe Chart</a></div></div><a href="../documentation/">Documentation</a><a href="../about/">About</a><a href="./" aria-current="page">Contact</a></nav></div></header><main class="contact-page"><section class="contact-panel"><h1>Contact DemQora</h1><p class="contact-intro">Official channels for DemQora Technologies.</p><div class="social-grid"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener" aria-label="X" title="X">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">YouTube</a></div></section></main><footer class="site-footer"><div class="container footer-row"><div><strong>DemQora Technologies</strong><div>Advanced Market Intelligence</div><div class="small">© <span data-year></span> DemQora Technologies.</div></div></div></footer><script src="../assets/js/main.js"></script></body></html>
