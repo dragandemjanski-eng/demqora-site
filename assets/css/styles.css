@@ -494,3 +494,9 @@ body:has(main > .page-hero) .site-header .brand { margin-left: 0 !important; mar
 body:has(.page-hero) .site-header .brand span { display: inline !important; }
 body:has(.page-hero) .site-header .brand { margin-left: 0 !important; margin-right: auto !important; }
 body:has(.page-hero) .page-hero h1 { font-size: clamp(2rem, 4vw, 3.4rem) !important; line-height: 1.08 !important; margin: 0 !important; }
+
+
+/* Contact-only restoration for the current contact layout. */
+body:has(.contact-panel) .site-header .brand span { display: inline !important; }
+body:has(.contact-panel) .site-header .brand { margin-left: 0 !important; margin-right: auto !important; }
+body:has(.contact-panel) .contact-panel h1 { font-size: clamp(2rem, 4vw, 3.4rem) !important; line-height: 1.08 !important; margin: 0 !important; }
