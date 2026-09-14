@@ -922,3 +922,8 @@ h3 { font-size:1.25rem; }
 .about-page .about-direction-inner { grid-template-columns: 1fr 1fr; gap: 2rem 5rem; }
 .about-page .about-closing { font-size: clamp(1.25rem, 1.9vw, 2rem) !important; font-weight: 500; }
 @media (max-width: 700px) { .about-page .about-section { padding: 2.4rem 0; } .about-page .about-method-list { display: block; } .about-page .about-direction-inner { display: block; } .about-page .about-hero-copy { padding: 3rem 0 2.5rem; } }
+
+/* final visual correction */
+.about-page { background: #030909 url('../img/hero-banner.png') center center / cover fixed no-repeat !important; }
+.about-page::before { background: radial-gradient(ellipse 34% 25% at 50% 34%, rgba(3,9,9,.88), transparent 78%), linear-gradient(180deg, rgba(3,9,9,.18), rgba(3,9,9,.48)), linear-gradient(90deg, rgba(3,9,9,.38), rgba(3,9,9,.10) 54%, rgba(3,9,9,.38)) !important; }
+.about-page .about-hero { background: transparent !important; }
