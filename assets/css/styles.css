@@ -1060,3 +1060,12 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer { margin: 
   .about-reference-layout .about-ref-split h2,
   .about-reference-layout .about-direction-grid > h2 { font-size: clamp(1.25rem, 5.5vw, 1.7rem) !important; }
 }
+
+
+/* Restore Home-only composition without affecting About. */
+body:not(:has(.about-reference-layout)) .site-header .brand span { display: none !important; }
+body:not(:has(.about-reference-layout)) .site-header .brand { margin-left: 0 !important; margin-right: auto !important; }
+body:not(:has(.about-reference-layout)) .company-hero-overlay { align-items: flex-start !important; padding-top: clamp(78px, 11vh, 126px) !important; padding-bottom: 0 !important; }
+body:not(:has(.about-reference-layout)) .company-hero .hero-copy { display: block !important; max-width: 430px !important; margin-left: 0 !important; }
+body:not(:has(.about-reference-layout)) .company-hero h1 { max-width: 430px !important; margin: 0 0 12px !important; font-size: clamp(1.12rem, 1.5vw, 1.7rem) !important; line-height: 1.2 !important; font-weight: 500 !important; color: rgba(190,224,220,.46) !important; }
+body:not(:has(.about-reference-layout)) .company-hero .lead { max-width: 360px !important; margin: 0 !important; font-size: .68rem !important; line-height: 1.4 !important; letter-spacing: .1em !important; color: rgba(130,190,183,.38) !important; }
