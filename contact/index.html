@@ -1049,17 +1049,17 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer { margin: 
 .contact-page {
   position: relative;
   isolation: isolate;
-  background: linear-gradient(180deg, rgba(3, 9, 9, .58), rgba(3, 9, 9, .72)), url("../assets/img/ChatGPT%20Image%20Sep%2014%2C%202026%2C%2002_01_47%20AM.png") center / cover no-repeat;
+  background: url("../assets/img/ChatGPT%20Image%20Sep%2014%2C%202026%2C%2002_01_47%20AM.png") center / cover no-repeat;
 }
 .contact-page .contact-panel { position: relative; z-index: 1; }
 </style>
 
 <style id="contact-title-cloud">
-.contact-page .contact-panel { position: relative; isolation: isolate; }
-.contact-page .contact-panel::before {
-  content: ""; position: absolute; inset: -2.2rem -3.5rem; z-index: -1;
-  background: radial-gradient(ellipse at center, rgba(2, 8, 8, .9) 0%, rgba(2, 8, 8, .68) 48%, rgba(2, 8, 8, 0) 82%);
-  filter: blur(18px); pointer-events: none;
+.contact-page .contact-intro { position: relative; isolation: isolate; }
+.contact-page .contact-intro::before {
+  content: ""; position: absolute; inset: -1.2rem -2rem; z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(2, 8, 8, .72) 0%, rgba(2, 8, 8, .42) 52%, rgba(2, 8, 8, 0) 84%);
+  filter: blur(16px); pointer-events: none;
 }
 .contact-page h1 { font-size: clamp(1.5rem, 2vw, 2rem) !important; line-height: 1.08 !important; }
 .contact-page .contact-intro { position: relative; z-index: 1; }
