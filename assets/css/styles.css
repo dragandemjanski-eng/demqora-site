@@ -430,3 +430,41 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer {
     background-attachment: scroll !important;
   }
 }
+
+/* Compact About display type and preserve copy legibility over the cinematic image. */
+.about-reference-layout {
+  --about-copy-cloud-core: rgba(1, 9, 10, .78);
+  --about-copy-cloud-edge: rgba(1, 9, 10, 0);
+}
+
+.about-reference-layout h1 {
+  font-size: clamp(1.025rem, 2.1vw, 1.75rem) !important;
+}
+
+.about-reference-layout .about-ref-split h2,
+.about-reference-layout .about-direction-grid > h2 {
+  font-size: clamp(.9rem, 1.5vw, 1.3rem) !important;
+}
+
+.about-reference-layout .about-cinema-copy > p,
+.about-reference-layout .about-hero-note,
+.about-reference-layout .about-ref-copy,
+.about-reference-layout .about-decision-line {
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+}
+
+.about-reference-layout .about-cinema-copy > p::before,
+.about-reference-layout .about-hero-note::before,
+.about-reference-layout .about-ref-copy::before,
+.about-reference-layout .about-decision-line::before {
+  content: '';
+  position: absolute;
+  inset: -1rem -1.25rem;
+  z-index: -1;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at 42% 50%, var(--about-copy-cloud-core) 0%, rgba(1, 9, 10, .64) 50%, var(--about-copy-cloud-edge) 80%);
+  filter: blur(12px);
+  pointer-events: none;
+}
