@@ -431,22 +431,40 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer {
   }
 }
 
-/* Compact About typography and readable copy treatment. */
-.about-reference-layout h1 { font-size: clamp(1.55rem, 3.1vw, 2.55rem) !important; line-height: 1.08 !important; }
-.about-reference-layout .about-ref-split h2,
-.about-reference-layout .about-direction-grid > h2 { font-size: clamp(1.35rem, 2.15vw, 1.9rem) !important; line-height: 1.12 !important; }
-.about-reference-layout .about-ref-philosophy h2 { max-width: 19ch; }
-.about-reference-layout .about-cinema-copy > p:not(.about-principle-line) { font-size: clamp(.78rem, .9vw, .9rem); line-height: 1.45; }
-.about-reference-layout .about-principle-line { margin-top: 1.25rem !important; font-size: .56rem !important; line-height: 1.55 !important; }
-.about-reference-layout .about-ref-copy { position: relative; isolation: isolate; }
-.about-reference-layout .about-ref-copy::before { content: ''; position: absolute; inset: -1.15rem -1.8rem; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at center, rgba(2, 12, 13, .78) 0%, rgba(2, 12, 13, .46) 42%, rgba(2, 12, 13, 0) 78%); filter: blur(12px); }
-.about-reference-layout .about-ref-copy p { font-size: clamp(.72rem, .82vw, .84rem); line-height: 1.45; }
-.about-reference-layout .about-ref-copy p + p { margin-top: .62rem; }
-.about-reference-layout .about-decision-line { font-size: clamp(.86rem, 1.05vw, 1.05rem) !important; line-height: 1.38 !important; }
-@media (max-width: 800px) {
-  .about-reference-layout h1 { font-size: clamp(1.65rem, 7vw, 2.4rem) !important; }
-  .about-reference-layout .about-ref-split h2,
-  .about-reference-layout .about-direction-grid > h2 { font-size: clamp(1.25rem, 5.5vw, 1.7rem) !important; }
+/* Compact About display type and preserve copy legibility over the cinematic image. */
+.about-reference-layout {
+  --about-copy-cloud-core: rgba(1, 9, 10, .78);
+  --about-copy-cloud-edge: rgba(1, 9, 10, 0);
 }
 
+.about-reference-layout h1 {
+  font-size: clamp(1.025rem, 2.1vw, 1.75rem) !important;
+}
 
+.about-reference-layout .about-ref-split h2,
+.about-reference-layout .about-direction-grid > h2 {
+  font-size: clamp(.9rem, 1.5vw, 1.3rem) !important;
+}
+
+.about-reference-layout .about-cinema-copy > p,
+.about-reference-layout .about-hero-note,
+.about-reference-layout .about-ref-copy,
+.about-reference-layout .about-decision-line {
+  position: relative;
+  isolation: isolate;
+  z-index: 0;
+}
+
+.about-reference-layout .about-cinema-copy > p::before,
+.about-reference-layout .about-hero-note::before,
+.about-reference-layout .about-ref-copy::before,
+.about-reference-layout .about-decision-line::before {
+  content: '';
+  position: absolute;
+  inset: -1rem -1.25rem;
+  z-index: -1;
+  border-radius: 999px;
+  background: radial-gradient(ellipse at 42% 50%, var(--about-copy-cloud-core) 0%, rgba(1, 9, 10, .64) 50%, var(--about-copy-cloud-edge) 80%);
+  filter: blur(12px);
+  pointer-events: none;
+}
