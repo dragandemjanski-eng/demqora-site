@@ -468,3 +468,11 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer {
   filter: blur(12px);
   pointer-events: none;
 }
+
+
+/* Transparent logo treatment across all pages */
+.site-header .brand img {
+  background: transparent !important;
+  box-shadow: none !important;
+  mix-blend-mode: screen;
+}
