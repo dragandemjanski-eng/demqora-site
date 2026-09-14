@@ -474,3 +474,12 @@ body:not(:has(.about-reference-layout)) .company-hero .lead { max-width: 360px !
   background-size: cover !important;
   background-attachment: scroll !important;
 }
+
+
+/* About: use only the selected full-resolution mountain background. */
+.about-reference-layout {
+  background-image: url("../img/about-cinematic-bg.png") !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center calc(50% + var(--about-parallax)) !important;
+}
