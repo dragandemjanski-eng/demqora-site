@@ -1057,11 +1057,11 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer { margin: 
 <style id="contact-title-cloud">
 .contact-page .contact-panel { position: relative; isolation: isolate; }
 .contact-page .contact-panel::before {
-  content: ""; position: absolute; inset: -2rem -3rem; z-index: -1;
+  content: ""; position: absolute; inset: -2rem -3rem; z-index: 0;
   background: radial-gradient(ellipse at center, rgba(2, 8, 8, .54) 0%, rgba(2, 8, 8, .27) 52%, rgba(2, 8, 8, 0) 84%);
   filter: blur(18px); pointer-events: none;
 }
-.contact-page h1 { font-size: clamp(1.5rem, 2vw, 2rem) !important; line-height: 1.08 !important; }
+.contact-page h1 { position: relative; z-index: 1; font-size: clamp(1.5rem, 2vw, 2rem) !important; line-height: 1.08 !important; }
 .contact-page .contact-intro { position: relative; z-index: 1; }
 .contact-page .social-grid { position: relative; z-index: 1; }
 </style>
