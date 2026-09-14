@@ -488,3 +488,9 @@ body:not(:has(.about-reference-layout)) .company-hero .lead { max-width: 360px !
 /* Keep Contact independent from About/Home overrides. */
 body:has(main > .page-hero) .site-header .brand span { display: inline !important; }
 body:has(main > .page-hero) .site-header .brand { margin-left: 0 !important; margin-right: auto !important; }
+
+
+/* Contact-only restoration: keep Contact independent and compact. */
+body:has(.page-hero) .site-header .brand span { display: inline !important; }
+body:has(.page-hero) .site-header .brand { margin-left: 0 !important; margin-right: auto !important; }
+body:has(.page-hero) .page-hero h1 { font-size: clamp(2rem, 4vw, 3.4rem) !important; line-height: 1.08 !important; margin: 0 !important; }
