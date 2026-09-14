@@ -942,3 +942,19 @@ h3 { font-size:1.25rem; }
 .about-page .about-section-heading { margin-bottom: 1.15rem; }
 .about-page .about-principles-grid, .about-page .about-method-list { border-color: rgba(83,238,225,.18); }
 @media (max-width: 700px) { .about-page { background-size: auto 620px !important; background-position: center 30% !important; } .about-page .about-section { padding-top: 2.2rem; padding-bottom: 2.2rem; } }
+
+/* About cinematic mountain scene — replaces the legacy technical drawing */
+.about-page {
+  background: #030909 url('../img/hero-mountains.png') left center / 300% auto fixed no-repeat !important;
+}
+.about-page::before {
+  background:
+    linear-gradient(90deg, rgba(3,9,9,.78) 0%, rgba(3,9,9,.46) 48%, rgba(3,9,9,.78) 100%),
+    linear-gradient(180deg, rgba(3,9,9,.16), rgba(3,9,9,.62)) !important;
+}
+@media (max-width: 700px) {
+  .about-page {
+    background-size: auto 170vh !important;
+    background-position: left center !important;
+  }
+}
