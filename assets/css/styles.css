@@ -483,3 +483,8 @@ body:not(:has(.about-reference-layout)) .company-hero .lead { max-width: 360px !
   background-repeat: no-repeat !important;
   background-position: center calc(50% + var(--about-parallax)) !important;
 }
+
+
+/* Keep Contact independent from About/Home overrides. */
+body:has(main > .page-hero) .site-header .brand span { display: inline !important; }
+body:has(main > .page-hero) .site-header .brand { margin-left: 0 !important; margin-right: auto !important; }
