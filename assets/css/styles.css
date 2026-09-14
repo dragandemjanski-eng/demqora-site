@@ -931,3 +931,14 @@ h3 { font-size:1.25rem; }
 /* Remove the old embedded-logo background from About */
 .about-page { background: #030909 url('../img/about-visual-clean.png') center center / min(1180px, 92vw) auto no-repeat fixed !important; }
 .about-page::before { background: linear-gradient(180deg, rgba(3,9,9,.18), rgba(3,9,9,.58)), linear-gradient(90deg, rgba(3,9,9,.48), rgba(3,9,9,.12) 56%, rgba(3,9,9,.46)) !important; }
+
+/* Final About composition */
+.about-page { background-position: center 42%; background-size: min(1380px, 100vw) auto !important; }
+.about-page::before { background: linear-gradient(180deg, rgba(3,9,9,.10), rgba(3,9,9,.52)), linear-gradient(90deg, rgba(3,9,9,.38), rgba(3,9,9,.08) 58%, rgba(3,9,9,.36)) !important; }
+.about-page .about-hero-copy { max-width: 620px; padding-top: 3rem; padding-bottom: 3rem; }
+.about-page h1 { max-width: 15ch; font-size: clamp(1.9rem, 2.65vw, 3rem) !important; }
+.about-page .about-section { padding-top: 2.6rem; padding-bottom: 2.6rem; background: rgba(3,9,9,.08) !important; }
+.about-page .about-section + .about-section { background: rgba(3,9,9,.14) !important; }
+.about-page .about-section-heading { margin-bottom: 1.15rem; }
+.about-page .about-principles-grid, .about-page .about-method-list { border-color: rgba(83,238,225,.18); }
+@media (max-width: 700px) { .about-page { background-size: auto 620px !important; background-position: center 30% !important; } .about-page .about-section { padding-top: 2.2rem; padding-bottom: 2.2rem; } }
