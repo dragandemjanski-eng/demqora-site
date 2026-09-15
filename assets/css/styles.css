@@ -476,3 +476,26 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer {
   box-shadow: none !important;
   mix-blend-mode: screen;
 }
+
+/* Consistent header logo: match the approved Home dimensions on every page.
+   Repeated classes override legacy page-local header rules. */
+html body .site-header.site-header .navbar.navbar {
+  width: min(calc(100% - 36px), 1180px) !important;
+  max-width: 1180px !important;
+  min-height: 74px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  align-items: center !important;
+}
+html body .site-header.site-header .brand.brand {
+  display: flex !important; align-items: center !important;
+  margin: 0 !important; padding: 0 !important;
+}
+html body .site-header.site-header .brand.brand img {
+  width: 46px !important; height: 46px !important;
+  flex: 0 0 46px !important; object-fit: contain !important;
+  border-radius: 12px !important;
+  background: transparent !important; box-shadow: none !important;
+  mix-blend-mode: screen !important;
+}
+html body .site-header.site-header .brand.brand > span { display: none !important; }
