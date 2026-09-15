@@ -499,3 +499,6 @@ html body .site-header.site-header .brand.brand img {
   mix-blend-mode: screen !important;
 }
 html body .site-header.site-header .brand.brand > span { display: none !important; }
+
+/* Keep centered header alignment consistent on short and scrolling pages. */
+html { scrollbar-gutter: stable; }
