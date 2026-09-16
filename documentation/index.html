@@ -14,11 +14,7 @@
 <meta name="theme-color" content="#030909">
 
 <link rel="icon" href="../assets/img/demqora-logo.png">
-
-<link
-  rel="stylesheet"
-  href="../assets/css/styles.css?v=202609161435">
-
+<link rel="stylesheet" href="../assets/css/styles.css?v=202609161440">
 
 <style id="documentation-background">
 
@@ -36,6 +32,7 @@
 
 .documentation-page::before {
   content: "";
+
   position: absolute;
   inset: 0;
 
@@ -128,7 +125,7 @@ main .page-hero h1.brand-page-heading {
 }
 
 
-/* Main section */
+/* Main */
 
 .documentation-page .documentation-content {
   padding: 64px 0 88px;
@@ -151,9 +148,6 @@ main .page-hero h1.brand-page-heading {
   margin-bottom: 38px;
 }
 
-
-/* Smaller MS 1.1 Documentation title */
-
 .documentation-page .documentation-intro h2 {
   margin: 0 0 16px;
 
@@ -170,7 +164,6 @@ main .page-hero h1.brand-page-heading {
 
   letter-spacing: normal;
 }
-
 
 .documentation-page .documentation-intro p {
   max-width: 620px;
@@ -206,7 +199,7 @@ main .page-hero h1.brand-page-heading {
 }
 
 
-/* Resource grid */
+/* Cards */
 
 .documentation-page .resource-grid {
   display: grid;
@@ -216,9 +209,6 @@ main .page-hero h1.brand-page-heading {
 
   gap: 16px;
 }
-
-
-/* Resource cards */
 
 .documentation-page .resource-card {
   position: relative;
@@ -251,8 +241,7 @@ main .page-hero h1.brand-page-heading {
 }
 
 .documentation-page .resource-card:hover {
-  transform:
-    translateY(-3px);
+  transform: translateY(-3px);
 
   border-color:
     rgba(88,255,240,.34);
@@ -264,9 +253,6 @@ main .page-hero h1.brand-page-heading {
       rgba(4,14,13,.78)
     );
 }
-
-
-/* Subtle glow */
 
 .documentation-page .resource-card::before {
   content: "";
@@ -292,7 +278,7 @@ main .page-hero h1.brand-page-heading {
 }
 
 
-/* Coming Soon */
+/* Status */
 
 .documentation-page .resource-top {
   display: flex;
@@ -334,7 +320,7 @@ main .page-hero h1.brand-page-heading {
 }
 
 
-/* Card text */
+/* Text */
 
 .documentation-page .resource-card h3 {
   margin: 0 0 10px;
@@ -360,7 +346,7 @@ main .page-hero h1.brand-page-heading {
 }
 
 
-/* User Manual highlight */
+/* Manual highlight */
 
 .documentation-page .resource-card.featured {
   border-color:
@@ -397,7 +383,7 @@ main .page-hero h1.brand-page-heading {
 }
 
 
-/* Support section */
+/* Support */
 
 .documentation-page .documentation-support {
   display: flex;
@@ -437,7 +423,6 @@ main .page-hero h1.brand-page-heading {
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
   min-height: 42px;
@@ -465,8 +450,7 @@ main .page-hero h1.brand-page-heading {
 }
 
 .documentation-page .support-link:hover {
-  transform:
-    translateY(-2px);
+  transform: translateY(-2px);
 
   border-color:
     rgba(88,255,240,.50);
@@ -522,7 +506,6 @@ main .page-hero h1.brand-page-heading {
 
 </head>
 
-
 <body>
 
 
@@ -530,39 +513,21 @@ main .page-hero h1.brand-page-heading {
 
   <div class="container navbar">
 
-    <a
-      class="brand"
-      href="../">
-
-      <img
-        src="../assets/img/demqora-logo.png"
-        alt="DemQora DQ logo">
-
-      <span>
-        DemQora Technologies
-      </span>
-
+    <a class="brand" href="../">
+      <img src="../assets/img/demqora-logo.png" alt="DemQora DQ logo">
+      <span>DemQora Technologies</span>
     </a>
-
 
     <button
       class="menu-toggle"
       aria-expanded="false"
       aria-controls="main-nav">
-
       Menu
-
     </button>
 
+    <nav id="main-nav" class="nav-links">
 
-    <nav
-      id="main-nav"
-      class="nav-links">
-
-      <a href="../">
-        Home
-      </a>
-
+      <a href="../">Home</a>
 
       <div class="nav-products">
 
@@ -571,33 +536,19 @@ main .page-hero h1.brand-page-heading {
         </a>
 
         <div class="submenu">
-
           <a href="../products/ms-1-1/">
             MS 1.1 — Market Structure Multi-Timeframe Chart
           </a>
-
         </div>
 
       </div>
 
-
-      <a
-        href="./"
-        aria-current="page">
-
+      <a href="./" aria-current="page">
         Documentation
-
       </a>
 
-
-      <a href="../about/">
-        About
-      </a>
-
-
-      <a href="../contact/">
-        Contact
-      </a>
+      <a href="../about/">About</a>
+      <a href="../contact/">Contact</a>
 
     </nav>
 
@@ -606,52 +557,28 @@ main .page-hero h1.brand-page-heading {
 </header>
 
 
-
 <main class="documentation-page">
-
 
   <section class="page-hero">
 
     <div class="container">
 
-
-      <h1
-        class="brand-page-heading"
-        aria-label="DemQora Documentation">
-
-        <span class="brand-prefix">
-          Dem
-        </span>
-
-        <span class="brand-suffix">
-          Qora
-        </span>
-
-        <span class="page-word">
-          Documentation
-        </span>
-
-      </h1>
-
+      <h1 class="brand-page-heading" aria-label="DemQora Documentation"><span class="brand-prefix">Dem</span><span class="brand-suffix">Qora</span><span class="page-word">Documentation</span></h1>
 
       <p class="lead">
         Everything you need to install, configure and master.
       </p>
-
 
     </div>
 
   </section>
 
 
-
   <section class="documentation-content">
 
     <div class="container">
 
-
       <div class="documentation-intro">
-
 
         <div>
 
@@ -667,17 +594,12 @@ main .page-hero h1.brand-page-heading {
 
         </div>
 
-
         <div class="documentation-intro-note">
-
           Documentation resources will become available as each item
           is finalized for the first public release.
-
         </div>
 
-
       </div>
-
 
 
       <div class="resource-grid">
@@ -685,20 +607,15 @@ main .page-hero h1.brand-page-heading {
 
         <article class="resource-card featured">
 
-
           <div class="resource-top">
-
             <span class="resource-status">
               Coming Soon
             </span>
-
           </div>
-
 
           <h3>
             User Manual
           </h3>
-
 
           <p>
             Complete product reference covering installation,
@@ -706,54 +623,40 @@ main .page-hero h1.brand-page-heading {
             multi-timeframe operation and core MS 1.1 functionality.
           </p>
 
-
         </article>
-
 
 
         <article class="resource-card">
 
-
           <div class="resource-top">
-
             <span class="resource-status">
               Coming Soon
             </span>
-
           </div>
-
 
           <h3>
             Quick Start Guide
           </h3>
-
 
           <p>
             A concise introduction to installation, first setup
             and the essential controls needed to begin using MS 1.1.
           </p>
 
-
         </article>
-
 
 
         <article class="resource-card">
 
-
           <div class="resource-top">
-
             <span class="resource-status">
               Coming Soon
             </span>
-
           </div>
-
 
           <h3>
             Video Tutorials
           </h3>
-
 
           <p>
             Guided DemQora walkthroughs showing configuration,
@@ -761,33 +664,25 @@ main .page-hero h1.brand-page-heading {
             in MetaTrader 5.
           </p>
 
-
         </article>
-
 
 
         <article class="resource-card">
 
-
           <div class="resource-top">
-
             <span class="resource-status">
               Coming Soon
             </span>
-
           </div>
-
 
           <h3>
             Release Notes
           </h3>
 
-
           <p>
             Version history, feature additions, improvements,
             fixes and important information for each public release.
           </p>
-
 
         </article>
 
@@ -795,9 +690,7 @@ main .page-hero h1.brand-page-heading {
       </div>
 
 
-
       <div class="documentation-support">
-
 
         <div class="documentation-support-copy">
 
@@ -805,39 +698,30 @@ main .page-hero h1.brand-page-heading {
             Need help?
           </h3>
 
-
           <p>
             Contact DemQora Technologies for product and documentation enquiries.
           </p>
 
         </div>
 
-
         <a
           class="support-link"
           href="../contact/">
-
           Contact DemQora
-
         </a>
 
-
       </div>
-
 
     </div>
 
   </section>
 
-
 </main>
-
 
 
 <footer class="site-footer">
 
   <div class="container footer-row">
-
 
     <div>
 
@@ -855,32 +739,19 @@ main .page-hero h1.brand-page-heading {
 
     </div>
 
-
     <div class="footer-links">
 
-      <a href="../products/">
-        Products
-      </a>
-
-      <a href="../about/">
-        About
-      </a>
-
-      <a href="../contact/">
-        Contact
-      </a>
+      <a href="../products/">Products</a>
+      <a href="../about/">About</a>
+      <a href="../contact/">Contact</a>
 
     </div>
-
 
   </div>
 
 </footer>
 
-
-
 <script src="../assets/js/main.js"></script>
-
 
 </body>
 </html>
