@@ -502,18 +502,65 @@ html body .site-header.site-header .brand.brand > span { display: none !importan
 
 /* Keep centered header alignment consistent on short and scrolling pages. */
 html { scrollbar-gutter: stable; }
-/* Products dropdown position */
+/* =========================================================
+   PRODUCTS DROPDOWN — FINAL DESKTOP POSITION FIX
+   ========================================================= */
+
 @media (min-width: 901px) {
-  .nav-products .submenu {
-    top: calc(100% + 14px) !important;
+
+  /* Products е anchor за dropdown-а */
+  .site-header .nav-products {
+    position: relative !important;
   }
 
-  .nav-products .submenu::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -14px;
-    height: 14px;
+  /* Dropdown прозорецът */
+  .site-header .nav-products .submenu {
+    position: absolute !important;
+
+    /* започва от долната страна на Products */
+    top: 100% !important;
+    left: 0 !important;
+
+    /* реално го сваля 30px по-надолу */
+    transform: translateY(30px) !important;
+
+    min-width: 240px !important;
+
+    padding: 9px !important;
+
+    background: #071211 !important;
+    border: 1px solid rgba(31, 238, 218, .22) !important;
+    border-radius: 14px !important;
+
+    box-shadow: 0 24px 80px rgba(0, 0, 0, .38) !important;
+
+    z-index: 9999 !important;
+  }
+
+  /* Невидим мост между Products и dropdown-а.
+     Така менюто няма да изчезва, докато движиш мишката надолу. */
+  .site-header .nav-products .submenu::before {
+    content: "" !important;
+    position: absolute !important;
+
+    left: 0 !important;
+    right: 0 !important;
+
+    top: -30px !important;
+    height: 30px !important;
+
+    background: transparent !important;
+    pointer-events: auto !important;
+  }
+
+  /* Dropdown се показва при hover/focus */
+  .site-header .nav-products:hover .submenu,
+  .site-header .nav-products:focus-within .submenu {
+    display: block !important;
+  }
+
+  /* Product link вътре */
+  .site-header .nav-products .submenu a {
+    display: block !important;
   }
 }
