@@ -17,7 +17,7 @@
 
 <link
   rel="stylesheet"
-  href="../assets/css/styles.css?v=202609161130">
+  href="../assets/css/styles.css?v=202609161145">
 
 
 <style id="products-background">
@@ -65,47 +65,151 @@ main .page-hero h1.brand-page-heading {
 
 <style id="mt5-product-icon">
 
-/* ---------------------------------------------------------
-   MT5 ICON — BOTTOM RIGHT OF MS 1.1 PRODUCT CARD
-   --------------------------------------------------------- */
+/* =========================================================
+   MT5 ICON — BOTTOM RIGHT
+   2X SIZE + SOFT WHITE OPACITY CLOUD
+   ========================================================= */
 
 .products-background-page .product-card {
   position: relative !important;
 }
 
 
-/* MT5 icon */
+/* Badge / cloud container */
 
-.products-background-page .mt5-corner-icon {
+.products-background-page .mt5-corner-badge {
   position: absolute;
 
-  right: 28px;
-  bottom: 24px;
+  right: 20px;
+  bottom: 14px;
 
-  width: 50px;
-  height: 50px;
+  width: 132px;
+  height: 132px;
 
-  object-fit: contain;
-
-  opacity: .82;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   z-index: 5;
 
-  filter:
-    drop-shadow(0 0 8px rgba(88, 255, 240, .16))
-    drop-shadow(0 5px 12px rgba(0, 0, 0, .35));
-
-  transition:
-    opacity .2s ease,
-    transform .2s ease;
+  pointer-events: auto;
 }
 
 
-/* Small hover effect */
+/* Large soft white cloud */
 
-.products-background-page .mt5-corner-icon:hover {
+.products-background-page .mt5-corner-badge::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 132px;
+  height: 132px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at center,
+
+      rgba(255,255,255,.38) 0%,
+      rgba(255,255,255,.29) 22%,
+      rgba(255,255,255,.20) 40%,
+      rgba(255,255,255,.12) 56%,
+      rgba(255,255,255,.055) 72%,
+      rgba(255,255,255,.018) 84%,
+      rgba(255,255,255,0) 100%
+    );
+
+  filter: blur(12px);
+
+  opacity: .95;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* Second inner glow layer */
+
+.products-background-page .mt5-corner-badge::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 98px;
+  height: 98px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at center,
+
+      rgba(255,255,255,.20) 0%,
+      rgba(255,255,255,.10) 52%,
+      rgba(255,255,255,0) 100%
+    );
+
+  filter: blur(7px);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+
+/* MT5 icon */
+
+.products-background-page .mt5-corner-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100px;
+  height: 100px;
+
+  object-fit: contain;
+
+  opacity: .98;
+
+  filter:
+    drop-shadow(0 0 7px rgba(255,255,255,.28))
+    drop-shadow(0 0 16px rgba(255,255,255,.18))
+    drop-shadow(0 7px 16px rgba(0,0,0,.38));
+
+  transition:
+    transform .22s ease,
+    opacity .22s ease,
+    filter .22s ease;
+}
+
+
+/* Hover */
+
+.products-background-page
+.mt5-corner-badge:hover
+.mt5-corner-icon {
+
+  transform: scale(1.05);
+
   opacity: 1;
-  transform: scale(1.06);
+
+  filter:
+    drop-shadow(0 0 10px rgba(255,255,255,.34))
+    drop-shadow(0 0 22px rgba(255,255,255,.22))
+    drop-shadow(0 8px 18px rgba(0,0,0,.4));
 }
 
 
@@ -113,12 +217,36 @@ main .page-hero h1.brand-page-heading {
 
 @media (max-width: 700px) {
 
-  .products-background-page .mt5-corner-icon {
-    right: 18px;
-    bottom: 16px;
+  .products-background-page .mt5-corner-badge {
 
-    width: 40px;
-    height: 40px;
+    right: 10px;
+    bottom: 8px;
+
+    width: 94px;
+    height: 94px;
+  }
+
+
+  .products-background-page .mt5-corner-badge::before {
+
+    width: 94px;
+    height: 94px;
+
+    filter: blur(9px);
+  }
+
+
+  .products-background-page .mt5-corner-badge::after {
+
+    width: 72px;
+    height: 72px;
+  }
+
+
+  .products-background-page .mt5-corner-icon {
+
+    width: 72px;
+    height: 72px;
   }
 
 }
@@ -313,11 +441,15 @@ main .page-hero h1.brand-page-heading {
 
         <!-- MetaTrader 5 icon — bottom right -->
 
-        <img
-          class="mt5-corner-icon"
-          src="../assets/img/mt5-icon.png"
-          alt="MetaTrader 5"
-          title="MetaTrader 5">
+        <div class="mt5-corner-badge">
+
+          <img
+            class="mt5-corner-icon"
+            src="../assets/img/mt5-icon.png"
+            alt="MetaTrader 5"
+            title="MetaTrader 5">
+
+        </div>
 
 
       </article>
