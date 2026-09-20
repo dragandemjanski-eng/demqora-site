@@ -1,1 +1,391 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Products | DemQora Technologies</title><meta  name="description"  content="Products by DemQora Technologies — advanced tools for market analysis and trading technology."><meta name="theme-color" content="#030909"><link rel="icon" href="../assets/img/demqora-logo.png"><link rel="stylesheet" href="../assets/css/styles.css?v=202609202300"><style id="products-background">.products-background-page {  background:    #030909    url("../assets/img/ChatGPT%20Image%20Sep%2015%2C%202026%2C%2005_50_58%20PM.png")    center top / cover no-repeat;}.products-background-page > .page-hero,.products-background-page > .section {  background: transparent;}</style><style id="brand-page-heading">
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Products | DemQora Technologies</title>
+
+<meta
+  name="description"
+  content="Products by DemQora Technologies — advanced tools for market analysis and trading technology.">
+
+<meta name="theme-color" content="#030909">
+
+<link rel="icon" href="../assets/img/demqora-logo.png">
+<link rel="stylesheet" href="../assets/css/styles.css?v=202609161450">
+
+<style id="products-background">
+
+.products-background-page {
+  background:
+    #030909
+    url("../assets/img/ChatGPT%20Image%20Sep%2015%2C%202026%2C%2005_50_58%20PM.png")
+    center top / cover no-repeat;
+}
+
+.products-background-page > .page-hero,
+.products-background-page > .section {
+  background: transparent;
+}
+
+</style>
+
+<style id="brand-page-heading">
+
+main .page-hero h1.brand-page-heading {
+  font-size: clamp(1.5rem, 2vw, 2rem) !important;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: normal;
+  color: #effffb;
+  margin: 0 0 24px;
+  display: inline-block;
+}
+
+.brand-page-heading .brand-prefix,
+.brand-page-heading .brand-suffix {
+  font-size: 1em;
+}
+
+.brand-page-heading .page-word {
+  display: block;
+  font-size: .5em;
+  margin-left: clamp(3.1rem, 4.7vw, 4.4rem);
+}
+
+</style>
+
+<style id="product-title-size">
+
+/* MS 1.1 — same size as DemQora heading */
+.products-background-page .product-card h2 {
+  font-size: clamp(1.5rem, 2vw, 2rem) !important;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: normal;
+  margin: 0 0 22px;
+}
+
+</style>
+
+<style id="mt5-product-icon">
+
+.products-background-page .product-card {
+  position: relative !important;
+}
+
+.products-background-page .mt5-corner-badge {
+  position: absolute;
+
+  right: 20px;
+  bottom: 14px;
+
+  width: 132px;
+  height: 132px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 5;
+
+  pointer-events: auto;
+}
+
+.products-background-page .mt5-corner-badge::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 132px;
+  height: 132px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,.38) 0%,
+      rgba(255,255,255,.29) 22%,
+      rgba(255,255,255,.20) 40%,
+      rgba(255,255,255,.12) 56%,
+      rgba(255,255,255,.055) 72%,
+      rgba(255,255,255,.018) 84%,
+      rgba(255,255,255,0) 100%
+    );
+
+  filter: blur(12px);
+
+  opacity: .95;
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+.products-background-page .mt5-corner-badge::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 98px;
+  height: 98px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,.20) 0%,
+      rgba(255,255,255,.10) 52%,
+      rgba(255,255,255,0) 100%
+    );
+
+  filter: blur(7px);
+
+  z-index: 0;
+
+  pointer-events: none;
+}
+
+.products-background-page .mt5-corner-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100px;
+  height: 100px;
+
+  object-fit: contain;
+
+  opacity: .98;
+
+  filter:
+    drop-shadow(0 0 7px rgba(255,255,255,.28))
+    drop-shadow(0 0 16px rgba(255,255,255,.18))
+    drop-shadow(0 7px 16px rgba(0,0,0,.38));
+
+  transition:
+    transform .22s ease,
+    opacity .22s ease,
+    filter .22s ease;
+}
+
+.products-background-page .mt5-corner-badge:hover .mt5-corner-icon {
+  transform: scale(1.05);
+
+  opacity: 1;
+
+  filter:
+    drop-shadow(0 0 10px rgba(255,255,255,.34))
+    drop-shadow(0 0 22px rgba(255,255,255,.22))
+    drop-shadow(0 8px 18px rgba(0,0,0,.4));
+}
+
+@media (max-width: 700px) {
+
+  .products-background-page .mt5-corner-badge {
+    right: 10px;
+    bottom: 8px;
+
+    width: 94px;
+    height: 94px;
+  }
+
+  .products-background-page .mt5-corner-badge::before {
+    width: 94px;
+    height: 94px;
+
+    filter: blur(9px);
+  }
+
+  .products-background-page .mt5-corner-badge::after {
+    width: 72px;
+    height: 72px;
+  }
+
+  .products-background-page .mt5-corner-icon {
+    width: 72px;
+    height: 72px;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <div class="container navbar">
+
+    <a class="brand" href="../">
+      <img src="../assets/img/demqora-logo.png" alt="DemQora DQ logo">
+      <span>DemQora Technologies</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      aria-expanded="false"
+      aria-controls="main-nav">
+      Menu
+    </button>
+
+    <nav id="main-nav" class="nav-links">
+
+      <a href="../">Home</a>
+
+      <div class="nav-products">
+
+        <a href="./" aria-current="page">
+          Products
+        </a>
+
+        <div class="submenu">
+          <a href="ms-1-1/">
+            MS 1.1 — Market Structure Multi-Timeframe Chart
+          </a>
+        </div>
+
+      </div>
+
+      <a href="../documentation/">Documentation</a>
+      <a href="../about/">About</a>
+      <a href="../contact/">Contact</a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main class="products-background-page">
+
+  <section class="page-hero">
+
+    <div class="container">
+
+      <h1 class="brand-page-heading" aria-label="DemQora Products"><span class="brand-prefix">Dem</span><span class="brand-suffix">Qora</span><span class="page-word">Products</span></h1>
+
+      <p class="lead">
+        Advanced tools for market analysis and trading technology.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <div class="container">
+
+      <article class="card product-card">
+
+        <div class="body">
+
+          <div class="status">
+            Coming soon · MQL5 Market
+          </div>
+
+          <h2>
+            MS 1.1
+          </h2>
+
+          <p class="lead">
+            Market Structure Multi-Timeframe Chart
+          </p>
+
+          <p>
+            Designed to bring selected timeframe structure into one
+            MetaTrader 5 chart environment with configurable visual
+            controls, trend and range context, BOL, POI and SM structure.
+          </p>
+
+          <div class="actions">
+
+            <a
+              class="btn primary"
+              href="ms-1-1/">
+              Learn More
+            </a>
+
+            <span class="btn disabled">
+              Coming Soon on MQL5 Market
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="mt5-corner-badge">
+
+          <img
+            class="mt5-corner-icon"
+            src="../assets/img/mt5-icon.png"
+            alt="MetaTrader 5"
+            title="MetaTrader 5">
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer class="site-footer">
+
+  <div class="container footer-row">
+
+    <div>
+
+      <strong>
+        DemQora Technologies
+      </strong>
+
+      <div>
+        Advanced Market Intelligence
+      </div>
+
+      <div class="small">
+        © <span data-year></span> DemQora Technologies.
+      </div>
+
+    </div>
+
+    <div class="footer-links">
+
+      <a href="../">Home</a>
+      <a href="../documentation/">Documentation</a>
+      <a href="../contact/">Contact</a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script src="../assets/js/main.js"></script>
+
+</body>
+</html>
