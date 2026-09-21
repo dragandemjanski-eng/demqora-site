@@ -19,6 +19,16 @@ body:has(.about-reference-layout) .site-footer { margin-top: 0 !important; paddi
 body:has(.about-reference-layout) .site-footer > .container.footer-row { min-height: 74px !important; align-items: center !important; }
 body:has(.about-reference-layout) .site-footer > .container.footer-row > div:first-child { font-size: .7rem !important; line-height: 1.25 !important; }
 body:has(.about-reference-layout) .site-footer > .container.footer-row > div:first-child .small { font-size: .68rem !important; }
+
+/* Match Home social icons on About only */
+body:has(.about-reference-layout) .footer-social { gap: 16px !important; align-items: center !important; }
+body:has(.about-reference-layout) .footer-social .social-card { width: 40px !important; height: 40px !important; min-height: 40px !important; padding: 0 !important; display: grid !important; place-items: center !important; }
+body:has(.about-reference-layout) .footer-social .social-card::before { display: block !important; width: 30px !important; height: 30px !important; font-size: 1.45rem !important; line-height: 30px !important; text-align: center !important; font-weight: 700 !important; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1010%) hue-rotate(124deg) brightness(94%) contrast(88%) drop-shadow(0 0 7px rgba(22,234,215,.2)) !important; opacity: .3 !important; }
+body:has(.about-reference-layout) .footer-social .social-card:nth-child(2)::before { width: 30px !important; height: 30px !important; transform: scale(.88); }
+body:has(.about-reference-layout) .footer-social .social-card:nth-child(1)::before { transform: scale(1.28); }
+body:has(.about-reference-layout) .footer-social .social-card:nth-child(3)::before { font-size: 1.35rem !important; transform: scale(1.12); }
+body:has(.about-reference-layout) .footer-social .social-card:nth-child(4)::before { font-size: 1.55rem !important; transform: scale(1.08); }
+body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::before { width: 38px !important; height: 27px !important; transform: scale(.9); }
 </style>
 </head>
 <body>
