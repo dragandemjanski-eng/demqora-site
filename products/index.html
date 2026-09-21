@@ -268,6 +268,12 @@ body > main.products-background-page { flex: 1; width: 100%; }
 .footer-social .social-card:nth-child(4)::before { content: "\1D54F" !important; }
 </style>
 
+<style id="header-normalize">
+.site-header .container { width:min(calc(100% - 36px), var(--max)); margin:0 auto; }
+.site-header .navbar, .site-header .container.navbar { min-height:74px !important; max-width:none !important; }
+.site-header .brand img { width:42px !important; height:42px !important; border-radius:0 !important; box-shadow:none !important; background:transparent !important; object-fit:contain !important; mix-blend-mode:screen; }
+.site-header .brand span { display:inline !important; }
+</style>
 </head>
 
 <body>
