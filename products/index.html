@@ -230,6 +230,15 @@ main .page-hero h1.brand-page-heading {
 html, body { min-height: 100%; }
 body { min-height: 100vh; display: flex; flex-direction: column; }
 body > main.products-background-page { flex: 1; width: 100%; }
+/* Match the Home footer exactly */
+.site-footer { margin-top: 0 !important; padding: 0 !important; min-height: 74px !important; }
+.site-footer > .container { width: 100% !important; max-width: none !important; margin: 0 !important; padding-left: 32px !important; padding-right: 32px !important; }
+.site-footer > .container.footer-row { min-height: 74px !important; align-items: center !important; justify-content: flex-start !important; }
+.site-footer > .container.footer-row > div:first-child { font-size: .7rem !important; line-height: 1.25 !important; }
+.site-footer > .container.footer-row > div:first-child .small { font-size: .68rem !important; }
+.site-footer .footer-social { margin-left: auto !important; }
+@media (max-width: 640px) { .site-footer > .container { padding-left: 20px !important; padding-right: 20px !important; } }
+
 </style>
 
 </head>
@@ -360,37 +369,7 @@ body > main.products-background-page { flex: 1; width: 100%; }
 </main>
 
 
-<footer class="site-footer">
-
-  <div class="container footer-row">
-
-    <div>
-
-      <strong>
-        DemQora Technologies
-      </strong>
-
-      <div>
-        Advanced Market Intelligence
-      </div>
-
-      <div class="small">
-        © <span data-year></span> DemQora Technologies.
-      </div>
-
-    </div>
-
-    <div class="footer-links">
-
-      <a href="../">Home</a>
-      <a href="../documentation/">Documentation</a>
-      <a href="../contact/">Contact</a>
-
-    </div>
-
-  </div>
-
-</footer>
+<footer class="site-footer"><div class="container footer-row"><div><strong>DemQora Technologies</strong><div>Advanced Market Intelligence</div><div class="small">© <span data-year></span> DemQora Technologies.</div></div><div class="social-grid footer-social"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener">YouTube</a></div></div></footer>
 
 <script src="../assets/js/main.js"></script>
 
