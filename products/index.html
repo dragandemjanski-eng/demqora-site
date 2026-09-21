@@ -68,6 +68,22 @@ main .page-hero h1.brand-page-heading {
   margin: 0 0 22px;
 }
 
+
+.products-background-page .product-card h2.product-title-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+.products-background-page .product-title-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+@media (max-width: 700px) {
+  .products-background-page .product-title-icon { width: 34px; height: 34px; }
+}
+
 </style>
 
 <style id="mt5-product-icon">
@@ -333,9 +349,7 @@ body > main.products-background-page { flex: 1; width: 100%; }
             Coming soon · MQL5 Market
           </div>
 
-          <h2>
-            MS 1.1
-          </h2>
+          <h2 class="product-title-row">MS 1.1 <img class="product-title-icon" src="../assets/img/mt5-icon.png" alt="MetaTrader 5"></h2>
 
           <p class="lead">
             Market Structure Multi-Timeframe Chart
