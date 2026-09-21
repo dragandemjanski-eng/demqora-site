@@ -1,16 +1,5 @@
 /*
   DemQora Technologies — About page correction
-  ------------------------------------------------
-  IMPORTANT:
-  This file intentionally DOES NOT set background-image.
-  The separate high-resolution cinematic About background
-  already stored in assets/css/styles.css remains in control.
-
-  This file only:
-  - restores the text readability clouds from the approved history;
-  - keeps the slower About parallax positioning;
-  - makes the About header match the other pages;
-  - preserves the current About title/footer treatment.
 */
 
 
@@ -36,9 +25,8 @@
 
 
 /* =========================================================
-   ORIGINAL ABOUT CINEMATIC BACKGROUND
-   Restored from the approved historical About version.
-   This is NOT the Home background.
+   ABOUT CINEMATIC BACKGROUND
+   Less zoom — preserve full image width
    ========================================================= */
 
 main.about-page.about-reference-layout {
@@ -59,14 +47,14 @@ main.about-page.about-reference-layout {
     url("../img/about-cinematic-bg.png") !important;
 
   background-position:
-    center,
-    center,
-    center calc(50% + var(--about-parallax, 0px)) !important;
+    center top,
+    center top,
+    center top !important;
 
   background-size:
-    cover,
-    cover,
-    cover !important;
+    100% auto,
+    100% auto,
+    100% auto !important;
 
   background-repeat:
     no-repeat,
@@ -80,8 +68,9 @@ main.about-page.about-reference-layout {
 }
 
 
-/* Keep the About sections transparent so the cinematic
-   background remains visible through the complete page. */
+/* =========================================================
+   TRANSPARENT ABOUT SECTIONS
+   ========================================================= */
 
 .about-reference-layout .about-cinema-hero,
 .about-reference-layout .about-ref-section,
@@ -94,7 +83,6 @@ main.about-page.about-reference-layout {
 
 /* =========================================================
    TEXT CLOUDS
-   Restored from the About history.
    ========================================================= */
 
 .about-reference-layout {
@@ -121,13 +109,11 @@ main.about-page.about-reference-layout {
 
   position: absolute;
 
-  inset:
-    -1rem -1.25rem;
+  inset: -1rem -1.25rem;
 
   z-index: -1;
 
-  border-radius:
-    999px;
+  border-radius: 999px;
 
   background:
     radial-gradient(
@@ -137,16 +123,13 @@ main.about-page.about-reference-layout {
       var(--about-copy-cloud-edge) 80%
     );
 
-  filter:
-    blur(12px);
+  filter: blur(12px);
 
-  pointer-events:
-    none;
+  pointer-events: none;
 }
 
 
-/* The longer body-copy areas had a slightly darker cloud
-   in the later approved About version. */
+/* Darker cloud behind longer text blocks */
 
 .about-reference-layout .about-ref-copy::before {
   background:
@@ -161,12 +144,11 @@ main.about-page.about-reference-layout {
 
 /* =========================================================
    HEADER
-   Match Home / Products / Documentation
+   Same as other pages
    ========================================================= */
 
 body:has(.about-reference-layout) .site-header {
-  background:
-    rgba(3, 9, 9, .82) !important;
+  background: rgba(3, 9, 9, .82) !important;
 
   border-bottom:
     1px solid var(--line) !important;
@@ -178,213 +160,164 @@ body:has(.about-reference-layout)
   width:
     min(calc(100% - 36px), var(--max)) !important;
 
-  max-width:
-    none !important;
+  max-width: none !important;
 
-  min-height:
-    74px !important;
+  min-height: 74px !important;
 
-  margin:
-    0 auto !important;
+  margin: 0 auto !important;
 
-  display:
-    flex !important;
+  display: flex !important;
 
-  align-items:
-    center !important;
+  align-items: center !important;
 
-  justify-content:
-    space-between !important;
+  justify-content: space-between !important;
 
-  gap:
-    24px !important;
+  gap: 24px !important;
 }
 
 
 body:has(.about-reference-layout)
 .site-header .brand {
-  position:
-    static !important;
+  position: static !important;
 
-  display:
-    flex !important;
+  display: flex !important;
 
-  align-items:
-    center !important;
+  align-items: center !important;
 
-  margin:
-    0 !important;
+  margin: 0 !important;
 
-  transform:
-    none !important;
+  transform: none !important;
 }
 
 
 body:has(.about-reference-layout)
 .site-header .brand img {
-  width:
-    42px !important;
+  width: 42px !important;
 
-  height:
-    42px !important;
+  height: 42px !important;
 
-  border-radius:
-    0 !important;
+  border-radius: 0 !important;
 
-  box-shadow:
-    none !important;
+  box-shadow: none !important;
 
-  background:
-    transparent !important;
+  background: transparent !important;
 
-  object-fit:
-    contain !important;
+  object-fit: contain !important;
 
-  mix-blend-mode:
-    screen !important;
+  mix-blend-mode: screen !important;
 }
 
 
 body:has(.about-reference-layout)
 .site-header .brand span {
-  display:
-    none !important;
+  display: none !important;
 }
 
 
 /* =========================================================
    FOOTER
-   Preserve the compact Home-style About footer.
    ========================================================= */
 
 body:has(.about-reference-layout) .site-footer {
-  margin-top:
-    0 !important;
+  margin-top: 0 !important;
 
-  padding:
-    0 !important;
+  padding: 0 !important;
 
-  min-height:
-    74px !important;
+  min-height: 74px !important;
 }
 
 
 body:has(.about-reference-layout)
 .site-footer > .container.footer-row {
-  min-height:
-    74px !important;
+  min-height: 74px !important;
 
-  align-items:
-    center !important;
+  align-items: center !important;
 }
 
 
 body:has(.about-reference-layout)
 .site-footer > .container.footer-row > div:first-child {
-  font-size:
-    .7rem !important;
+  font-size: .7rem !important;
 
-  line-height:
-    1.25 !important;
+  line-height: 1.25 !important;
 }
 
 
 body:has(.about-reference-layout)
 .site-footer > .container.footer-row > div:first-child .small {
-  font-size:
-    .68rem !important;
+  font-size: .68rem !important;
 }
 
 
 body:has(.about-reference-layout)
 .site-footer > .container {
-  width:
-    100% !important;
+  width: 100% !important;
 
-  max-width:
-    none !important;
+  max-width: none !important;
 
-  margin:
-    0 !important;
+  margin: 0 !important;
 
-  padding-left:
-    32px !important;
+  padding-left: 32px !important;
 
-  padding-right:
-    32px !important;
+  padding-right: 32px !important;
 }
 
 
 body:has(.about-reference-layout)
 .site-footer .footer-row {
-  justify-content:
-    flex-start !important;
+  justify-content: flex-start !important;
 }
 
 
 body:has(.about-reference-layout)
 .site-footer .footer-social {
-  margin-left:
-    auto !important;
+  margin-left: auto !important;
 }
 
 
-/* Footer social icons */
+/* =========================================================
+   FOOTER SOCIAL ICONS
+   ========================================================= */
 
 body:has(.about-reference-layout)
 .footer-social {
-  gap:
-    16px !important;
+  gap: 16px !important;
 
-  align-items:
-    center !important;
+  align-items: center !important;
 }
 
 
 body:has(.about-reference-layout)
 .footer-social .social-card {
-  width:
-    40px !important;
+  width: 40px !important;
 
-  height:
-    40px !important;
+  height: 40px !important;
 
-  min-height:
-    40px !important;
+  min-height: 40px !important;
 
-  padding:
-    0 !important;
+  padding: 0 !important;
 
-  display:
-    grid !important;
+  display: grid !important;
 
-  place-items:
-    center !important;
+  place-items: center !important;
 }
 
 
 body:has(.about-reference-layout)
 .footer-social .social-card::before {
-  display:
-    block !important;
+  display: block !important;
 
-  width:
-    30px !important;
+  width: 30px !important;
 
-  height:
-    30px !important;
+  height: 30px !important;
 
-  font-size:
-    1.45rem !important;
+  font-size: 1.45rem !important;
 
-  line-height:
-    30px !important;
+  line-height: 30px !important;
 
-  text-align:
-    center !important;
+  text-align: center !important;
 
-  font-weight:
-    700 !important;
+  font-weight: 700 !important;
 
   filter:
     brightness(0)
@@ -398,106 +331,88 @@ body:has(.about-reference-layout)
     drop-shadow(0 0 7px rgba(22,234,215,.2))
     !important;
 
-  opacity:
-    .3 !important;
+  opacity: .3 !important;
 }
 
 
 body:has(.about-reference-layout)
 .footer-social .social-card:nth-child(1)::before {
-  transform:
-    scale(1.28);
+  transform: scale(1.28);
 }
 
 
 body:has(.about-reference-layout)
 .footer-social .social-card:nth-child(2)::before {
-  width:
-    30px !important;
+  width: 30px !important;
 
-  height:
-    30px !important;
+  height: 30px !important;
 
-  transform:
-    scale(.88);
+  transform: scale(.88);
 }
 
 
 body:has(.about-reference-layout)
 .footer-social .social-card:nth-child(3)::before {
-  font-size:
-    1.35rem !important;
+  font-size: 1.35rem !important;
 
-  transform:
-    scale(1.12);
+  transform: scale(1.12);
 }
 
 
 body:has(.about-reference-layout)
 .footer-social .social-card:nth-child(4)::before {
-  content:
-    'X' !important;
+  content: 'X' !important;
 
   font-family:
-    Arial, sans-serif !important;
+    Arial,
+    sans-serif !important;
 
-  color:
-    #58fff0 !important;
+  color: #58fff0 !important;
 
   -webkit-text-fill-color:
     #58fff0 !important;
 
-  font-size:
-    1.55rem !important;
+  font-size: 1.55rem !important;
 
-  transform:
-    scale(1.08);
+  transform: scale(1.08);
 }
 
 
 body:has(.about-reference-layout)
 .footer-social .social-card:nth-child(5)::before {
-  content:
-    '' !important;
+  content: '' !important;
 
-  width:
-    38px !important;
+  width: 38px !important;
 
-  height:
-    27px !important;
+  height: 27px !important;
 
-  border:
-    0 !important;
+  border: 0 !important;
 
-  border-radius:
-    0 !important;
+  border-radius: 0 !important;
 
   background:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E")
     center / contain no-repeat !important;
 
-  -webkit-mask:
-    none !important;
+  -webkit-mask: none !important;
 
-  mask:
-    none !important;
+  mask: none !important;
 
-  opacity:
-    .3 !important;
+  opacity: .3 !important;
 
   filter:
-    drop-shadow(0 0 7px rgba(88,255,240,.28))
+    drop-shadow(
+      0 0 7px rgba(88,255,240,.28)
+    )
     !important;
 
-  transform:
-    scale(.9);
+  transform: scale(.9);
 }
 
 
 body:has(.about-reference-layout)
 .footer-social .social-card:nth-child(5)::after {
-  display:
-    none !important;
+  display: none !important;
 }
 
 
@@ -509,9 +424,14 @@ body:has(.about-reference-layout)
 
   main.about-page.about-reference-layout {
     background-position:
-      center,
-      center,
+      center top,
+      center top,
       center top !important;
+
+    background-size:
+      100% auto,
+      100% auto,
+      100% auto !important;
 
     background-attachment:
       scroll,
@@ -526,11 +446,9 @@ body:has(.about-reference-layout)
 
   body:has(.about-reference-layout)
   .site-footer > .container {
-    padding-left:
-      20px !important;
+    padding-left: 20px !important;
 
-    padding-right:
-      20px !important;
+    padding-right: 20px !important;
   }
 
 }
