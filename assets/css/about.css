@@ -56,7 +56,7 @@ main.about-page.about-reference-layout {
       rgba(2, 8, 8, .04) 0%,
       rgba(2, 8, 8, .14) 100%
     ),
-    url("../img/about-cinematic-bg.jpg") !important;
+    url("../img/about-cinematic-bg.png") !important;
 
   background-position:
     center,
