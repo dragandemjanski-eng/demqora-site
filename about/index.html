@@ -29,6 +29,39 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(1)::befo
 body:has(.about-reference-layout) .footer-social .social-card:nth-child(3)::before { font-size: 1.35rem !important; transform: scale(1.12); }
 body:has(.about-reference-layout) .footer-social .social-card:nth-child(4)::before { font-size: 1.55rem !important; transform: scale(1.08); }
 body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::before { width: 38px !important; height: 27px !important; transform: scale(.9); }
+
+/* Final Home-matched footer alignment and icons on About only */
+body:has(.about-reference-layout) .site-footer > .container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+body:has(.about-reference-layout) .site-footer .footer-row { justify-content: flex-start !important; }
+body:has(.about-reference-layout) .site-footer .footer-social { margin-left: auto !important; }
+body:has(.about-reference-layout) .footer-social .social-card:nth-child(4)::before {
+  content: 'X' !important;
+  font-family: Arial, sans-serif !important;
+  color: #58fff0 !important;
+  -webkit-text-fill-color: #58fff0 !important;
+}
+body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::before {
+  content: '' !important;
+  width: 38px !important;
+  height: 27px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E") center/contain no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  opacity: .3 !important;
+  filter: drop-shadow(0 0 7px rgba(88,255,240,.28)) !important;
+}
+body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::after { display: none !important; }
+@media (max-width: 640px) {
+  body:has(.about-reference-layout) .site-footer > .container { padding-left: 20px !important; padding-right: 20px !important; }
+}
 </style>
 </head>
 <body>
