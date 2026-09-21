@@ -36,25 +36,46 @@
 
 
 /* =========================================================
-   ORIGINAL ABOUT BACKGROUND — POSITION ONLY
-   ---------------------------------------------------------
-   Do NOT add a url() here.
-   The actual high-resolution About image remains in styles.css.
-   This restores the slower parallax behaviour without replacing
-   the image with Home's hero-mountains.png.
+   ORIGINAL ABOUT CINEMATIC BACKGROUND
+   Restored from the approved historical About version.
+   This is NOT the Home background.
    ========================================================= */
 
-.about-reference-layout {
+main.about-page.about-reference-layout {
+  background-color: #020808 !important;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(2, 8, 8, .22) 0%,
+      rgba(2, 8, 8, .05) 48%,
+      rgba(2, 8, 8, .24) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(2, 8, 8, .04) 0%,
+      rgba(2, 8, 8, .14) 100%
+    ),
+    url("../img/about-cinematic-bg.jpg") !important;
+
   background-position:
+    center,
+    center,
     center calc(50% + var(--about-parallax, 0px)) !important;
 
   background-size:
+    cover,
+    cover,
     cover !important;
 
   background-repeat:
+    no-repeat,
+    no-repeat,
     no-repeat !important;
 
   background-attachment:
+    scroll,
+    scroll,
     scroll !important;
 }
 
@@ -486,11 +507,15 @@ body:has(.about-reference-layout)
 
 @media (max-width: 800px) {
 
-  .about-reference-layout {
+  main.about-page.about-reference-layout {
     background-position:
+      center,
+      center,
       center top !important;
 
     background-attachment:
+      scroll,
+      scroll,
       scroll !important;
   }
 
