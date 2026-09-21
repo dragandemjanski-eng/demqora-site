@@ -1053,6 +1053,12 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer { margin: 
   .about-reference-footer nav { flex-wrap: wrap; justify-content: flex-start; gap: .8rem 1.15rem; }
   .about-reference-footer small { justify-self: start; white-space: normal; }
 }
+
+/* Keep the Home footer flush with the bottom of the viewport */
+html, body { min-height: 100%; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+body > main { flex: 1; display: flex; flex-direction: column; }
+body > main > .company-hero { flex: 1; width: 100%; min-height: calc(100vh - 148px) !important; }
 </style>
 </head>
 <body>
