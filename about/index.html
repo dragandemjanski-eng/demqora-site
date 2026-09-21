@@ -15,13 +15,14 @@
   <meta name="theme-color" content="#030909">
 
   <link rel="icon" href="../assets/img/demqora-logo.png">
-
-  <link
-    rel="stylesheet"
-    href="../assets/css/styles.css?v=202609212230">
+  <link rel="stylesheet" href="../assets/css/styles.css?v=202609212245">
 
 
-  <style id="about-brand-title-style">
+  <style id="about-final-fix">
+
+    /* =========================================================
+       ABOUT TITLE
+       ========================================================= */
 
     .about-reference-layout .about-brand-title {
       font-size: clamp(1.5rem, 2vw, 2rem);
@@ -41,52 +42,143 @@
 
 
     /* =========================================================
+       ABOUT BACKGROUND
+       Restored from site history:
+       hero-mountains.png
+       ========================================================= */
+
+    main.about-page.about-reference-layout {
+      position: relative;
+      isolation: isolate;
+
+      background-color: #030909 !important;
+
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(3,9,9,.72) 0%,
+          rgba(3,9,9,.42) 42%,
+          rgba(3,9,9,.20) 68%,
+          rgba(3,9,9,.50) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(3,9,9,.08) 0%,
+          rgba(3,9,9,.20) 65%,
+          rgba(3,9,9,.56) 100%
+        ),
+        url("../assets/img/hero-mountains.png") !important;
+
+      background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat !important;
+
+      background-position:
+        center,
+        center,
+        center center !important;
+
+      background-size:
+        cover,
+        cover,
+        cover !important;
+
+      background-attachment:
+        scroll,
+        scroll,
+        fixed !important;
+    }
+
+
+    /* All About sections remain transparent */
+
+    .about-reference-layout .about-cinema-hero,
+    .about-reference-layout .about-ref-section,
+    .about-reference-layout .about-ref-approach,
+    .about-reference-layout .about-ref-philosophy,
+    .about-reference-layout .about-ref-direction {
+      background: transparent !important;
+    }
+
+
+    /* Remove old pseudo backgrounds */
+
+    main.about-reference-layout::before,
+    main.about-reference-layout::after {
+      display: none !important;
+    }
+
+
+    /* =========================================================
        HEADER
-       Match Home / Products / Documentation
+       Same as Home / Products / Documentation
        ========================================================= */
 
     body:has(.about-reference-layout) .site-header {
+      position: sticky !important;
+      top: 0 !important;
+      z-index: 50 !important;
+
+      backdrop-filter: blur(18px);
+
       background: rgba(3,9,9,.82) !important;
-      border-bottom: 1px solid var(--line) !important;
+
+      border-bottom:
+        1px solid rgba(31,238,218,.22) !important;
     }
 
-    body:has(.about-reference-layout) .site-header .container {
-      width: min(calc(100% - 36px), var(--max)) !important;
+
+    body:has(.about-reference-layout)
+    .site-header .container.navbar {
+
+      width:
+        min(
+          calc(100% - 36px),
+          var(--max)
+        ) !important;
+
       max-width: none !important;
-      margin: 0 auto !important;
-    }
 
-    body:has(.about-reference-layout) .site-header .navbar,
-    body:has(.about-reference-layout) .site-header .container.navbar {
       min-height: 74px !important;
-      max-width: none !important;
-      width: min(calc(100% - 36px), var(--max)) !important;
+
+      margin: 0 auto !important;
 
       display: flex !important;
+
       align-items: center !important;
+
       justify-content: space-between !important;
 
       gap: 24px !important;
-
-      margin: 0 auto !important;
     }
 
-    body:has(.about-reference-layout) .site-header .brand {
+
+    body:has(.about-reference-layout)
+    .site-header .brand {
+
       position: static !important;
 
       display: flex !important;
-      align-items: center !important;
 
-      order: 0 !important;
+      align-items: center !important;
 
       margin: 0 !important;
 
       transform: none !important;
+
+      order: 0 !important;
     }
 
-    body:has(.about-reference-layout) .site-header .brand img {
+
+    body:has(.about-reference-layout)
+    .site-header .brand img {
+
       width: 42px !important;
+
       height: 42px !important;
+
+      object-fit: contain !important;
 
       border-radius: 0 !important;
 
@@ -94,59 +186,107 @@
 
       background: transparent !important;
 
-      object-fit: contain !important;
-
       mix-blend-mode: screen !important;
     }
 
-    body:has(.about-reference-layout) .site-header .brand span {
+
+    body:has(.about-reference-layout)
+    .site-header .brand span {
+
       display: none !important;
     }
 
-    body:has(.about-reference-layout) .site-header .nav-links {
+
+    body:has(.about-reference-layout)
+    .site-header .nav-links {
+
       margin-right: 0 !important;
     }
 
 
     /* =========================================================
        FOOTER
-       Match Home
+       Same treatment as Home
        ========================================================= */
 
     body:has(.about-reference-layout) .site-footer {
+
       margin-top: 0 !important;
+
       padding: 0 !important;
+
       min-height: 74px !important;
     }
+
+
+    body:has(.about-reference-layout)
+    .site-footer > .container {
+
+      width: 100% !important;
+
+      max-width: none !important;
+
+      margin: 0 !important;
+
+      padding-left: 32px !important;
+
+      padding-right: 32px !important;
+    }
+
 
     body:has(.about-reference-layout)
     .site-footer > .container.footer-row {
+
       min-height: 74px !important;
+
       align-items: center !important;
+
+      justify-content: flex-start !important;
     }
+
 
     body:has(.about-reference-layout)
     .site-footer > .container.footer-row > div:first-child {
+
       font-size: .7rem !important;
+
       line-height: 1.25 !important;
     }
 
+
     body:has(.about-reference-layout)
-    .site-footer > .container.footer-row > div:first-child .small {
+    .site-footer
+    > .container.footer-row
+    > div:first-child
+    .small {
+
       font-size: .68rem !important;
     }
 
 
-    /* Social icons */
+    body:has(.about-reference-layout)
+    .site-footer .footer-social {
 
-    body:has(.about-reference-layout) .footer-social {
+      margin-left: auto !important;
+    }
+
+
+    /* Footer social icons */
+
+    body:has(.about-reference-layout)
+    .footer-social {
+
       gap: 16px !important;
+
       align-items: center !important;
     }
 
+
     body:has(.about-reference-layout)
     .footer-social .social-card {
+
       width: 40px !important;
+
       height: 40px !important;
 
       min-height: 40px !important;
@@ -154,22 +294,29 @@
       padding: 0 !important;
 
       display: grid !important;
+
       place-items: center !important;
     }
 
+
     body:has(.about-reference-layout)
     .footer-social .social-card::before {
+
       display: block !important;
 
       width: 30px !important;
+
       height: 30px !important;
 
       font-size: 1.45rem !important;
+
       line-height: 30px !important;
 
       text-align: center !important;
 
       font-weight: 700 !important;
+
+      opacity: .3 !important;
 
       filter:
         brightness(0)
@@ -180,111 +327,152 @@
         hue-rotate(124deg)
         brightness(94%)
         contrast(88%)
-        drop-shadow(0 0 7px rgba(22,234,215,.2))
+        drop-shadow(
+          0 0 7px rgba(22,234,215,.2)
+        )
         !important;
-
-      opacity: .3 !important;
     }
 
+
     body:has(.about-reference-layout)
-    .footer-social .social-card:nth-child(1)::before {
+    .footer-social
+    .social-card:nth-child(1)::before {
+
       transform: scale(1.28);
     }
 
+
     body:has(.about-reference-layout)
-    .footer-social .social-card:nth-child(2)::before {
+    .footer-social
+    .social-card:nth-child(2)::before {
+
       width: 30px !important;
+
       height: 30px !important;
 
       transform: scale(.88);
     }
 
+
     body:has(.about-reference-layout)
-    .footer-social .social-card:nth-child(3)::before {
+    .footer-social
+    .social-card:nth-child(3)::before {
+
       font-size: 1.35rem !important;
 
       transform: scale(1.12);
     }
 
-    body:has(.about-reference-layout)
-    .footer-social .social-card:nth-child(4)::before {
-      content: 'X' !important;
 
-      font-family: Arial, sans-serif !important;
+    body:has(.about-reference-layout)
+    .footer-social
+    .social-card:nth-child(4)::before {
+
+      content: "X" !important;
+
+      font-family:
+        Arial,
+        sans-serif !important;
 
       font-size: 1.55rem !important;
 
       color: #58fff0 !important;
-      -webkit-text-fill-color: #58fff0 !important;
+
+      -webkit-text-fill-color:
+        #58fff0 !important;
 
       transform: scale(1.08);
     }
 
+
     body:has(.about-reference-layout)
-    .footer-social .social-card:nth-child(5)::before {
-      content: '' !important;
+    .footer-social
+    .social-card:nth-child(5)::before {
+
+      content: "" !important;
 
       width: 38px !important;
+
       height: 27px !important;
 
       border: 0 !important;
+
       border-radius: 0 !important;
 
       background:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E")
-        center / contain no-repeat !important;
 
-      -webkit-mask: none !important;
-      mask: none !important;
+        url(
+          "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E"
+        )
 
-      opacity: .3 !important;
+        center /
+        contain
+
+        no-repeat !important;
+
+      -webkit-mask:
+        none !important;
+
+      mask:
+        none !important;
+
+      opacity:
+        .3 !important;
 
       filter:
-        drop-shadow(
-          0 0 7px rgba(88,255,240,.28)
-        ) !important;
 
-      transform: scale(.9);
+        drop-shadow(
+          0 0 7px
+          rgba(88,255,240,.28)
+        )
+
+        !important;
+
+      transform:
+        scale(.9);
     }
 
+
     body:has(.about-reference-layout)
-    .footer-social .social-card:nth-child(5)::after {
+    .footer-social
+    .social-card:nth-child(5)::after {
+
       display: none !important;
     }
 
 
-    /* Footer alignment */
+    /* =========================================================
+       MOBILE
+       ========================================================= */
 
-    body:has(.about-reference-layout)
-    .site-footer > .container {
-      width: 100% !important;
-      max-width: none !important;
+    @media (max-width: 800px) {
 
-      margin: 0 !important;
+      main.about-page.about-reference-layout {
 
-      padding-left: 32px !important;
-      padding-right: 32px !important;
+        background-attachment:
+          scroll,
+          scroll,
+          scroll !important;
+
+        background-position:
+          center,
+          center,
+          center top !important;
+      }
+
     }
 
-    body:has(.about-reference-layout)
-    .site-footer .footer-row {
-      justify-content: flex-start !important;
-    }
-
-    body:has(.about-reference-layout)
-    .site-footer .footer-social {
-      margin-left: auto !important;
-    }
-
-
-    /* Mobile */
 
     @media (max-width: 640px) {
 
       body:has(.about-reference-layout)
       .site-footer > .container {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
+
+        padding-left:
+          20px !important;
+
+        padding-right:
+          20px !important;
       }
 
     }
@@ -295,6 +483,7 @@
 
 
 <body>
+
 
 
 <header class="site-header">
@@ -336,9 +525,11 @@
 
       <div class="nav-products">
 
+
         <a href="../products/">
           Products
         </a>
+
 
         <div class="submenu">
 
@@ -347,6 +538,7 @@
           </a>
 
         </div>
+
 
       </div>
 
@@ -372,6 +564,7 @@
 
     </nav>
 
+
   </div>
 
 </header>
@@ -381,9 +574,12 @@
 <main class="about-page about-reference-layout">
 
 
+
   <section class="about-cinema-hero">
 
+
     <div class="about-ref-container about-hero-grid">
+
 
 
       <div class="about-cinema-copy">
@@ -400,6 +596,7 @@
           </span>
 
         </div>
+
 
 
         <h1>
@@ -419,11 +616,15 @@
         </h1>
 
 
+
         <p>
+
           DemQora Technologies develops market-intelligence software
           designed to transform complex market information into
           structured, understandable insight.
+
         </p>
+
 
 
         <p class="about-principle-line">
@@ -445,15 +646,21 @@
         <span></span>
 
         <p>
+
           Markets are complex.<br>
+
           Understanding<br>
+
           shouldn’t be.
+
         </p>
 
       </aside>
 
 
+
     </div>
+
 
   </section>
 
@@ -461,7 +668,9 @@
 
   <section class="about-ref-section about-ref-approach">
 
+
     <div class="about-ref-container about-ref-split">
+
 
 
       <h2>
@@ -473,32 +682,42 @@
       </h2>
 
 
+
       <div class="about-ref-copy">
 
 
         <p>
+
           Financial markets generate enormous amounts of information.
           More information does not automatically create better understanding.
+
         </p>
 
 
         <p>
+
           DemQora is built around a simple principle:
           identify meaningful information,
           organize it logically and present it with enough clarity
           that complex market behaviour becomes easier to interpret.
+
         </p>
 
 
         <p>
+
           Our systems are designed to reduce visual noise
           while preserving the context behind price movement.
+
         </p>
 
 
       </div>
 
+
+
     </div>
+
 
   </section>
 
@@ -506,7 +725,9 @@
 
   <section class="about-ref-section about-ref-philosophy">
 
+
     <div class="about-ref-container about-ref-split">
+
 
 
       <h2>
@@ -534,6 +755,7 @@
       </h2>
 
 
+
       <div class="about-ref-copy">
 
 
@@ -543,21 +765,28 @@
 
 
         <p>
+
           Our goal is not to remove that uncertainty
           or promise prediction.
+
         </p>
 
 
         <p>
+
           Our goal is to provide better structure,
           better context and better tools
           for understanding what is happening.
+
         </p>
 
 
       </div>
 
+
+
     </div>
+
 
   </section>
 
@@ -565,7 +794,9 @@
 
   <section class="about-ref-section about-ref-direction">
 
+
     <div class="about-ref-container about-direction-grid">
+
 
 
       <h2>
@@ -577,26 +808,33 @@
       </h2>
 
 
+
       <div class="about-ref-copy">
 
 
         <p>
+
           DemQora Technologies is being developed
           as a long-term market-intelligence technology company.
+
         </p>
 
 
         <p>
+
           Our focus is on building systems
           that combine structured market logic,
           reliable engineering
           and clear visual communication.
+
         </p>
 
 
         <p>
+
           As the technology evolves,
           one principle remains unchanged:
+
         </p>
 
 
@@ -625,9 +863,12 @@
       </p>
 
 
+
     </div>
 
+
   </section>
+
 
 
 </main>
@@ -636,26 +877,31 @@
 
 <footer class="site-footer">
 
+
   <div class="container footer-row">
 
 
+
     <div>
+
 
       <strong>
         DemQora Technologies
       </strong>
 
+
       <div>
         Advanced Market Intelligence
       </div>
 
+
       <div class="small">
 
-        ©
-        <span data-year></span>
+        © <span data-year></span>
         DemQora Technologies.
 
       </div>
+
 
     </div>
 
@@ -721,53 +967,16 @@
 
     </div>
 
+
+
   </div>
+
 
 </footer>
 
 
 
 <script src="../assets/js/main.js"></script>
-
-
-<script>
-
-(() => {
-
-  const page =
-    document.querySelector(
-      '.about-reference-layout'
-    );
-
-  if (!page)
-    return;
-
-
-  const updateParallax = () => {
-
-    page.style.setProperty(
-      '--about-parallax',
-      (window.scrollY * 0.5).toFixed(1) + 'px'
-    );
-
-  };
-
-
-  updateParallax();
-
-
-  window.addEventListener(
-    'scroll',
-    updateParallax,
-    {
-      passive: true
-    }
-  );
-
-
-})();
-
-</script>
 
 
 </body>
