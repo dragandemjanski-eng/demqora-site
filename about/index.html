@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,176 +15,341 @@
   <meta name="theme-color" content="#030909">
 
   <link rel="icon" href="../assets/img/demqora-logo.png">
-  <link rel="stylesheet" href="../assets/css/styles.css?v=202609141930">
 
-<style id="about-brand-title-style">
-
-.about-reference-layout .about-brand-title {
-  font-size: clamp(1.5rem, 2vw, 2rem);
-  font-weight: 700;
-  line-height: 1.08;
-  color: #effffb;
-  margin: 0 0 24px;
-}
-
-.about-reference-layout .about-brand-title .about-title-word {
-  font-size: .5em;
-}
-
-.about-reference-layout .about-brand-title .about-title-brand {
-  font-size: 1em;
-}
+  <!-- New cache version -->
+  <link rel="stylesheet" href="../assets/css/styles.css?v=202609212230">
 
 
-/* Match the compact Home footer on About only */
+  <style id="about-brand-title-style">
 
-body:has(.about-reference-layout) .site-footer {
-  margin-top: 0 !important;
-  padding: 0 !important;
-  min-height: 74px !important;
-}
+    .about-reference-layout .about-brand-title {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      font-weight: 700;
+      line-height: 1.08;
+      color: #effffb;
+      margin: 0 0 24px;
+    }
 
-body:has(.about-reference-layout) .site-footer > .container.footer-row {
-  min-height: 74px !important;
-  align-items: center !important;
-}
+    .about-reference-layout .about-brand-title .about-title-word {
+      font-size: .5em;
+    }
 
-body:has(.about-reference-layout) .site-footer > .container.footer-row > div:first-child {
-  font-size: .7rem !important;
-  line-height: 1.25 !important;
-}
-
-body:has(.about-reference-layout) .site-footer > .container.footer-row > div:first-child .small {
-  font-size: .68rem !important;
-}
+    .about-reference-layout .about-brand-title .about-title-brand {
+      font-size: 1em;
+    }
 
 
-/* Match Home social icons on About only */
+    /* =========================================================
+       ABOUT BACKGROUND FIX
+       Uses an image that actually exists in GitHub.
+       ========================================================= */
 
-body:has(.about-reference-layout) .footer-social {
-  gap: 16px !important;
-  align-items: center !important;
-}
+    main.about-reference-layout {
+      background-color: #020808 !important;
 
-body:has(.about-reference-layout) .footer-social .social-card {
-  width: 40px !important;
-  height: 40px !important;
-  min-height: 40px !important;
-  padding: 0 !important;
-  display: grid !important;
-  place-items: center !important;
-}
+      background-image:
+        linear-gradient(
+          90deg,
+          rgba(2, 8, 8, .44) 0%,
+          rgba(2, 8, 8, .14) 48%,
+          rgba(2, 8, 8, .38) 100%
+        ),
+        linear-gradient(
+          180deg,
+          rgba(2, 8, 8, .06) 0%,
+          rgba(2, 8, 8, .18) 100%
+        ),
+        url("../assets/img/about-visual-clean.png") !important;
 
-body:has(.about-reference-layout) .footer-social .social-card::before {
-  display: block !important;
-  width: 30px !important;
-  height: 30px !important;
-  font-size: 1.45rem !important;
-  line-height: 30px !important;
-  text-align: center !important;
-  font-weight: 700 !important;
+      background-position:
+        center,
+        center,
+        center top !important;
 
-  filter:
-    brightness(0)
-    saturate(100%)
-    invert(83%)
-    sepia(26%)
-    saturate(1010%)
-    hue-rotate(124deg)
-    brightness(94%)
-    contrast(88%)
-    drop-shadow(0 0 7px rgba(22,234,215,.2)) !important;
+      background-size:
+        cover,
+        cover,
+        cover !important;
 
-  opacity: .3 !important;
-}
+      background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat !important;
 
-body:has(.about-reference-layout) .footer-social .social-card:nth-child(2)::before {
-  width: 30px !important;
-  height: 30px !important;
-  transform: scale(.88);
-}
-
-body:has(.about-reference-layout) .footer-social .social-card:nth-child(1)::before {
-  transform: scale(1.28);
-}
-
-body:has(.about-reference-layout) .footer-social .social-card:nth-child(3)::before {
-  font-size: 1.35rem !important;
-  transform: scale(1.12);
-}
-
-body:has(.about-reference-layout) .footer-social .social-card:nth-child(4)::before {
-  font-size: 1.55rem !important;
-  transform: scale(1.08);
-}
-
-body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::before {
-  width: 38px !important;
-  height: 27px !important;
-  transform: scale(.9);
-}
+      background-attachment:
+        scroll,
+        scroll,
+        fixed !important;
+    }
 
 
-/* Final Home-matched footer alignment and icons on About only */
+    /* Keep all About sections transparent so the background is visible */
 
-body:has(.about-reference-layout) .site-footer > .container {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding-left: 32px !important;
-  padding-right: 32px !important;
-}
-
-body:has(.about-reference-layout) .site-footer .footer-row {
-  justify-content: flex-start !important;
-}
-
-body:has(.about-reference-layout) .site-footer .footer-social {
-  margin-left: auto !important;
-}
-
-body:has(.about-reference-layout) .footer-social .social-card:nth-child(4)::before {
-  content: 'X' !important;
-  font-family: Arial, sans-serif !important;
-  color: #58fff0 !important;
-  -webkit-text-fill-color: #58fff0 !important;
-}
-
-body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::before {
-  content: '' !important;
-  width: 38px !important;
-  height: 27px !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E")
-    center/contain no-repeat !important;
-
-  -webkit-mask: none !important;
-  mask: none !important;
-
-  opacity: .3 !important;
-
-  filter:
-    drop-shadow(0 0 7px rgba(88,255,240,.28)) !important;
-}
-
-body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::after {
-  display: none !important;
-}
+    .about-reference-layout .about-cinema-hero,
+    .about-reference-layout .about-ref-section,
+    .about-reference-layout .about-ref-approach,
+    .about-reference-layout .about-ref-philosophy,
+    .about-reference-layout .about-ref-direction {
+      background: transparent !important;
+    }
 
 
-@media (max-width: 640px) {
+    /* =========================================================
+       HEADER FIX
+       Same dimensions as all other pages.
+       ========================================================= */
 
-  body:has(.about-reference-layout) .site-footer > .container {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
+    body:has(.about-reference-layout) .site-header {
+      background: rgba(3, 9, 9, .82) !important;
+      border-bottom: 1px solid var(--line) !important;
+    }
 
-}
+    body:has(.about-reference-layout) .site-header .container {
+      width: min(calc(100% - 36px), var(--max)) !important;
+      max-width: none !important;
+      margin: 0 auto !important;
+    }
 
-</style>
+    body:has(.about-reference-layout) .site-header .navbar,
+    body:has(.about-reference-layout) .site-header .container.navbar {
+      min-height: 74px !important;
+      max-width: none !important;
+      width: min(calc(100% - 36px), var(--max)) !important;
+
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+
+      gap: 24px !important;
+
+      margin: 0 auto !important;
+    }
+
+    body:has(.about-reference-layout) .site-header .brand {
+      position: static !important;
+      order: 0 !important;
+
+      display: flex !important;
+      align-items: center !important;
+
+      margin: 0 !important;
+
+      transform: none !important;
+    }
+
+    body:has(.about-reference-layout) .site-header .brand img {
+      width: 42px !important;
+      height: 42px !important;
+
+      border-radius: 0 !important;
+      box-shadow: none !important;
+
+      background: transparent !important;
+
+      object-fit: contain !important;
+
+      mix-blend-mode: screen !important;
+    }
+
+    body:has(.about-reference-layout) .site-header .nav-links {
+      margin-right: 0 !important;
+    }
+
+
+    /* =========================================================
+       FOOTER
+       Match Home footer.
+       ========================================================= */
+
+    body:has(.about-reference-layout) .site-footer {
+      margin-top: 0 !important;
+      padding: 0 !important;
+      min-height: 74px !important;
+    }
+
+    body:has(.about-reference-layout)
+    .site-footer > .container.footer-row {
+      min-height: 74px !important;
+      align-items: center !important;
+    }
+
+    body:has(.about-reference-layout)
+    .site-footer > .container.footer-row > div:first-child {
+      font-size: .7rem !important;
+      line-height: 1.25 !important;
+    }
+
+    body:has(.about-reference-layout)
+    .site-footer > .container.footer-row > div:first-child .small {
+      font-size: .68rem !important;
+    }
+
+
+    body:has(.about-reference-layout) .footer-social {
+      gap: 16px !important;
+      align-items: center !important;
+    }
+
+    body:has(.about-reference-layout)
+    .footer-social .social-card {
+      width: 40px !important;
+      height: 40px !important;
+
+      min-height: 40px !important;
+
+      padding: 0 !important;
+
+      display: grid !important;
+      place-items: center !important;
+    }
+
+    body:has(.about-reference-layout)
+    .footer-social .social-card::before {
+      display: block !important;
+
+      width: 30px !important;
+      height: 30px !important;
+
+      font-size: 1.45rem !important;
+      line-height: 30px !important;
+
+      text-align: center !important;
+      font-weight: 700 !important;
+
+      filter:
+        brightness(0)
+        saturate(100%)
+        invert(83%)
+        sepia(26%)
+        saturate(1010%)
+        hue-rotate(124deg)
+        brightness(94%)
+        contrast(88%)
+        drop-shadow(0 0 7px rgba(22,234,215,.2))
+        !important;
+
+      opacity: .3 !important;
+    }
+
+
+    body:has(.about-reference-layout)
+    .footer-social .social-card:nth-child(1)::before {
+      transform: scale(1.28);
+    }
+
+    body:has(.about-reference-layout)
+    .footer-social .social-card:nth-child(2)::before {
+      width: 30px !important;
+      height: 30px !important;
+
+      transform: scale(.88);
+    }
+
+    body:has(.about-reference-layout)
+    .footer-social .social-card:nth-child(3)::before {
+      font-size: 1.35rem !important;
+
+      transform: scale(1.12);
+    }
+
+    body:has(.about-reference-layout)
+    .footer-social .social-card:nth-child(4)::before {
+      content: 'X' !important;
+
+      font-family: Arial, sans-serif !important;
+      font-size: 1.55rem !important;
+
+      color: #58fff0 !important;
+      -webkit-text-fill-color: #58fff0 !important;
+
+      transform: scale(1.08);
+    }
+
+    body:has(.about-reference-layout)
+    .footer-social .social-card:nth-child(5)::before {
+      content: '' !important;
+
+      width: 38px !important;
+      height: 27px !important;
+
+      border: 0 !important;
+      border-radius: 0 !important;
+
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E")
+        center / contain no-repeat !important;
+
+      -webkit-mask: none !important;
+      mask: none !important;
+
+      opacity: .3 !important;
+
+      filter:
+        drop-shadow(
+          0 0 7px rgba(88,255,240,.28)
+        ) !important;
+
+      transform: scale(.9);
+    }
+
+    body:has(.about-reference-layout)
+    .footer-social .social-card:nth-child(5)::after {
+      display: none !important;
+    }
+
+
+    body:has(.about-reference-layout)
+    .site-footer > .container {
+      width: 100% !important;
+      max-width: none !important;
+
+      margin: 0 !important;
+
+      padding-left: 32px !important;
+      padding-right: 32px !important;
+    }
+
+    body:has(.about-reference-layout)
+    .site-footer .footer-row {
+      justify-content: flex-start !important;
+    }
+
+    body:has(.about-reference-layout)
+    .site-footer .footer-social {
+      margin-left: auto !important;
+    }
+
+
+    /* Mobile */
+
+    @media (max-width: 800px) {
+
+      main.about-reference-layout {
+        background-attachment:
+          scroll,
+          scroll,
+          scroll !important;
+
+        background-position:
+          center,
+          center,
+          center top !important;
+      }
+
+    }
+
+
+    @media (max-width: 640px) {
+
+      body:has(.about-reference-layout)
+      .site-footer > .container {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+      }
+
+    }
+
+  </style>
 
 </head>
 
@@ -194,30 +361,47 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 
   <div class="container navbar">
 
-    <a class="brand" href="../">
+
+    <!-- LOGO ONLY -->
+
+    <a
+      class="brand"
+      href="../"
+      aria-label="DemQora Technologies Home">
+
       <img
         src="../assets/img/demqora-logo.png"
         alt="DemQora DQ logo">
+
     </a>
+
 
     <button
       class="menu-toggle"
       aria-expanded="false"
       aria-controls="main-nav">
+
       Menu
+
     </button>
 
-    <nav id="main-nav" class="nav-links">
+
+    <nav
+      id="main-nav"
+      class="nav-links">
+
 
       <a href="../">
         Home
       </a>
+
 
       <div class="nav-products">
 
         <a href="../products/">
           Products
         </a>
+
 
         <div class="submenu">
 
@@ -229,17 +413,25 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 
       </div>
 
+
       <a href="../documentation/">
         Documentation
       </a>
 
-      <a href="./" aria-current="page">
+
+      <a
+        href="./"
+        aria-current="page">
+
         About
+
       </a>
+
 
       <a href="../contact/">
         Contact
       </a>
+
 
     </nav>
 
@@ -256,18 +448,39 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 
     <div class="about-ref-container about-hero-grid">
 
+
       <div class="about-cinema-copy">
 
+
         <div class="about-brand-title">
-          <span class="about-title-word">About</span>
-          <span class="about-title-brand">DemQora</span>
+
+          <span class="about-title-word">
+            About
+          </span>
+
+          <span class="about-title-brand">
+            DemQora
+          </span>
+
         </div>
 
+
         <h1>
-          <span>Technology built</span>
-          <span>to make complex</span>
-          <span>markets <em>clearer.</em></span>
+
+          <span>
+            Technology built
+          </span>
+
+          <span>
+            to make complex
+          </span>
+
+          <span>
+            markets <em>clearer.</em>
+          </span>
+
         </h1>
+
 
         <p>
           DemQora Technologies develops market-intelligence software
@@ -275,12 +488,19 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
           structured, understandable insight.
         </p>
 
+
         <p class="about-principle-line">
-          Clarity over noise. Structure over assumption.<br>
+
+          Clarity over noise.
+          Structure over assumption.<br>
+
           Precision over complexity.
+
         </p>
 
+
       </div>
+
 
 
       <aside class="about-hero-note">
@@ -295,6 +515,7 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 
       </aside>
 
+
     </div>
 
   </section>
@@ -305,28 +526,38 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 
     <div class="about-ref-container about-ref-split">
 
+
       <h2>
+
         Built around<br>
+
         market <em>clarity.</em>
+
       </h2>
 
+
       <div class="about-ref-copy">
+
 
         <p>
           Financial markets generate enormous amounts of information.
           More information does not automatically create better understanding.
         </p>
 
-        <p>
-          DemQora is built around a simple principle: identify meaningful
-          information, organize it logically and present it with enough
-          clarity that complex market behaviour becomes easier to interpret.
-        </p>
 
         <p>
-          Our systems are designed to reduce visual noise while preserving
-          the context behind price movement.
+          DemQora is built around a simple principle:
+          identify meaningful information,
+          organize it logically and present it with enough clarity
+          that complex market behaviour becomes easier to interpret.
         </p>
+
+
+        <p>
+          Our systems are designed to reduce visual noise
+          while preserving the context behind price movement.
+        </p>
+
 
       </div>
 
@@ -340,28 +571,52 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 
     <div class="about-ref-container about-ref-split">
 
+
       <h2>
-        <span>We do not believe good</span>
-        <span>market technology should</span>
-        <span>tell users what to think.</span>
-        <span><em>It should help them see</em></span>
-        <span><em>more clearly.</em></span>
+
+        <span>
+          We do not believe good
+        </span>
+
+        <span>
+          market technology should
+        </span>
+
+        <span>
+          tell users what to think.
+        </span>
+
+        <span>
+          <em>It should help them see</em>
+        </span>
+
+        <span>
+          <em>more clearly.</em>
+        </span>
+
       </h2>
 
+
       <div class="about-ref-copy">
+
 
         <p>
           Markets remain uncertain.
         </p>
 
-        <p>
-          Our goal is not to remove that uncertainty or promise prediction.
-        </p>
 
         <p>
-          Our goal is to provide better structure, better context and
-          better tools for understanding what is happening.
+          Our goal is not to remove that uncertainty
+          or promise prediction.
         </p>
+
+
+        <p>
+          Our goal is to provide better structure,
+          better context and better tools
+          for understanding what is happening.
+        </p>
+
 
       </div>
 
@@ -375,40 +630,63 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 
     <div class="about-ref-container about-direction-grid">
 
+
       <h2>
+
         Built for<br>
+
         the <em>long term.</em>
+
       </h2>
+
 
       <div class="about-ref-copy">
 
-        <p>
-          DemQora Technologies is being developed as a long-term
-          market-intelligence technology company.
-        </p>
 
         <p>
-          Our focus is on building systems that combine structured
-          market logic, reliable engineering and clear visual communication.
+          DemQora Technologies is being developed
+          as a long-term market-intelligence technology company.
         </p>
 
+
         <p>
-          As the technology evolves, one principle remains unchanged:
+          Our focus is on building systems
+          that combine structured market logic,
+          reliable engineering
+          and clear visual communication.
         </p>
+
+
+        <p>
+          As the technology evolves,
+          one principle remains unchanged:
+        </p>
+
 
         <p class="about-direction-principle">
+
           Complex systems should produce clearer information —
           not more complexity.
+
         </p>
+
 
       </div>
 
 
+
       <p class="about-decision-line">
+
         See the structure.<br>
+
         Understand the context.<br>
-        <em>Make your own decision.</em>
+
+        <em>
+          Make your own decision.
+        </em>
+
       </p>
+
 
     </div>
 
@@ -423,6 +701,7 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 
   <div class="container footer-row">
 
+
     <div>
 
       <strong>
@@ -434,59 +713,81 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
       </div>
 
       <div class="small">
-        © <span data-year></span> DemQora Technologies.
+
+        ©
+        <span data-year></span>
+        DemQora Technologies.
+
       </div>
 
     </div>
 
 
+
     <div class="social-grid footer-social">
+
 
       <a
         class="social-card"
         href="https://www.facebook.com/DemQora"
         target="_blank"
         rel="noopener">
+
         Facebook
+
       </a>
+
 
       <a
         class="social-card"
         href="https://www.instagram.com/demqora/"
         target="_blank"
         rel="noopener">
+
         Instagram
+
       </a>
+
 
       <a
         class="social-card"
         href="https://www.linkedin.com/company/145012898/"
         target="_blank"
         rel="noopener">
+
         LinkedIn
+
       </a>
+
 
       <a
         class="social-card"
         href="https://x.com/DemQora"
         target="_blank"
         rel="noopener">
+
         X
+
       </a>
+
 
       <a
         class="social-card"
         href="https://www.youtube.com/@DemQora"
         target="_blank"
         rel="noopener">
+
         YouTube
+
       </a>
+
 
     </div>
 
   </div>
 
 </footer>
+
 
 
 <script src="../assets/js/main.js"></script>
@@ -497,10 +798,13 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 (() => {
 
   const page =
-    document.querySelector('.about-reference-layout');
+    document.querySelector(
+      '.about-reference-layout'
+    );
 
   if (!page)
     return;
+
 
   const updateParallax = () => {
 
@@ -511,13 +815,18 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 
   };
 
+
   updateParallax();
+
 
   window.addEventListener(
     'scroll',
     updateParallax,
-    { passive: true }
+    {
+      passive: true
+    }
   );
+
 
 })();
 
@@ -525,4 +834,5 @@ body:has(.about-reference-layout) .footer-social .social-card:nth-child(5)::afte
 
 
 </body>
+
 </html>
