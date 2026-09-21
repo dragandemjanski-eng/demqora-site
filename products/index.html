@@ -225,6 +225,13 @@ main .page-hero h1.brand-page-heading {
 
 </style>
 
+<style id="products-footer-flush">
+/* Keep the Products footer flush with the bottom of the viewport */
+html, body { min-height: 100%; }
+body { min-height: 100vh; display: flex; flex-direction: column; }
+body > main.products-background-page { flex: 1; width: 100%; }
+</style>
+
 </head>
 
 <body>
