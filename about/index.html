@@ -16,8 +16,9 @@
 
   <link rel="icon" href="../assets/img/demqora-logo.png">
 
-  <!-- New cache version -->
-  <link rel="stylesheet" href="../assets/css/styles.css?v=202609212230">
+  <link
+    rel="stylesheet"
+    href="../assets/css/styles.css?v=202609212230">
 
 
   <style id="about-brand-title-style">
@@ -40,67 +41,12 @@
 
 
     /* =========================================================
-       ABOUT BACKGROUND FIX
-       Uses an image that actually exists in GitHub.
-       ========================================================= */
-
-    main.about-reference-layout {
-      background-color: #020808 !important;
-
-      background-image:
-        linear-gradient(
-          90deg,
-          rgba(2, 8, 8, .44) 0%,
-          rgba(2, 8, 8, .14) 48%,
-          rgba(2, 8, 8, .38) 100%
-        ),
-        linear-gradient(
-          180deg,
-          rgba(2, 8, 8, .06) 0%,
-          rgba(2, 8, 8, .18) 100%
-        ),
-        url("../assets/img/about-visual-clean.png") !important;
-
-      background-position:
-        center,
-        center,
-        center top !important;
-
-      background-size:
-        cover,
-        cover,
-        cover !important;
-
-      background-repeat:
-        no-repeat,
-        no-repeat,
-        no-repeat !important;
-
-      background-attachment:
-        scroll,
-        scroll,
-        fixed !important;
-    }
-
-
-    /* Keep all About sections transparent so the background is visible */
-
-    .about-reference-layout .about-cinema-hero,
-    .about-reference-layout .about-ref-section,
-    .about-reference-layout .about-ref-approach,
-    .about-reference-layout .about-ref-philosophy,
-    .about-reference-layout .about-ref-direction {
-      background: transparent !important;
-    }
-
-
-    /* =========================================================
-       HEADER FIX
-       Same dimensions as all other pages.
+       HEADER
+       Match Home / Products / Documentation
        ========================================================= */
 
     body:has(.about-reference-layout) .site-header {
-      background: rgba(3, 9, 9, .82) !important;
+      background: rgba(3,9,9,.82) !important;
       border-bottom: 1px solid var(--line) !important;
     }
 
@@ -127,10 +73,11 @@
 
     body:has(.about-reference-layout) .site-header .brand {
       position: static !important;
-      order: 0 !important;
 
       display: flex !important;
       align-items: center !important;
+
+      order: 0 !important;
 
       margin: 0 !important;
 
@@ -142,6 +89,7 @@
       height: 42px !important;
 
       border-radius: 0 !important;
+
       box-shadow: none !important;
 
       background: transparent !important;
@@ -151,6 +99,10 @@
       mix-blend-mode: screen !important;
     }
 
+    body:has(.about-reference-layout) .site-header .brand span {
+      display: none !important;
+    }
+
     body:has(.about-reference-layout) .site-header .nav-links {
       margin-right: 0 !important;
     }
@@ -158,7 +110,7 @@
 
     /* =========================================================
        FOOTER
-       Match Home footer.
+       Match Home
        ========================================================= */
 
     body:has(.about-reference-layout) .site-footer {
@@ -184,6 +136,8 @@
       font-size: .68rem !important;
     }
 
+
+    /* Social icons */
 
     body:has(.about-reference-layout) .footer-social {
       gap: 16px !important;
@@ -214,6 +168,7 @@
       line-height: 30px !important;
 
       text-align: center !important;
+
       font-weight: 700 !important;
 
       filter:
@@ -230,7 +185,6 @@
 
       opacity: .3 !important;
     }
-
 
     body:has(.about-reference-layout)
     .footer-social .social-card:nth-child(1)::before {
@@ -257,6 +211,7 @@
       content: 'X' !important;
 
       font-family: Arial, sans-serif !important;
+
       font-size: 1.55rem !important;
 
       color: #58fff0 !important;
@@ -298,6 +253,8 @@
     }
 
 
+    /* Footer alignment */
+
     body:has(.about-reference-layout)
     .site-footer > .container {
       width: 100% !important;
@@ -322,23 +279,6 @@
 
     /* Mobile */
 
-    @media (max-width: 800px) {
-
-      main.about-reference-layout {
-        background-attachment:
-          scroll,
-          scroll,
-          scroll !important;
-
-        background-position:
-          center,
-          center,
-          center top !important;
-      }
-
-    }
-
-
     @media (max-width: 640px) {
 
       body:has(.about-reference-layout)
@@ -361,8 +301,6 @@
 
   <div class="container navbar">
 
-
-    <!-- LOGO ONLY -->
 
     <a
       class="brand"
@@ -401,7 +339,6 @@
         <a href="../products/">
           Products
         </a>
-
 
         <div class="submenu">
 
