@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>MS 1.1 User Manual | DemQora Technologies</title>
 <meta name="description" content="MS 1.1 User Manual for DemQora Technologies.">
 <meta name="theme-color" content="#030909">
+
 <link rel="icon" href="../../assets/img/demqora-logo.png">
-<link rel="stylesheet" href="../../assets/css/styles.css?v=202609271">
+<link rel="stylesheet" href="../../assets/css/styles.css?v=202609290010">
+
 <style>
 .guide-page-shell {
   min-height: calc(100vh - 74px);
@@ -15,14 +18,17 @@
     radial-gradient(circle at 74% 4%, rgba(22,234,215,.08), transparent 34rem),
     linear-gradient(180deg, rgba(3,9,9,.98) 0%, rgba(3,9,9,.94) 48%, #030909 100%);
 }
+
 .guide-hero {
   padding: 72px 0 38px;
   border-bottom: 1px solid rgba(88,255,240,.13);
 }
+
 .guide-hero .container,
 .guide-pages .container {
   max-width: 1180px;
 }
+
 .guide-kicker {
   margin-bottom: 14px;
   color: #58fff0;
@@ -31,6 +37,7 @@
   letter-spacing: .18em;
   text-transform: uppercase;
 }
+
 .guide-title {
   margin: 0 0 14px;
   color: #effffb;
@@ -38,6 +45,7 @@
   line-height: .98;
   letter-spacing: -.055em;
 }
+
 .guide-lead {
   max-width: 760px;
   margin: 0;
@@ -45,6 +53,7 @@
   font-size: clamp(1rem,1.35vw,1.18rem);
   line-height: 1.65;
 }
+
 .guide-meta {
   display: inline-flex;
   margin-top: 22px;
@@ -58,13 +67,16 @@
   letter-spacing: .12em;
   text-transform: uppercase;
 }
+
 .guide-pages {
-  padding: 38px 0 90px;
+  padding: 38px 0 20px;
 }
+
 .guide-stack {
   display: grid;
   gap: 22px;
 }
+
 .guide-page {
   margin: 0 auto;
   width: min(100%, 980px);
@@ -74,22 +86,203 @@
   background: #030909;
   box-shadow: 0 22px 70px rgba(0,0,0,.34);
 }
+
 .guide-page img {
   width: 100%;
   height: auto;
   display: block;
 }
+
 @media (max-width: 800px) {
   .guide-hero { padding: 50px 0 30px; }
-  .guide-pages { padding: 28px 0 64px; }
+  .guide-pages { padding: 28px 0 18px; }
   .guide-stack { gap: 14px; }
   .guide-page { border-radius: 12px; }
 }
 </style>
+
+<style id="home-footer-exact-match">
+.site-footer {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: 74px !important;
+  height: 74px !important;
+  overflow: hidden !important;
+}
+
+.site-footer > .container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 32px !important;
+}
+
+.site-footer > .container.footer-row {
+  min-height: 74px !important;
+  height: 74px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 24px !important;
+}
+
+.site-footer > .container.footer-row > div:first-child {
+  font-size: .7rem !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+}
+
+.site-footer > .container.footer-row > div:first-child .small {
+  font-size: .68rem !important;
+}
+
+.site-footer .footer-social {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-left: auto !important;
+}
+
+.site-footer .footer-social .social-card {
+  position: relative !important;
+  width: 40px !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  display: grid !important;
+  place-items: center !important;
+  font-size: 0 !important;
+  transform: none !important;
+}
+
+.site-footer .footer-social .social-card::before {
+  display: block !important;
+  width: 30px !important;
+  height: 30px !important;
+  line-height: 30px !important;
+  text-align: center !important;
+  color: #58fff0 !important;
+  opacity: .30 !important;
+  filter: drop-shadow(0 0 7px rgba(88,255,240,.20)) !important;
+}
+
+.site-footer .footer-social .social-card::after {
+  display: none !important;
+}
+
+/* Facebook — same construction as Home */
+.site-footer .footer-social .social-card:nth-child(1)::before {
+  content: 'f' !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 1.45rem !important;
+  font-weight: 700 !important;
+  transform: scale(1.28);
+}
+
+/* Instagram — same mask construction as Home */
+.site-footer .footer-social .social-card:nth-child(2)::before {
+  content: '' !important;
+  width: 30px !important;
+  height: 30px !important;
+  background: #58fff0 !important;
+  -webkit-mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='3' width='18' height='18' rx='5' fill='none' stroke='black' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='4' fill='none' stroke='black' stroke-width='2'/%3E%3Ccircle cx='17.5' cy='6.5' r='1.2' fill='black'/%3E%3C/svg%3E")
+    center / contain no-repeat !important;
+  mask:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect x='3' y='3' width='18' height='18' rx='5' fill='none' stroke='black' stroke-width='2'/%3E%3Ccircle cx='12' cy='12' r='4' fill='none' stroke='black' stroke-width='2'/%3E%3Ccircle cx='17.5' cy='6.5' r='1.2' fill='black'/%3E%3C/svg%3E")
+    center / contain no-repeat !important;
+  transform: scale(.88);
+}
+
+/* LinkedIn — same text construction as Home */
+.site-footer .footer-social .social-card:nth-child(3)::before {
+  content: 'in' !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 1.35rem !important;
+  font-weight: 700 !important;
+  transform: scale(1.12);
+}
+
+/* X — same glyph as Home */
+.site-footer .footer-social .social-card:nth-child(4)::before {
+  content: '𝕏' !important;
+  font-size: 1.55rem !important;
+  font-weight: 400 !important;
+  transform: scale(1.08);
+}
+
+/* YouTube — same final Home mark */
+.site-footer .footer-social .social-card:nth-child(5)::before {
+  content: '' !important;
+  width: 38px !important;
+  height: 27px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E")
+    center / contain no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  opacity: .30 !important;
+  filter: drop-shadow(0 0 7px rgba(88,255,240,.28)) !important;
+  transform: scale(.9);
+}
+
+.site-footer .footer-social .social-card:hover::before {
+  opacity: .30 !important;
+}
+
+@media (max-width: 640px) {
+  .site-footer > .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .site-footer .footer-social {
+    gap: 10px !important;
+  }
+}
+</style>
 </head>
+
 <body>
-<header class="site-header"><div class="container navbar"><a class="brand" href="../../"><img src="../../assets/img/demqora-logo.png" alt="DemQora DQ logo"></a><button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button><nav id="main-nav" class="nav-links"><a href="../../">Home</a><div class="nav-products"><a href="../../products/">Products</a><div class="submenu"><a href="../../products/ms-1-1/">MS 1.1 — Market Structure Multi-Timeframe Chart</a></div></div><a href="../" aria-current="page">Documentation</a><a href="../../about/">About</a><a href="../../contact/">Contact</a></nav></div></header>
+
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="../../">
+      <img src="../../assets/img/demqora-logo.png" alt="DemQora DQ logo">
+    </a>
+
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">
+      Menu
+    </button>
+
+    <nav id="main-nav" class="nav-links">
+      <a href="../../">Home</a>
+
+      <div class="nav-products">
+        <a href="../../products/">Products</a>
+        <div class="submenu">
+          <a href="../../products/ms-1-1/">
+            MS 1.1 — Market Structure Multi-Timeframe Chart
+          </a>
+        </div>
+      </div>
+
+      <a href="../" aria-current="page">Documentation</a>
+      <a href="../../about/">About</a>
+      <a href="../../contact/">Contact</a>
+    </nav>
+  </div>
+</header>
+
 <main class="guide-page-shell">
+
   <section class="guide-hero">
     <div class="container">
       <div class="guide-kicker">Documentation</div>
@@ -98,6 +291,7 @@
       <div class="guide-meta">92 pages · Inline guide</div>
     </div>
   </section>
+
   <section class="guide-pages">
     <div class="container">
       <div class="guide-stack">
@@ -196,8 +390,30 @@
       </div>
     </div>
   </section>
+
 </main>
-<footer class="site-footer"><div class="container footer-row"><div><strong>DemQora Technologies</strong><div>Advanced Market Intelligence</div><div class="small">© <span data-year></span> All rights reserved.</div></div><div class="social-grid footer-social"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener">YouTube</a></div></div></footer>
+
+<footer class="site-footer">
+  <div class="container footer-row">
+
+    <div>
+      <strong>DemQora Technologies</strong>
+      <div>Advanced Market Intelligence</div>
+      <div class="small">© <span data-year></span> All rights reserved.</div>
+    </div>
+
+    <div class="social-grid footer-social">
+      <a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener">Facebook</a>
+      <a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener">Instagram</a>
+      <a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener">X</a>
+      <a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener">YouTube</a>
+    </div>
+
+  </div>
+</footer>
+
 <script src="../../assets/js/main.js"></script>
+
 </body>
 </html>
