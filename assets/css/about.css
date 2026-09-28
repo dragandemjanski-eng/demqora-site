@@ -47,9 +47,9 @@ main.about-page.about-reference-layout {
     url("../img/about-cinematic-bg.png") !important;
 
   background-position:
-    center top,
-    center top,
-    center top !important;
+  center top,
+  center top,
+  center var(--about-parallax, 0px) !important;
 
   background-size:
     100% auto,
