@@ -24,10 +24,18 @@
 
   min-height: calc(100vh - 74px);
 
-  background:
-    #030909
-    url("../assets/img/ChatGPT%20Image%20Sep%2015%2C%202026%2C%2005_28_10%20PM.png")
-    center top / cover no-repeat;
+  --documentation-parallax: 0px;
+
+  background-color: #030909;
+
+  background-image:
+    url("../assets/img/ChatGPT%20Image%20Sep%2015%2C%202026%2C%2005_28_10%20PM.png");
+
+  background-position:
+    center var(--documentation-parallax);
+
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .documentation-page::before {
@@ -383,8 +391,6 @@ main .page-hero h1.brand-page-heading {
 }
 
 
-
-
 .documentation-page .resource-card-link {
   display: block;
   color: inherit;
@@ -397,7 +403,11 @@ main .page-hero h1.brand-page-heading {
   background: rgba(22,234,215,.08);
   color: #58fff0;
   cursor: pointer;
-  transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+  transition:
+    background .2s ease,
+    border-color .2s ease,
+    color .2s ease,
+    transform .2s ease;
 }
 
 .documentation-page .resource-card-link:hover .resource-status {
@@ -406,6 +416,7 @@ main .page-hero h1.brand-page-heading {
   color: #effffb;
   transform: translateY(-1px);
 }
+
 
 /* Support */
 
@@ -528,43 +539,232 @@ main .page-hero h1.brand-page-heading {
 
 </style>
 
+
 <style id="documentation-footer-flush">
-/* Keep the Documentation footer flush with the bottom of the viewport */
-html, body { min-height: 100%; }
-body { min-height: 100vh; display: flex; flex-direction: column; }
-body > main.documentation-page { flex: 1; width: 100%; }
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+}
+
+body > main.documentation-page {
+  flex: 1;
+
+  width: 100%;
+}
+
+
 /* Match the Home footer exactly */
-.site-footer { margin-top: 0 !important; padding: 0 !important; min-height: 74px !important; }
-.site-footer > .container { width: 100% !important; max-width: none !important; margin: 0 !important; padding-left: 32px !important; padding-right: 32px !important; }
-.site-footer > .container.footer-row { min-height: 74px !important; align-items: center !important; justify-content: flex-start !important; }
-.site-footer > .container.footer-row > div:first-child { font-size: .7rem !important; line-height: 1.25 !important; }
-.site-footer > .container.footer-row > div:first-child .small { font-size: .68rem !important; }
-.site-footer .footer-social { margin-left: auto !important; }
-@media (max-width: 640px) { .site-footer > .container { padding-left: 20px !important; padding-right: 20px !important; } }
+
+.site-footer {
+  margin-top: 0 !important;
+
+  padding: 0 !important;
+
+  min-height: 74px !important;
+}
+
+.site-footer > .container {
+  width: 100% !important;
+
+  max-width: none !important;
+
+  margin: 0 !important;
+
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
+.site-footer > .container.footer-row {
+  min-height: 74px !important;
+
+  align-items: center !important;
+
+  justify-content: flex-start !important;
+}
+
+.site-footer > .container.footer-row > div:first-child {
+  font-size: .7rem !important;
+
+  line-height: 1.25 !important;
+}
+
+.site-footer > .container.footer-row > div:first-child .small {
+  font-size: .68rem !important;
+}
+
+.site-footer .footer-social {
+  margin-left: auto !important;
+}
+
+
+@media (max-width: 640px) {
+
+  .site-footer > .container {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+}
 
 
 /* Match the Home footer icon treatment */
-.footer-social { gap: 16px !important; align-items: center !important; }
-.footer-social .social-card { width: 40px !important; height: 40px !important; min-height: 40px !important; padding: 0 !important; display: grid !important; place-items: center !important; }
-.footer-social .social-card::before { display: block !important; width: 30px !important; height: 30px !important; font-size: 1.45rem !important; line-height: 30px !important; text-align: center !important; font-weight: 700 !important; opacity: .3 !important; filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1010%) hue-rotate(124deg) brightness(94%) contrast(88%) drop-shadow(0 0 7px rgba(22,234,215,.2)) !important; }
-.footer-social .social-card:hover::before { opacity: .3 !important; }
-.footer-social .social-card:nth-child(1)::before { transform: scale(1.28); }
-.footer-social .social-card:nth-child(2)::before { width: 30px !important; height: 30px !important; transform: scale(.88); }
-.footer-social .social-card:nth-child(3)::before { font-size: 1.35rem !important; transform: scale(1.12); }
-.footer-social .social-card:nth-child(4)::before { font-size: 1.55rem !important; transform: scale(1.08); }
-.footer-social .social-card:nth-child(5)::before { content: '' !important; width: 38px !important; height: 27px !important; border: 0 !important; border-radius: 0 !important; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E") center/contain no-repeat !important; -webkit-mask: none !important; mask: none !important; opacity: .3 !important; filter: drop-shadow(0 0 7px rgba(88,255,240,.28)) !important; transform: scale(.9); }
-.footer-social .social-card:nth-child(5)::after { display: none !important; }
 
-.footer-social .social-card:nth-child(4)::before { content: "\1D54F" !important; }
+.footer-social {
+  gap: 16px !important;
+
+  align-items: center !important;
+}
+
+.footer-social .social-card {
+  width: 40px !important;
+  height: 40px !important;
+
+  min-height: 40px !important;
+
+  padding: 0 !important;
+
+  display: grid !important;
+
+  place-items: center !important;
+}
+
+.footer-social .social-card::before {
+  display: block !important;
+
+  width: 30px !important;
+  height: 30px !important;
+
+  font-size: 1.45rem !important;
+
+  line-height: 30px !important;
+
+  text-align: center !important;
+
+  font-weight: 700 !important;
+
+  opacity: .3 !important;
+
+  filter:
+    brightness(0)
+    saturate(100%)
+    invert(83%)
+    sepia(26%)
+    saturate(1010%)
+    hue-rotate(124deg)
+    brightness(94%)
+    contrast(88%)
+    drop-shadow(0 0 7px rgba(22,234,215,.2))
+    !important;
+}
+
+.footer-social .social-card:hover::before {
+  opacity: .3 !important;
+}
+
+.footer-social .social-card:nth-child(1)::before {
+  transform: scale(1.28);
+}
+
+.footer-social .social-card:nth-child(2)::before {
+  width: 30px !important;
+  height: 30px !important;
+
+  transform: scale(.88);
+}
+
+.footer-social .social-card:nth-child(3)::before {
+  font-size: 1.35rem !important;
+
+  transform: scale(1.12);
+}
+
+.footer-social .social-card:nth-child(4)::before {
+  content: "\1D54F" !important;
+
+  font-size: 1.55rem !important;
+
+  transform: scale(1.08);
+}
+
+.footer-social .social-card:nth-child(5)::before {
+  content: '' !important;
+
+  width: 38px !important;
+  height: 27px !important;
+
+  border: 0 !important;
+  border-radius: 0 !important;
+
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E")
+    center / contain no-repeat !important;
+
+  -webkit-mask: none !important;
+  mask: none !important;
+
+  opacity: .3 !important;
+
+  filter:
+    drop-shadow(0 0 7px rgba(88,255,240,.28))
+    !important;
+
+  transform: scale(.9);
+}
+
+.footer-social .social-card:nth-child(5)::after {
+  display: none !important;
+}
+
 </style>
+
 
 <style id="header-normalize">
-.site-header .container { width:min(calc(100% - 36px), var(--max)); margin:0 auto; }
-.site-header .navbar, .site-header .container.navbar { min-height:74px !important; max-width:none !important; }
-.site-header .brand img { width:42px !important; height:42px !important; border-radius:0 !important; box-shadow:none !important; background:transparent !important; object-fit:contain !important; mix-blend-mode:screen; }
-.site-header .brand span { display:inline !important; }
+
+.site-header .container {
+  width:
+    min(calc(100% - 36px), var(--max));
+
+  margin: 0 auto;
+}
+
+.site-header .navbar,
+.site-header .container.navbar {
+  min-height: 74px !important;
+
+  max-width: none !important;
+}
+
+.site-header .brand img {
+  width: 42px !important;
+  height: 42px !important;
+
+  border-radius: 0 !important;
+
+  box-shadow: none !important;
+
+  background: transparent !important;
+
+  object-fit: contain !important;
+
+  mix-blend-mode: screen;
+}
+
+.site-header .brand span {
+  display: inline !important;
+}
+
 </style>
+
 </head>
+
 
 <body>
 
@@ -574,8 +774,11 @@ body > main.documentation-page { flex: 1; width: 100%; }
   <div class="container navbar">
 
     <a class="brand" href="../">
-      <img src="../assets/img/demqora-logo.png" alt="DemQora DQ logo">
+      <img
+        src="../assets/img/demqora-logo.png"
+        alt="DemQora DQ logo">
     </a>
+
 
     <button
       class="menu-toggle"
@@ -584,9 +787,15 @@ body > main.documentation-page { flex: 1; width: 100%; }
       Menu
     </button>
 
-    <nav id="main-nav" class="nav-links">
 
-      <a href="../">Home</a>
+    <nav
+      id="main-nav"
+      class="nav-links">
+
+      <a href="../">
+        Home
+      </a>
+
 
       <div class="nav-products">
 
@@ -595,19 +804,31 @@ body > main.documentation-page { flex: 1; width: 100%; }
         </a>
 
         <div class="submenu">
+
           <a href="../products/ms-1-1/">
             MS 1.1 — Market Structure Multi-Timeframe Chart
           </a>
+
         </div>
 
       </div>
 
-      <a href="./" aria-current="page">
+
+      <a
+        href="./"
+        aria-current="page">
         Documentation
       </a>
 
-      <a href="../about/">About</a>
-      <a href="../contact/">Contact</a>
+
+      <a href="../about/">
+        About
+      </a>
+
+
+      <a href="../contact/">
+        Contact
+      </a>
 
     </nav>
 
@@ -616,13 +837,32 @@ body > main.documentation-page { flex: 1; width: 100%; }
 </header>
 
 
+
 <main class="documentation-page">
+
 
   <section class="page-hero">
 
     <div class="container">
 
-      <h1 class="brand-page-heading" aria-label="DemQora Documentation"><span class="brand-prefix">Dem</span><span class="brand-suffix">Qora</span><span class="page-word">Documentation</span></h1>
+      <h1
+        class="brand-page-heading"
+        aria-label="DemQora Documentation">
+
+        <span class="brand-prefix">
+          Dem
+        </span>
+
+        <span class="brand-suffix">
+          Qora
+        </span>
+
+        <span class="page-word">
+          Documentation
+        </span>
+
+      </h1>
+
 
       <p class="lead">
         Everything you need to install, configure and master.
@@ -633,9 +873,11 @@ body > main.documentation-page { flex: 1; width: 100%; }
   </section>
 
 
+
   <section class="documentation-content">
 
     <div class="container">
+
 
       <div class="documentation-intro">
 
@@ -653,28 +895,38 @@ body > main.documentation-page { flex: 1; width: 100%; }
 
         </div>
 
+
         <div class="documentation-intro-note">
+
           Documentation resources will become available as each item
           is finalized for the first public release.
+
         </div>
 
       </div>
 
 
+
       <div class="resource-grid">
 
 
-        <a class="resource-card resource-card-link featured" href="user-manual/">
+        <a
+          class="resource-card resource-card-link featured"
+          href="user-manual/">
 
           <div class="resource-top">
+
             <span class="resource-status">
               Open
             </span>
+
           </div>
+
 
           <h3>
             User Manual
           </h3>
+
 
           <p>
             Complete product reference covering installation,
@@ -685,17 +937,24 @@ body > main.documentation-page { flex: 1; width: 100%; }
         </a>
 
 
-        <a class="resource-card resource-card-link" href="quick-start/">
+
+        <a
+          class="resource-card resource-card-link"
+          href="quick-start/">
 
           <div class="resource-top">
+
             <span class="resource-status">
               Open
             </span>
+
           </div>
+
 
           <h3>
             Quick Start Guide
           </h3>
+
 
           <p>
             A concise introduction to installation, first setup
@@ -705,17 +964,22 @@ body > main.documentation-page { flex: 1; width: 100%; }
         </a>
 
 
+
         <article class="resource-card">
 
           <div class="resource-top">
+
             <span class="resource-status">
               Coming Soon
             </span>
+
           </div>
+
 
           <h3>
             Video Tutorials
           </h3>
+
 
           <p>
             Guided DemQora walkthroughs showing configuration,
@@ -726,17 +990,22 @@ body > main.documentation-page { flex: 1; width: 100%; }
         </article>
 
 
+
         <article class="resource-card">
 
           <div class="resource-top">
+
             <span class="resource-status">
               Coming Soon
             </span>
+
           </div>
+
 
           <h3>
             Release Notes
           </h3>
+
 
           <p>
             Version history, feature additions, improvements,
@@ -745,11 +1014,12 @@ body > main.documentation-page { flex: 1; width: 100%; }
 
         </article>
 
-
       </div>
 
 
+
       <div class="documentation-support">
+
 
         <div class="documentation-support-copy">
 
@@ -763,24 +1033,137 @@ body > main.documentation-page { flex: 1; width: 100%; }
 
         </div>
 
+
         <a
           class="support-link"
           href="../contact/">
+
           Contact DemQora
+
         </a>
 
       </div>
+
 
     </div>
 
   </section>
 
+
 </main>
 
 
-<footer class="site-footer"><div class="container footer-row"><div><strong>DemQora Technologies</strong><div>Advanced Market Intelligence</div><div class="small">© <span data-year></span> All rights reserved.</div></div><div class="social-grid footer-social"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener">YouTube</a></div></div></footer>
+
+<footer class="site-footer">
+
+  <div class="container footer-row">
+
+    <div>
+
+      <strong>
+        DemQora Technologies
+      </strong>
+
+      <div>
+        Advanced Market Intelligence
+      </div>
+
+      <div class="small">
+        © <span data-year></span> All rights reserved.
+      </div>
+
+    </div>
+
+
+    <div class="social-grid footer-social">
+
+      <a
+        class="social-card"
+        href="https://www.facebook.com/DemQora"
+        target="_blank"
+        rel="noopener">
+        Facebook
+      </a>
+
+
+      <a
+        class="social-card"
+        href="https://www.instagram.com/demqora/"
+        target="_blank"
+        rel="noopener">
+        Instagram
+      </a>
+
+
+      <a
+        class="social-card"
+        href="https://www.linkedin.com/company/145012898/"
+        target="_blank"
+        rel="noopener">
+        LinkedIn
+      </a>
+
+
+      <a
+        class="social-card"
+        href="https://x.com/DemQora"
+        target="_blank"
+        rel="noopener">
+        X
+      </a>
+
+
+      <a
+        class="social-card"
+        href="https://www.youtube.com/@DemQora"
+        target="_blank"
+        rel="noopener">
+        YouTube
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
 
 <script src="../assets/js/main.js"></script>
 
+
+<script>
+(() => {
+
+  const page =
+    document.querySelector('.documentation-page');
+
+  if (!page)
+    return;
+
+
+  const updateParallax = () => {
+
+    page.style.setProperty(
+      '--documentation-parallax',
+      (window.scrollY * 0.5).toFixed(1) + 'px'
+    );
+
+  };
+
+
+  updateParallax();
+
+
+  window.addEventListener(
+    'scroll',
+    updateParallax,
+    { passive: true }
+  );
+
+})();
+</script>
+
+
 </body>
+
 </html>
