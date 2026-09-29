@@ -1,556 +1,833 @@
-from pathlib import Path
-
-products_index = r'''<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Products | DemQora Technologies</title>
+<title>MS 1.1 — Market Structure Multi-Timeframe Chart | DemQora</title>
 
 <meta
-  name="description"
-  content="Products by DemQora Technologies — advanced tools for market analysis and trading technology.">
+name="description"
+content="MS 1.1 by DemQora Technologies — a MetaTrader 5 Market Structure Multi-Timeframe Chart designed to combine selected timeframe structure in one visual workspace.">
 
 <meta name="theme-color" content="#030909">
 
-<link rel="icon" href="../assets/img/demqora-logo.png">
-<link rel="stylesheet" href="../assets/css/styles.css?v=202609161450">
-
-<style id="products-background">
-
-.products-background-page {
-  background:
-    #030909
-    url("../assets/img/ChatGPT%20Image%20Sep%2015%2C%202026%2C%2005_50_58%20PM.png")
-    center top / cover no-repeat;
-}
-
-.products-background-page > .page-hero,
-.products-background-page > .section {
-  background: transparent;
-}
-
-</style>
-
-<style id="brand-page-heading">
-
-main .page-hero h1.brand-page-heading {
-  font-size: clamp(1.5rem, 2vw, 2rem) !important;
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: normal;
-  color: #effffb;
-  margin: 0 0 24px;
-  display: inline-block;
-}
-
-.brand-page-heading .brand-prefix,
-.brand-page-heading .brand-suffix {
-  font-size: 1em;
-}
-
-.brand-page-heading .page-word {
-  display: block;
-  font-size: .5em;
-  margin-left: clamp(3.1rem, 4.7vw, 4.4rem);
-}
-
-</style>
-
-<style id="product-title-size">
-
-/* Kept for compatibility with existing product styling */
-.products-background-page .product-card h2 {
-  font-size: clamp(1.5rem, 2vw, 2rem) !important;
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: normal;
-  margin: 0 0 22px;
-}
-
-.products-background-page .product-card h2.product-title-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.products-background-page .product-title-icon {
-  width: auto;
-  height: 1.15em;
-  object-fit: contain;
-  flex: 0 0 auto;
-}
-
-</style>
-
-<style id="ms11-product-logo-style">
-
-.products-background-page .ms11-product-logo {
-  margin: 4px 0 18px;
-}
-
-.products-background-page .ms11-product-logo img {
-  display: block;
-
-  width: 210px;
-  max-width: 55%;
-  height: auto;
-
-  object-fit: contain;
-
-  filter:
-    drop-shadow(0 0 10px rgba(88,255,240,.14))
-    drop-shadow(0 8px 20px rgba(0,0,0,.30));
-}
-
-@media (max-width: 700px) {
-
-  .products-background-page .ms11-product-logo img {
-    width: 175px;
-    max-width: 70%;
-  }
-
-}
-
-</style>
-
-<style id="mt5-product-icon">
-
-.products-background-page .product-card {
-  position: relative !important;
-}
-
-.products-background-page .mt5-corner-badge {
-  position: absolute;
-
-  right: 20px;
-  bottom: 14px;
-
-  width: 132px;
-  height: 132px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  z-index: 5;
-
-  pointer-events: auto;
-}
-
-.products-background-page .mt5-corner-badge::before {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  width: 132px;
-  height: 132px;
-
-  transform: translate(-50%, -50%);
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(255,255,255,.38) 0%,
-      rgba(255,255,255,.29) 22%,
-      rgba(255,255,255,.20) 40%,
-      rgba(255,255,255,.12) 56%,
-      rgba(255,255,255,.055) 72%,
-      rgba(255,255,255,.018) 84%,
-      rgba(255,255,255,0) 100%
-    );
-
-  filter: blur(12px);
-
-  opacity: .95;
-
-  z-index: 0;
-
-  pointer-events: none;
-}
-
-.products-background-page .mt5-corner-badge::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  top: 50%;
-
-  width: 98px;
-  height: 98px;
-
-  transform: translate(-50%, -50%);
-
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(255,255,255,.20) 0%,
-      rgba(255,255,255,.10) 52%,
-      rgba(255,255,255,0) 100%
-    );
-
-  filter: blur(7px);
-
-  z-index: 0;
-
-  pointer-events: none;
-}
-
-.products-background-page .mt5-corner-icon {
-  position: relative;
-
-  z-index: 2;
-
-  width: 100px;
-  height: 100px;
-
-  object-fit: contain;
-
-  opacity: .98;
-
-  filter:
-    drop-shadow(0 0 7px rgba(255,255,255,.28))
-    drop-shadow(0 0 16px rgba(255,255,255,.18))
-    drop-shadow(0 7px 16px rgba(0,0,0,.38));
-
-  transition:
-    transform .22s ease,
-    opacity .22s ease,
-    filter .22s ease;
-}
-
-.products-background-page .mt5-corner-badge:hover .mt5-corner-icon {
-  transform: scale(1.05);
-
-  opacity: 1;
-
-  filter:
-    drop-shadow(0 0 10px rgba(255,255,255,.34))
-    drop-shadow(0 0 22px rgba(255,255,255,.22))
-    drop-shadow(0 8px 18px rgba(0,0,0,.4));
-}
-
-@media (max-width: 700px) {
-
-  .products-background-page .mt5-corner-badge {
-    right: 10px;
-    bottom: 8px;
-
-    width: 94px;
-    height: 94px;
-  }
-
-  .products-background-page .mt5-corner-badge::before {
-    width: 94px;
-    height: 94px;
-
-    filter: blur(9px);
-  }
-
-  .products-background-page .mt5-corner-badge::after {
-    width: 72px;
-    height: 72px;
-  }
-
-  .products-background-page .mt5-corner-icon {
-    width: 72px;
-    height: 72px;
-  }
-
-}
-
-</style>
-
-<style id="products-footer-flush">
-/* Keep the Products footer flush with the bottom of the viewport */
-html, body { min-height: 100%; }
-body { min-height: 100vh; display: flex; flex-direction: column; }
-body > main.products-background-page { flex: 1; width: 100%; }
-
-/* Match the Home footer exactly */
-.site-footer { margin-top: 0 !important; padding: 0 !important; min-height: 74px !important; }
-.site-footer > .container { width: 100% !important; max-width: none !important; margin: 0 !important; padding-left: 32px !important; padding-right: 32px !important; }
-.site-footer > .container.footer-row { min-height: 74px !important; align-items: center !important; justify-content: flex-start !important; }
-.site-footer > .container.footer-row > div:first-child { font-size: .7rem !important; line-height: 1.25 !important; }
-.site-footer > .container.footer-row > div:first-child .small { font-size: .68rem !important; }
-.site-footer .footer-social { margin-left: auto !important; }
-
-@media (max-width: 640px) {
-  .site-footer > .container {
-    padding-left: 20px !important;
-    padding-right: 20px !important;
-  }
-}
-
-
-/* Match the Home footer icon treatment */
-.footer-social { gap: 16px !important; align-items: center !important; }
-
-.footer-social .social-card {
-  width: 40px !important;
-  height: 40px !important;
-  min-height: 40px !important;
-  padding: 0 !important;
-  display: grid !important;
-  place-items: center !important;
-}
-
-.footer-social .social-card::before {
-  display: block !important;
-  width: 30px !important;
-  height: 30px !important;
-  font-size: 1.45rem !important;
-  line-height: 30px !important;
-  text-align: center !important;
-  font-weight: 700 !important;
-  opacity: .3 !important;
-  filter:
-    brightness(0)
-    saturate(100%)
-    invert(83%)
-    sepia(26%)
-    saturate(1010%)
-    hue-rotate(124deg)
-    brightness(94%)
-    contrast(88%)
-    drop-shadow(0 0 7px rgba(22,234,215,.2))
-    !important;
-}
-
-.footer-social .social-card:hover::before {
-  opacity: .3 !important;
-}
-
-.footer-social .social-card:nth-child(1)::before {
-  transform: scale(1.28);
-}
-
-.footer-social .social-card:nth-child(2)::before {
-  width: 30px !important;
-  height: 30px !important;
-  transform: scale(.88);
-}
-
-.footer-social .social-card:nth-child(3)::before {
-  font-size: 1.35rem !important;
-  transform: scale(1.12);
-}
-
-.footer-social .social-card:nth-child(4)::before {
-  font-size: 1.55rem !important;
-  transform: scale(1.08);
-}
-
-.footer-social .social-card:nth-child(5)::before {
-  content: '' !important;
-  width: 38px !important;
-  height: 27px !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E")
-    center / contain no-repeat !important;
-  -webkit-mask: none !important;
-  mask: none !important;
-  opacity: .3 !important;
-  filter: drop-shadow(0 0 7px rgba(88,255,240,.28)) !important;
-  transform: scale(.9);
-}
-
-.footer-social .social-card:nth-child(5)::after {
-  display: none !important;
-}
-
-.footer-social .social-card:nth-child(4)::before {
-  content: "\1D54F" !important;
-}
-</style>
+<link rel="icon" href="../../assets/img/demqora-logo.png">
+<link rel="stylesheet" href="../../assets/css/styles.css?v=202609221705">
 
 <style id="header-normalize">
 .site-header .container {
-  width: min(calc(100% - 36px), var(--max));
-  margin: 0 auto;
+width: min(calc(100% - 36px), var(--max));
+margin: 0 auto;
 }
 
 .site-header .navbar,
 .site-header .container.navbar {
-  min-height: 74px !important;
-  max-width: none !important;
+min-height: 74px !important;
+max-width: none !important;
 }
 
 .site-header .brand img {
-  width: 42px !important;
-  height: 42px !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  background: transparent !important;
-  object-fit: contain !important;
-  mix-blend-mode: screen;
+width: 42px !important;
+height: 42px !important;
+border-radius: 0 !important;
+box-shadow: none !important;
+background: transparent !important;
+object-fit: contain !important;
+mix-blend-mode: screen;
 }
 
 .site-header .brand span {
-  display: inline !important;
+display: inline !important;
 }
 </style>
+
+
+<!-- =========================================
+      FOOTER — EXACT HOME PAGE APPEARANCE
+      ========================================= -->
+<style id="products-footer-flush">
+
+/* Match the Home footer exactly */
+.site-footer {
+margin-top: 0 !important;
+padding: 0 !important;
+min-height: 74px !important;
+}
+
+.site-footer > .container {
+width: 100% !important;
+max-width: none !important;
+margin: 0 !important;
+padding-left: 32px !important;
+padding-right: 32px !important;
+}
+
+.site-footer > .container.footer-row {
+min-height: 74px !important;
+align-items: center !important;
+justify-content: flex-start !important;
+}
+
+.site-footer > .container.footer-row > div:first-child {
+font-size: .7rem !important;
+line-height: 1.25 !important;
+}
+
+.site-footer > .container.footer-row > div:first-child .small {
+font-size: .68rem !important;
+}
+
+.site-footer .footer-social {
+margin-left: auto !important;
+}
+
+@media (max-width: 640px) {
+.site-footer > .container {
+padding-left: 20px !important;
+padding-right: 20px !important;
+}
+}
+
+
+/* Match the Home footer icon treatment */
+
+.footer-social {
+gap: 16px !important;
+align-items: center !important;
+}
+
+.footer-social .social-card {
+width: 40px !important;
+height: 40px !important;
+min-height: 40px !important;
+padding: 0 !important;
+display: grid !important;
+place-items: center !important;
+}
+
+.footer-social .social-card::before {
+display: block !important;
+width: 30px !important;
+height: 30px !important;
+font-size: 1.45rem !important;
+line-height: 30px !important;
+text-align: center !important;
+font-weight: 700 !important;
+opacity: .3 !important;
+
+filter:
+brightness(0)
+saturate(100%)
+invert(83%)
+sepia(26%)
+saturate(1010%)
+hue-rotate(124deg)
+brightness(94%)
+contrast(88%)
+drop-shadow(0 0 7px rgba(22,234,215,.2))
+!important;
+}
+
+.footer-social .social-card:hover::before {
+opacity: .3 !important;
+}
+
+.footer-social .social-card:nth-child(1)::before {
+transform: scale(1.28);
+}
+
+.footer-social .social-card:nth-child(2)::before {
+width: 30px !important;
+height: 30px !important;
+transform: scale(.88);
+}
+
+.footer-social .social-card:nth-child(3)::before {
+font-size: 1.35rem !important;
+transform: scale(1.12);
+}
+
+.footer-social .social-card:nth-child(4)::before {
+font-size: 1.55rem !important;
+transform: scale(1.08);
+}
+
+.footer-social .social-card:nth-child(5)::before {
+content: '' !important;
+width: 38px !important;
+height: 27px !important;
+border: 0 !important;
+border-radius: 0 !important;
+
+background:
+url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='9' fill='%2358fff0'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23030909'/%3E%3C/svg%3E")
+center/contain no-repeat !important;
+
+-webkit-mask: none !important;
+mask: none !important;
+opacity: .3 !important;
+
+filter:
+drop-shadow(0 0 7px rgba(88,255,240,.28))
+!important;
+
+transform: scale(.9);
+}
+
+.footer-social .social-card:nth-child(5)::after {
+display: none !important;
+}
+
+
+/* Correct X symbol */
+.footer-social .social-card:nth-child(4)::before {
+content: "\1D54F" !important;
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
 <header class="site-header">
 
-  <div class="container navbar">
+<div class="container navbar">
 
-    <a class="brand" href="../">
-      <img src="../assets/img/demqora-logo.png" alt="DemQora DQ logo">
-    </a>
+<a class="brand" href="../../">
+<img
+src="../../assets/img/demqora-logo.png"
+alt="DemQora DQ logo">
+</a>
 
-    <button
-      class="menu-toggle"
-      aria-expanded="false"
-      aria-controls="main-nav">
-      Menu
-    </button>
 
-    <nav id="main-nav" class="nav-links">
+<button
+class="menu-toggle"
+aria-expanded="false"
+aria-controls="main-nav">
 
-      <a href="../">Home</a>
+Menu
 
-      <div class="nav-products">
+</button>
 
-        <a href="./" aria-current="page">
-          Products
-        </a>
 
-        <div class="submenu">
-          <a href="ms-1-1/">
-            MS 1.1 — Market Structure Multi-Timeframe Chart
-          </a>
-        </div>
+<nav id="main-nav" class="nav-links">
 
-      </div>
+<a href="../../">
+Home
+</a>
 
-      <a href="../documentation/">Documentation</a>
-      <a href="../about/">About</a>
-      <a href="../contact/">Contact</a>
 
-    </nav>
+<div class="nav-products">
 
-  </div>
+<a
+href="../"
+aria-current="page">
+
+Products
+
+</a>
+
+
+<div class="submenu">
+
+<a
+href="./"
+aria-current="page">
+
+MS 1.1 — Market Structure Multi-Timeframe Chart
+
+</a>
+
+</div>
+
+</div>
+
+
+<a href="../../documentation/">
+Documentation
+</a>
+
+<a href="../../about/">
+About
+</a>
+
+<a href="../../contact/">
+Contact
+</a>
+
+</nav>
+
+</div>
 
 </header>
 
 
-<main class="products-background-page">
 
-  <section class="page-hero">
-
-    <div class="container">
-
-      <h1 class="brand-page-heading" aria-label="DemQora Products">
-        <span class="brand-prefix">Dem</span><span class="brand-suffix">Qora</span>
-        <span class="page-word">Products</span>
-      </h1>
-
-      <p class="lead">
-        Advanced tools for market analysis and trading technology.
-      </p>
-
-    </div>
-
-  </section>
+<main>
 
 
-  <section class="section">
+<!-- =========================================
+      HERO
+      ========================================= -->
 
-    <div class="container">
+<section class="page-hero ms-product-hero">
 
-      <article class="card product-card">
+<div class="container ms-hero-layout">
 
-        <div class="body">
 
-          <div class="status">
-            Coming soon · MQL5 Market
-          </div>
+<div class="ms-hero-copy">
 
-          <div class="ms11-product-logo">
-            <img
-              src="../assets/img/MS11_PRODUCT_LOGO_TRANSPARENT.png"
-              alt="MS 1.1 — Market Structure Multi-Timeframe Chart">
-          </div>
 
-          <p class="lead">
-            Market Structure Multi-Timeframe Chart
-          </p>
+<div class="breadcrumb">
 
-          <p>
-            MS 1.1 brings multi-timeframe market structure into a single MetaTrader 5 chart, combining Trend and
-            Range analysis, BOL, POI and SM structures, reference-timeframe context, advanced candlestick pattern
-            recognition, intelligent alerts and fully configurable visual controls.
-          </p>
+<a href="../">
+Products
+</a>
 
-          <div class="actions">
+/ MS 1.1
 
-            <a
-              class="btn primary"
-              href="ms-1-1/">
-              Learn More
-            </a>
+</div>
 
-            <span class="btn disabled">
-              Coming Soon on MQL5 Market
-            </span>
 
-          </div>
+<h1>
 
-        </div>
+MS
 
-      </article>
+<span
+style="
+             display:inline-flex;
+             align-items:baseline;
+             gap:.18em;
+             white-space:nowrap;
+           ">
 
-    </div>
+1.1
 
-  </section>
+<img
+class="ms-title-mt5-logo"
+style="
+               height:.5em;
+               width:auto;
+               object-fit:contain;
+               vertical-align:baseline;
+             "
+src="../../assets/img/ChatGPT%20Image%20Sep%2021%2C%202026%2C%2004_10_22%20PM.png"
+alt="MetaTrader 5">
+
+</span>
+
+</h1>
+
+
+<p class="lead">
+
+<strong>
+Market Structure Multi-Timeframe Chart.
+</strong>
+
+<br>
+
+See market structure across multiple timeframes
+without constantly switching charts.
+
+</p>
+
+
+<div class="actions">
+
+
+<span class="btn disabled">
+
+Coming Soon on MQL5 Market
+
+</span>
+
+
+<a
+class="btn secondary"
+href="../../documentation/">
+
+Documentation
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+
+<div class="ms-hero-visual product-shot">
+
+<img
+src="../../ms11-feature-visual.png"
+alt="MS 1.1 control panel and market structure chart visualization">
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================================
+      MAIN FEATURES
+      ========================================= -->
+
+<section class="section">
+
+<div class="container">
+
+
+<div class="section-head">
+
+<div class="eyebrow">
+Core Capabilities
+</div>
+
+<h2>
+Market structure intelligence, organized in one chart.
+</h2>
+
+<p>
+MS 1.1 is designed to bring multi-timeframe market structure into a
+single, controlled workspace.
+</p>
+
+<p>
+Instead of constantly switching between charts, traders can monitor
+the active timeframe together with selected reference timeframes,
+while keeping important structural information clearly separated
+and easy to read.
+</p>
+
+<p>
+BOL, POI and SM structures, Trend and Range context, configurable
+display presets, candlestick pattern recognition and market-structure
+alerts work together to provide a more complete view of how price is
+developing across multiple timeframes.
+</p>
+
+</div>
+
+
+<div class="feature-list">
+
+
+<div class="feature">
+
+<strong>
+Multi-Timeframe Structure
+</strong>
+
+<span class="small">
+Combine the active chart timeframe with selected reference
+timeframes and monitor their structure from a single chart.
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<strong>
+BOL, POI &amp; SM
+</strong>
+
+<span class="small">
+Visualize Break-of-Level, Point-of-Interest and Smart-Money
+structures through one consistent market-structure framework.
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<strong>
+Trend &amp; Range Context
+</strong>
+
+<span class="small">
+Keep directional trend and active range conditions visible
+alongside the underlying market structure.
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<strong>
+Flexible Display Control
+</strong>
+
+<span class="small">
+Choose between Basic, Performance, Standard, Full and Custom
+presets to control how much structural information is displayed.
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<strong>
+Pattern Recognition
+</strong>
+
+<span class="small">
+Advanced candlestick pattern recognition adds directional context
+and helps highlight relevant price-action setups.
+</span>
+
+</div>
+
+
+<div class="feature">
+
+<strong>
+Structure Alerts
+</strong>
+
+<span class="small">
+Receive alerts for supported structural events so important market
+changes can be identified without continuously monitoring the chart.
+</span>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================================
+      INTERFACE OVERVIEW
+      ========================================= -->
+
+<section class="section compact">
+
+<div class="container">
+
+
+<div class="section-head">
+
+
+<div class="eyebrow">
+
+Interface overview
+
+</div>
+
+
+<h2>
+
+Choose the display density that fits the workflow.
+
+</h2>
+
+
+<p>
+
+MS 1.1 includes five display presets,
+from a clean overview to a fully manual setup.
+
+</p>
+
+
+</div>
+
+
+
+<div class="panel-pair">
+
+
+<figure class="product-shot panel-card basic">
+
+
+<img
+src="../../assets/img/ms11-standard-panel.png"
+alt="MS 1.1 Standard display preset control panel">
+
+
+<figcaption>
+
+Standard display
+
+</figcaption>
+
+
+</figure>
+
+
+
+<figure class="product-shot panel-card custom">
+
+
+<img
+src="../../assets/img/ms11-custom-panel.png"
+alt="MS 1.1 Custom display control panel">
+
+
+<figcaption>
+
+Custom display
+
+</figcaption>
+
+
+</figure>
+
+
+</div>
+
+
+
+<div class="preset-grid">
+
+
+<article class="preset">
+
+<strong>
+Basic
+</strong>
+
+<span>
+
+Essential BOL lines and zones on the active timeframe,
+with a clear reference-timeframe view.
+
+</span>
+
+</article>
+
+
+
+<article class="preset">
+
+<strong>
+Performance
+</strong>
+
+<span>
+
+A lighter display focused on the information needed for
+fast chart reading and smoother execution.
+
+</span>
+
+</article>
+
+
+
+<article class="preset">
+
+<strong>
+Standard
+</strong>
+
+<span>
+
+A balanced view combining the main structural lines with
+useful context from selected reference timeframes.
+
+</span>
+
+</article>
+
+
+
+<article class="preset">
+
+<strong>
+Full
+</strong>
+
+<span>
+
+The richest predefined view, showing the broadest supported
+combination of structure, zones and context.
+
+</span>
+
+</article>
+
+
+
+<article class="preset custom-preset">
+
+<strong>
+Custom
+</strong>
+
+<span>
+
+Manual control of BOL, POI and SM lines, zones and executed
+levels for each selected timeframe.
+
+</span>
+
+</article>
+
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+<!-- =========================================
+      DISTRIBUTION
+      ========================================= -->
+
+<section class="section compact">
+
+<div class="container">
+
+
+<div class="notice">
+
+<strong>
+Distribution
+</strong>
+
+<br>
+
+MS 1.1 will be distributed exclusively through the official MQL5 Market.
+The official product link will be added here after publication.
+
+</div>
+
+
+</div>
+
+</section>
+
 
 </main>
 
 
-<footer class="site-footer">
-  <div class="container footer-row">
-    <div>
-      <strong>DemQora Technologies</strong>
-      <div>Advanced Market Intelligence</div>
-      <div class="small">© <span data-year></span> All rights reserved.</div>
-    </div>
 
-    <div class="social-grid footer-social">
-      <a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener">Facebook</a>
-      <a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener">Instagram</a>
-      <a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener">X</a>
-      <a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener">YouTube</a>
-    </div>
-  </div>
+<!-- =========================================
+    FOOTER
+    ========================================= -->
+
+<footer class="site-footer">
+
+<div class="container footer-row">
+
+
+<div>
+
+<strong>
+DemQora Technologies
+</strong>
+
+<div>
+Advanced Market Intelligence
+</div>
+
+<div class="small">
+
+        © <span data-year></span> DemQora Technologies.
+        © <span data-year></span> All rights reserved.
+
+</div>
+
+</div>
+
+
+
+<div class="footer-social">
+
+
+<a
+class="social-card"
+href="https://www.facebook.com/DemQora"
+target="_blank"
+rel="noopener">
+
+Facebook
+
+</a>
+
+
+<a
+class="social-card"
+href="https://www.instagram.com/demqora/"
+target="_blank"
+rel="noopener">
+
+Instagram
+
+</a>
+
+
+<a
+class="social-card"
+href="https://www.linkedin.com/company/145012898/"
+target="_blank"
+rel="noopener">
+
+LinkedIn
+
+</a>
+
+
+<a
+class="social-card"
+href="https://x.com/DemQora"
+target="_blank"
+rel="noopener">
+
+X
+
+</a>
+
+
+<a
+class="social-card"
+href="https://www.youtube.com/@DemQora"
+target="_blank"
+rel="noopener">
+
+YouTube
+
+</a>
+
+
+</div>
+
+
+</div>
+
 </footer>
 
-<script src="../assets/js/main.js"></script>
+
+
+<script src="../../assets/js/main.js"></script>
+
 
 </body>
+
 </html>
-'''
-
-html_path = Path("/mnt/data/PRODUCTS_INDEX_WITH_MS11_LOGO.html")
-txt_path = Path("/mnt/data/PRODUCTS_INDEX_WITH_MS11_LOGO.txt")
-html_path.write_text(products_index, encoding="utf-8")
-txt_path.write_text(products_index, encoding="utf-8")
-
-print(f"Created: {html_path}")
-print(f"Created: {txt_path}")
