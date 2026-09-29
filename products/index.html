@@ -68,17 +68,44 @@ main .page-hero h1.brand-page-heading {
   margin: 0 0 22px;
 }
 
-
 .products-background-page .product-card h2.product-title-row {
   display: inline-flex;
   align-items: center;
   gap: 12px;
 }
+
 .products-background-page .product-title-icon {
   width: auto;
   height: 1.15em;
   object-fit: contain;
   flex: 0 0 auto;
+}
+
+</style>
+
+<style id="ms11-product-logo-style">
+
+.products-background-page .ms11-product-logo {
+  margin: 6px 0 18px;
+}
+
+.products-background-page .ms11-product-logo img {
+  display: block;
+  width: 205px;
+  max-width: 54%;
+  height: auto;
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 0 10px rgba(88,255,240,.14))
+    drop-shadow(0 8px 20px rgba(0,0,0,.30));
+}
+
+@media (max-width: 700px) {
+  .products-background-page .ms11-product-logo img {
+    width: 170px;
+    max-width: 68%;
+  }
 }
 
 </style>
@@ -351,7 +378,11 @@ body > main.products-background-page { flex: 1; width: 100%; }
             Coming soon · MQL5 Market
           </div>
 
-          <h2 class="product-title-row">MS 1.1 <img class="product-title-icon" src="../assets/img/ChatGPT%20Image%20Sep%2021%2C%202026%2C%2004_10_22%20PM.png" alt="MetaTrader 5"></h2>
+          <div class="ms11-product-logo">
+            <img
+              src="../assets/img/MS11_PRODUCT_LOGO_TRANSPARENT.png"
+              alt="MS 1.1 — Market Structure Multi-Timeframe Chart">
+          </div>
 
           <p class="lead">
             Market Structure Multi-Timeframe Chart
