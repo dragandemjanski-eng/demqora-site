@@ -1208,3 +1208,54 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
     z-index: 2147483001 !important;
   }
 }
+
+/* Contact mobile visual cleanup: softer cloud, no boxed icon/text blocks. */
+@media (max-width: 760px) {
+  body > main.contact-page .contact-panel {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+
+  body > main.contact-page .contact-panel::before {
+    inset: -1.4rem -1.2rem !important;
+    background:
+      radial-gradient(
+        ellipse at center,
+        rgba(2, 8, 8, .58) 0%,
+        rgba(2, 8, 8, .36) 48%,
+        rgba(2, 8, 8, 0) 82%
+      ) !important;
+    filter: blur(30px) !important;
+    opacity: .72 !important;
+  }
+
+  body > main.contact-page .social-grid {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  body > main.contact-page .social-card {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+  }
+
+  body > main.contact-page .social-card::before {
+    filter: brightness(0) saturate(100%) invert(83%) sepia(26%) saturate(1010%) hue-rotate(124deg) brightness(94%) contrast(88%) drop-shadow(0 0 7px rgba(22,234,215,.16)) !important;
+    opacity: .62 !important;
+  }
+
+  body > main.contact-page .contact-intro {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    color: rgba(202, 222, 218, .72) !important;
+  }
+
+  body:has(> main.contact-page) .site-footer .footer-social {
+    display: none !important;
+  }
+}
