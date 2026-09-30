@@ -668,6 +668,7 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
 }
 
 @media (max-width: 760px) {
+  html:has(body > main > .company-hero),
   body:has(> main > .company-hero),
   body:has(.contact-page) {
     overflow-y: hidden !important;
@@ -719,5 +720,50 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
   .company-hero-media img {
     object-fit: contain !important;
     object-position: center center !important;
+  }
+
+  body:has(> main > .company-hero) .company-hero-media {
+    display: block !important;
+    overflow: hidden !important;
+    background: #030909 !important;
+  }
+
+  body:has(> main > .company-hero) .company-hero-media img {
+    position: absolute !important;
+    left: 50% !important;
+    top: 54% !important;
+    width: 300% !important;
+    max-width: none !important;
+    height: auto !important;
+    min-height: 0 !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform: translate(-50%, -50%) !important;
+    opacity: 1 !important;
+    filter: saturate(1.08) contrast(1.05) brightness(1.12) !important;
+  }
+
+  body:has(> main > .company-hero) .company-hero-media::after {
+    background:
+      radial-gradient(ellipse at center, rgba(3,9,9,0) 34%, rgba(3,9,9,.12) 72%, #030909 100%),
+      linear-gradient(180deg, rgba(3,9,9,.04), rgba(3,9,9,.10) 68%, #030909 100%) !important;
+  }
+
+  body:has(> main > .company-hero) {
+    height: 100svh !important;
+    max-height: 100svh !important;
+  }
+
+  body:has(> main > .company-hero) > main {
+    flex: 0 0 calc(100svh - 171px) !important;
+    min-height: 0 !important;
+    max-height: calc(100svh - 171px) !important;
+    overflow: hidden !important;
+  }
+
+  body:has(> main > .company-hero) > main > .company-hero {
+    min-height: calc(100svh - 171px) !important;
+    max-height: calc(100svh - 171px) !important;
+    overflow: hidden !important;
   }
 }
