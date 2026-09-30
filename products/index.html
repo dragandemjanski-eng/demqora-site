@@ -22,7 +22,7 @@
   background:
     #030909
     url("../assets/img/ChatGPT%20Image%20Sep%2015%2C%202026%2C%2005_50_58%20PM.png")
-    center var(--products-parallax, 0px) / cover no-repeat;
+    center top / cover no-repeat;
 }
 
 .products-background-page > .page-hero,
@@ -682,36 +682,6 @@ body > main.products-background-page {
 
 <script src="../assets/js/main.js"></script>
 
-<script>
-(() => {
-  const page = document.querySelector('.products-background-page');
-
-  if (!page)
-    return;
-
-  const isMobile = () => window.matchMedia('(max-width: 760px)').matches;
-
-  const updateParallax = () => {
-    if (isMobile()) {
-      page.style.setProperty('--products-parallax', '0px');
-      return;
-    }
-
-    page.style.setProperty(
-      '--products-parallax',
-      (window.scrollY * -0.015).toFixed(1) + 'px'
-    );
-  };
-
-  updateParallax();
-
-  window.addEventListener(
-    'scroll',
-    updateParallax,
-    { passive: true }
-  );
-})();
-</script>
 
 </body>
 
