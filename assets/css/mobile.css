@@ -1,3 +1,62 @@
+/* Final shared visual safety layer.
+   Keep this file as the last stylesheet on every page. */
+.site-footer .footer-social .social-card:nth-child(5)::before,
+.footer-social .social-card:nth-child(5)::before {
+  content: "" !important;
+  width: 34px !important;
+  height: 24px !important;
+  display: block !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='8' fill='%233c706b'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23020808'/%3E%3C/svg%3E") center / contain no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  opacity: .78 !important;
+}
+
+.site-footer .footer-social .social-card:nth-child(5)::after,
+.footer-social .social-card:nth-child(5)::after {
+  content: none !important;
+  display: none !important;
+}
+
+.site-footer .footer-social .social-card:nth-child(2)::before,
+.footer-social .social-card:nth-child(2)::before {
+  background: #3c706b !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  opacity: .78 !important;
+}
+
+.site-footer .footer-social .social-card:nth-child(1)::before,
+.site-footer .footer-social .social-card:nth-child(3)::before,
+.site-footer .footer-social .social-card:nth-child(4)::before,
+.footer-social .social-card:nth-child(1)::before,
+.footer-social .social-card:nth-child(3)::before,
+.footer-social .social-card:nth-child(4)::before {
+  color: #3c706b !important;
+  -webkit-text-fill-color: #3c706b !important;
+  background: transparent !important;
+  opacity: .78 !important;
+}
+
+.company-hero-media::after {
+  background:
+    radial-gradient(ellipse at center, rgba(3,9,9,0) 34%, rgba(3,9,9,.28) 70%, #030909 100%),
+    linear-gradient(90deg, rgba(3,9,9,.76), rgba(3,9,9,.10) 52%, rgba(3,9,9,.78)) !important;
+}
+
+main.about-page.about-reference-layout {
+  background-position:
+    center center,
+    center center,
+    center calc(50% + var(--about-parallax, 0px)) !important;
+  background-size:
+    100% 100%,
+    100% 100%,
+    cover !important;
+}
+
 @media (max-width: 760px) {
   html,
   body {
@@ -482,8 +541,8 @@
 
   body > main > .company-hero,
   .company-hero {
-    min-height: 430px !important;
-    max-height: 470px !important;
+    min-height: calc(100svh - 170px) !important;
+    max-height: calc(100svh - 170px) !important;
   }
 
   .company-hero-overlay {
@@ -501,8 +560,15 @@
   }
 
   .company-hero-media img {
-    object-fit: contain !important;
-    object-position: center bottom !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .company-hero-media::after {
+    background:
+      radial-gradient(ellipse at center, rgba(3,9,9,0) 24%, rgba(3,9,9,.42) 70%, #030909 100%),
+      linear-gradient(180deg, rgba(3,9,9,.08), rgba(3,9,9,.18) 58%, #030909 100%),
+      linear-gradient(90deg, rgba(3,9,9,.76), rgba(3,9,9,.08) 58%, rgba(3,9,9,.68)) !important;
   }
 
   main .page-hero h1.brand-page-heading,
@@ -551,8 +617,11 @@
   }
 
   .contact-page {
+    min-height: calc(100svh - 170px) !important;
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
     background-position: center center !important;
-    background-size: auto 90% !important;
+    background-size: auto 82% !important;
     background-repeat: no-repeat !important;
   }
 
@@ -569,5 +638,83 @@
 @media (max-width: 760px) and (min-height: 560px) {
   .about-reference-layout {
     background-attachment: fixed !important;
+  }
+}
+
+/* Last shared footer/icon override — must stay at the very end. */
+.site-footer .footer-social .social-card:nth-child(5)::before,
+.footer-social .social-card:nth-child(5)::before,
+body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-child(5)::before {
+  content: "" !important;
+  width: 34px !important;
+  height: 24px !important;
+  display: block !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='8' fill='%233c706b'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23020808'/%3E%3C/svg%3E") center / contain no-repeat !important;
+  -webkit-mask: none !important;
+  mask: none !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  opacity: .78 !important;
+}
+
+.site-footer .footer-social .social-card:nth-child(5)::after,
+.footer-social .social-card:nth-child(5)::after,
+body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-child(5)::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  body:has(> main > .company-hero),
+  body:has(.contact-page) {
+    overflow-y: hidden !important;
+  }
+
+  .site-footer .footer-social {
+    gap: 7px !important;
+  }
+
+  .site-footer .footer-social .social-card {
+    width: 28px !important;
+    min-width: 28px !important;
+  }
+
+  .site-footer .footer-social .social-card::before {
+    font-size: 1.25rem !important;
+  }
+
+  .site-footer .footer-social .social-card:nth-child(2)::before {
+    width: 27px !important;
+    height: 27px !important;
+  }
+
+  .site-footer .footer-social .social-card:nth-child(5)::before {
+    width: 30px !important;
+    height: 21px !important;
+  }
+
+  body:has(.about-reference-layout) .site-footer .footer-social {
+    gap: 6px !important;
+  }
+
+  body:has(.about-reference-layout) .site-footer .footer-social .social-card {
+    width: 27px !important;
+    min-width: 27px !important;
+    max-width: 27px !important;
+  }
+
+  body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-child(2)::before {
+    width: 27px !important;
+    height: 27px !important;
+  }
+
+  body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-child(5)::before {
+    width: 30px !important;
+    height: 21px !important;
+  }
+
+  .company-hero-media img {
+    object-fit: contain !important;
+    object-position: center center !important;
   }
 }
