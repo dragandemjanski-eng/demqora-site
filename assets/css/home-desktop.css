@@ -1,1 +1,229 @@
+/* =========================================================
+   DEMQORA HOME — DESKTOP HERO
+   Desktop only
+   Mobile remains controlled by mobile.css
+   ========================================================= */
 
+@media (min-width: 761px) {
+
+  /* -------------------------------------------------------
+     HOME PAGE STRUCTURE
+     ------------------------------------------------------- */
+
+  html,
+  body {
+    min-height: 100%;
+  }
+
+  body:has(> main > .company-hero) {
+    min-height: 100vh !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    background: #020808 !important;
+  }
+
+
+  body:has(> main > .company-hero) > main {
+    flex: 1 1 auto !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    min-height: 0 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     HERO
+     Header and footer remain separate.
+     The artwork occupies the area between them.
+     ------------------------------------------------------- */
+
+  body:has(> main > .company-hero)
+  .company-hero {
+
+    position: relative !important;
+
+    flex: 1 1 auto !important;
+
+    width: 100% !important;
+
+    min-height:
+      calc(100vh - 148px) !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+
+    overflow: hidden !important;
+
+    isolation: isolate !important;
+
+    background:
+      #020808 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     NEW DESKTOP ARTWORK
+     ------------------------------------------------------- */
+
+  body:has(> main > .company-hero)
+  .company-hero-media {
+
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    transform: none !important;
+
+    z-index: -1 !important;
+
+    overflow: hidden !important;
+
+    background-color:
+      #020808 !important;
+
+    background-image:
+      url("../img/home-desktop.png") !important;
+
+    background-position:
+      center center !important;
+
+    background-size:
+      cover !important;
+
+    background-repeat:
+      no-repeat !important;
+
+    background-attachment:
+      scroll !important;
+  }
+
+
+  /* -------------------------------------------------------
+     HIDE OLD hero-mountains.png
+     The new artwork is now the desktop hero.
+     ------------------------------------------------------- */
+
+  body:has(> main > .company-hero)
+  .company-hero-media img,
+
+  body:has(> main > .company-hero)
+  .company-hero-media picture {
+
+    display: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     REMOVE OLD DARK OVERLAY
+     New artwork already has the correct lighting.
+     ------------------------------------------------------- */
+
+  body:has(> main > .company-hero)
+  .company-hero-media::after {
+
+    content: none !important;
+
+    display: none !important;
+
+    background: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     REMOVE OLD HTML HERO TEXT
+     
+     home-desktop.png already contains:
+     DemQora Technologies
+     Technology that brings clarity to complex markets.
+     Clear ideas. Strong direction.
+     ------------------------------------------------------- */
+
+  body:has(> main > .company-hero)
+  .company-hero-overlay {
+
+    display: none !important;
+  }
+
+
+  /* -------------------------------------------------------
+     HEADER
+     Do not change design — only keep it above hero.
+     ------------------------------------------------------- */
+
+  body:has(> main > .company-hero)
+  .site-header {
+
+    position: sticky !important;
+
+    top: 0 !important;
+
+    z-index: 50 !important;
+  }
+
+
+  /* -------------------------------------------------------
+     FOOTER
+     Keep directly below hero.
+     ------------------------------------------------------- */
+
+  body:has(> main > .company-hero)
+  .site-footer {
+
+    flex: 0 0 auto !important;
+
+    margin-top: 0 !important;
+  }
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1600px) {
+
+  body:has(> main > .company-hero)
+  .company-hero-media {
+
+    background-position:
+      center center !important;
+
+    background-size:
+      cover !important;
+  }
+
+}
+
+
+/* =========================================================
+   SHORT DESKTOP / LAPTOP
+   Keep central logo + text visible.
+   ========================================================= */
+
+@media (min-width: 761px) and (max-height: 760px) {
+
+  body:has(> main > .company-hero)
+  .company-hero {
+
+    min-height:
+      calc(100vh - 148px) !important;
+  }
+
+
+  body:has(> main > .company-hero)
+  .company-hero-media {
+
+    background-position:
+      center center !important;
+  }
+
+}
