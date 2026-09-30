@@ -767,3 +767,253 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
     overflow: hidden !important;
   }
 }
+
+/* =========================================================
+   DEMQORA — FINAL MOBILE PAGE BACKGROUNDS
+   30 Sep 2026
+   Applies ONLY to mobile.
+   Desktop backgrounds remain unchanged.
+   ========================================================= */
+
+@media (max-width: 760px) {
+
+  html,
+  body {
+    background-color: #020808 !important;
+  }
+
+  .company-hero {
+    position: relative !important;
+    min-height: calc(100svh - 170px) !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background: #020808 !important;
+  }
+
+  .company-hero-media {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    background-color: #020808 !important;
+    background-image: url("../img/mobile-home.png") !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+  }
+
+  .company-hero-media picture,
+  .company-hero-media img {
+    display: none !important;
+  }
+
+  .company-hero-media::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+  }
+
+  .company-hero-overlay {
+    display: none !important;
+  }
+
+  main.products-background-page {
+    position: relative !important;
+    background-color: #020808 !important;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(2, 8, 8, .02) 0%,
+        rgba(2, 8, 8, .08) 42%,
+        rgba(2, 8, 8, .46) 82%,
+        #020808 100%
+      ),
+      url("../img/mobile-products.png") !important;
+    background-size:
+      100% 100%,
+      100% auto !important;
+    background-position:
+      center top,
+      center top !important;
+    background-repeat:
+      no-repeat,
+      no-repeat !important;
+    background-attachment:
+      scroll,
+      scroll !important;
+  }
+
+  main.products-background-page > .page-hero,
+  main.products-background-page > .section {
+    background: transparent !important;
+  }
+
+  main.documentation-page {
+    position: relative !important;
+    isolation: isolate !important;
+    background-color: #020808 !important;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(2, 8, 8, .01) 0%,
+        rgba(2, 8, 8, .10) 40%,
+        rgba(2, 8, 8, .50) 82%,
+        #020808 100%
+      ),
+      url("../img/mobile-documentation.png") !important;
+    background-size:
+      100% 100%,
+      100% auto !important;
+    background-position:
+      center top,
+      center top !important;
+    background-repeat:
+      no-repeat,
+      no-repeat !important;
+    background-attachment:
+      scroll,
+      scroll !important;
+  }
+
+  main.documentation-page::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: -1 !important;
+    pointer-events: none !important;
+    background:
+      radial-gradient(
+        circle at 74% 18%,
+        rgba(22, 234, 215, .035),
+        transparent 22rem
+      ) !important;
+  }
+
+  main.documentation-page > .page-hero,
+  main.documentation-page > .section,
+  main.documentation-page .documentation-content {
+    background: transparent !important;
+  }
+
+  main.about-page.about-reference-layout {
+    position: relative !important;
+    background-color: #020808 !important;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(2, 8, 8, .00) 0%,
+        rgba(2, 8, 8, .08) 45%,
+        rgba(2, 8, 8, .42) 82%,
+        #020808 100%
+      ),
+      url("../img/mobile-about.png") !important;
+    background-position:
+      center top,
+      center top !important;
+    background-size:
+      100% 100%,
+      100% auto !important;
+    background-repeat:
+      no-repeat,
+      no-repeat !important;
+    background-attachment:
+      scroll,
+      scroll !important;
+  }
+
+  .about-reference-layout .about-cinema-hero,
+  .about-reference-layout .about-ref-section,
+  .about-reference-layout .about-ref-approach,
+  .about-reference-layout .about-ref-philosophy,
+  .about-reference-layout .about-ref-direction {
+    background: transparent !important;
+  }
+
+  main.contact-page {
+    position: relative !important;
+    min-height: calc(100svh - 170px) !important;
+    background-color: #020808 !important;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(2, 8, 8, .03) 0%,
+        rgba(2, 8, 8, .14) 68%,
+        rgba(2, 8, 8, .36) 100%
+      ),
+      url("../img/mobile-contact.png") !important;
+    background-position:
+      center center,
+      center center !important;
+    background-size:
+      cover,
+      cover !important;
+    background-repeat:
+      no-repeat,
+      no-repeat !important;
+    background-attachment:
+      scroll,
+      scroll !important;
+  }
+
+  main.contact-page .contact-panel {
+    position: relative !important;
+    z-index: 1 !important;
+    background:
+      radial-gradient(
+        ellipse at center,
+        rgba(1, 8, 8, .72) 0%,
+        rgba(1, 8, 8, .48) 48%,
+        rgba(1, 8, 8, 0) 78%
+      ) !important;
+    box-shadow: none !important;
+    border: 0 !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .company-hero-media {
+    background-position: center center !important;
+  }
+
+  main.products-background-page,
+  main.documentation-page,
+  main.about-page.about-reference-layout {
+    background-position:
+      center top,
+      center top !important;
+  }
+
+  main.contact-page {
+    background-position:
+      center center,
+      center center !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body:has(> main > .company-hero) .company-hero-media {
+    background-color: #020808 !important;
+    background-image: url("../img/mobile-home.png") !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+  }
+
+  body:has(> main > .company-hero) .company-hero-media img,
+  body:has(> main > .company-hero) .company-hero-media picture {
+    display: none !important;
+  }
+
+  body:has(> main > .company-hero) .company-hero-media::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+  }
+
+  body:has(> main > .company-hero) .company-hero-overlay {
+    display: none !important;
+  }
+}
