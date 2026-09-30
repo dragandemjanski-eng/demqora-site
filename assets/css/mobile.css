@@ -1017,3 +1017,76 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
     display: none !important;
   }
 }
+
+/* Contact mobile final correction: no page scroll + clean YouTube icon. */
+@media (max-width: 760px) {
+  html:has(body > main.contact-page),
+  body:has(> main.contact-page) {
+    height: 100svh !important;
+    min-height: 100svh !important;
+    max-height: 100svh !important;
+    overflow: hidden !important;
+  }
+
+  body:has(> main.contact-page) {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  body > main.contact-page {
+    flex: 0 0 calc(100svh - 170px) !important;
+    min-height: calc(100svh - 170px) !important;
+    max-height: calc(100svh - 170px) !important;
+    height: calc(100svh - 170px) !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    display: grid !important;
+    place-items: center !important;
+  }
+
+  body > main.contact-page .contact-panel {
+    width: min(calc(100% - 32px), 430px) !important;
+    max-height: calc(100svh - 190px) !important;
+    padding: 16px 18px !important;
+    overflow: hidden !important;
+  }
+
+  body > main.contact-page .contact-email {
+    margin-top: 10px !important;
+  }
+
+  body > main.contact-page .social-grid {
+    margin-top: 14px !important;
+    gap: 6px !important;
+  }
+
+  body > main.contact-page .social-card {
+    min-height: 38px !important;
+    padding: 6px !important;
+  }
+
+  body > main.contact-page .contact-intro {
+    margin-top: 10px !important;
+  }
+
+  body > main.contact-page .social-grid .social-card:nth-child(5)::before,
+  body:has(> main.contact-page) .site-footer .footer-social .social-card:nth-child(5)::before {
+    content: "" !important;
+    width: 30px !important;
+    height: 21px !important;
+    display: block !important;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 34'%3E%3Crect width='48' height='34' rx='8' fill='%233c706b'/%3E%3Cpath d='m20 9 14 8-14 8Z' fill='%23020808'/%3E%3C/svg%3E") center / contain no-repeat !important;
+    color: transparent !important;
+    -webkit-text-fill-color: transparent !important;
+    -webkit-mask: none !important;
+    mask: none !important;
+    filter: none !important;
+    opacity: .8 !important;
+  }
+
+  body > main.contact-page .social-grid .social-card:nth-child(5)::after,
+  body:has(> main.contact-page) .site-footer .footer-social .social-card:nth-child(5)::after {
+    content: none !important;
+    display: none !important;
+  }
+}
