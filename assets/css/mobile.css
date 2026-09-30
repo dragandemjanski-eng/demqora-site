@@ -1088,3 +1088,77 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
     display: none !important;
   }
 }
+
+/* Mobile fixed backgrounds: page artwork stays locked while content scrolls. */
+@media (max-width: 760px) {
+  html,
+  body {
+    background: #020808 !important;
+  }
+
+  body {
+    position: relative !important;
+    isolation: isolate !important;
+  }
+
+  body::before {
+    content: "" !important;
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+    background-color: #020808 !important;
+    background-image: var(--mobile-fixed-bg) !important;
+    background-position: var(--mobile-fixed-bg-position, center center) !important;
+    background-size: var(--mobile-fixed-bg-size, cover) !important;
+    background-repeat: no-repeat !important;
+    transform: translateZ(0) !important;
+  }
+
+  body:has(> main > .company-hero) {
+    --mobile-fixed-bg: url("../img/mobile-home.png");
+    --mobile-fixed-bg-position: center center;
+    --mobile-fixed-bg-size: cover;
+  }
+
+  body:has(> main.products-background-page) {
+    --mobile-fixed-bg: linear-gradient(180deg, rgba(2, 8, 8, .02) 0%, rgba(2, 8, 8, .08) 42%, rgba(2, 8, 8, .46) 82%, #020808 100%), url("../img/mobile-products.png");
+    --mobile-fixed-bg-position: center top, center top;
+    --mobile-fixed-bg-size: 100% 100%, 100% auto;
+  }
+
+  body:has(> main.documentation-page) {
+    --mobile-fixed-bg: linear-gradient(180deg, rgba(2, 8, 8, .01) 0%, rgba(2, 8, 8, .10) 40%, rgba(2, 8, 8, .50) 82%, #020808 100%), url("../img/mobile-documentation.png");
+    --mobile-fixed-bg-position: center top, center top;
+    --mobile-fixed-bg-size: 100% 100%, 100% auto;
+  }
+
+  body:has(> main.about-page.about-reference-layout) {
+    --mobile-fixed-bg: linear-gradient(180deg, rgba(2, 8, 8, .00) 0%, rgba(2, 8, 8, .08) 45%, rgba(2, 8, 8, .42) 82%, #020808 100%), url("../img/mobile-about.png");
+    --mobile-fixed-bg-position: center top, center top;
+    --mobile-fixed-bg-size: 100% 100%, 100% auto;
+  }
+
+  body:has(> main.contact-page) {
+    --mobile-fixed-bg: linear-gradient(180deg, rgba(2, 8, 8, .03) 0%, rgba(2, 8, 8, .14) 68%, rgba(2, 8, 8, .36) 100%), url("../img/mobile-contact.png");
+    --mobile-fixed-bg-position: center center, center center;
+    --mobile-fixed-bg-size: cover, cover;
+  }
+
+  .company-hero-media,
+  main.products-background-page,
+  main.documentation-page,
+  main.about-page.about-reference-layout,
+  main.contact-page {
+    background-image: none !important;
+    background-color: transparent !important;
+    background-attachment: scroll !important;
+  }
+
+  .site-header,
+  main,
+  .site-footer {
+    position: relative !important;
+    z-index: 1 !important;
+  }
+}
