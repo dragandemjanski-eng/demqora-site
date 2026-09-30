@@ -1162,3 +1162,27 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
     z-index: 1 !important;
   }
 }
+
+/* Mobile menu final position: always open directly under the header. */
+@media (max-width: 760px) {
+  .site-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+  }
+
+  .site-header .nav-links {
+    position: fixed !important;
+    top: 74px !important;
+    left: 16px !important;
+    right: 16px !important;
+    z-index: 1001 !important;
+    max-height: calc(100svh - 90px) !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+  }
+
+  .site-header .nav-links.open {
+    display: flex !important;
+  }
+}
