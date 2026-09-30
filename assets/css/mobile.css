@@ -1186,3 +1186,25 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
     display: flex !important;
   }
 }
+
+/* Mobile menu layering: dropdown must cover page text/content. */
+@media (max-width: 760px) {
+  body::before {
+    z-index: 0 !important;
+  }
+
+  main,
+  .site-footer {
+    z-index: 1 !important;
+  }
+
+  .site-header {
+    z-index: 2147483000 !important;
+    isolation: isolate !important;
+  }
+
+  .site-header .nav-links,
+  .site-header .nav-links.open {
+    z-index: 2147483001 !important;
+  }
+}
