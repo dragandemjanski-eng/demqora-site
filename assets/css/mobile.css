@@ -1224,13 +1224,13 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
     background:
       radial-gradient(
         ellipse at center,
-        rgba(4, 18, 17, .78) 0%,
-        rgba(4, 18, 17, .56) 46%,
-        rgba(4, 18, 17, .18) 68%,
-        rgba(4, 18, 17, 0) 86%
+        rgba(2, 10, 10, .94) 0%,
+        rgba(2, 10, 10, .78) 46%,
+        rgba(2, 10, 10, .34) 70%,
+        rgba(2, 10, 10, 0) 88%
       ) !important;
-    filter: blur(24px) !important;
-    opacity: .92 !important;
+    filter: blur(26px) !important;
+    opacity: 1 !important;
   }
 
   body > main.contact-page .social-grid {
