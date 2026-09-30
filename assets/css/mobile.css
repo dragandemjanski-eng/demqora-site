@@ -1069,8 +1069,7 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
     margin-top: 10px !important;
   }
 
-  body > main.contact-page .social-grid .social-card:nth-child(5)::before,
-  body:has(> main.contact-page) .site-footer .footer-social .social-card:nth-child(5)::before {
+  body > main.contact-page .social-grid .social-card:nth-child(5)::before {
     content: "" !important;
     width: 30px !important;
     height: 21px !important;
@@ -1084,8 +1083,7 @@ body:has(.about-reference-layout) .site-footer .footer-social .social-card:nth-c
     opacity: .8 !important;
   }
 
-  body > main.contact-page .social-grid .social-card:nth-child(5)::after,
-  body:has(> main.contact-page) .site-footer .footer-social .social-card:nth-child(5)::after {
+  body > main.contact-page .social-grid .social-card:nth-child(5)::after {
     content: none !important;
     display: none !important;
   }
