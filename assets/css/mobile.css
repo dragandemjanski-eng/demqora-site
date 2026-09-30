@@ -601,15 +601,17 @@ main.about-page.about-reference-layout {
   }
 
   .about-reference-layout {
+    --about-parallax: 0px !important;
     background-position: center center !important;
     background-size: auto 100% !important;
-    background-attachment: fixed !important;
+    background-attachment: scroll !important;
   }
 
   main.about-page.about-reference-layout {
+    --about-parallax: 0px !important;
     background-position: center center !important;
     background-size: auto 100% !important;
-    background-attachment: fixed !important;
+    background-attachment: scroll !important;
   }
 
   .about-cinema-hero {
@@ -637,7 +639,8 @@ main.about-page.about-reference-layout {
 
 @media (max-width: 760px) and (min-height: 560px) {
   .about-reference-layout {
-    background-attachment: fixed !important;
+    --about-parallax: 0px !important;
+    background-attachment: scroll !important;
   }
 }
 
