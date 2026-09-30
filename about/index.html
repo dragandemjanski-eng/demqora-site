@@ -20,8 +20,7 @@
   <!-- About-only correction:
        keeps the original cinematic About background from styles.css,
        restores the text clouds, and normalizes the header. -->
-  <link rel="stylesheet" href="../assets/css/about.css?v=202609290045">
-  <link rel="stylesheet" href="../assets/css/mobile.css?v=20260930-desktop-safety">
+  <link rel="stylesheet" href="../assets/css/about.css?v=20260930-fixed-desktop-bg">`n  <link rel="stylesheet" href="../assets/css/mobile.css?v=20260930-fixed-desktop-bg">
 </head>
 
 <body>
@@ -319,36 +318,6 @@
 
 <script src="../assets/js/main.js"></script>
 
-<script>
-(() => {
-  const page = document.querySelector('.about-reference-layout');
-
-  if (!page)
-    return;
-
-  const isMobile = () => window.matchMedia('(max-width: 760px)').matches;
-
-  const updateParallax = () => {
-    if (isMobile()) {
-      page.style.setProperty('--about-parallax', '0px');
-      return;
-    }
-
-    page.style.setProperty(
-      '--about-parallax',
-      (window.scrollY * -0.007).toFixed(1) + 'px'
-    );
-  };
-
-  updateParallax();
-
-  window.addEventListener(
-    'scroll',
-    updateParallax,
-    { passive: true }
-  );
-})();
-</script>
 
 </body>
 </html>

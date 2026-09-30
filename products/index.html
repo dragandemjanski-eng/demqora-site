@@ -18,11 +18,33 @@
 
 <style id="products-background">
 
-.products-background-page {
+body:has(> main.products-background-page) {
+  background: #030909;
+  position: relative;
+  isolation: isolate;
+}
+
+body:has(> main.products-background-page)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background:
     #030909
     url("../assets/img/ChatGPT%20Image%20Sep%2015%2C%202026%2C%2005_50_58%20PM.png")
     center top / cover no-repeat;
+}
+
+.products-background-page {
+  background: transparent;
+}
+
+body:has(> main.products-background-page) .site-header,
+body:has(> main.products-background-page) main,
+body:has(> main.products-background-page) .site-footer {
+  position: relative;
+  z-index: 1;
 }
 
 .products-background-page > .page-hero,
@@ -423,7 +445,7 @@ body > main.products-background-page {
 
 </style>
 
-<link rel="stylesheet" href="../assets/css/mobile.css?v=20260930-desktop-safety">
+<link rel="stylesheet" href="../assets/css/mobile.css?v=20260930-fixed-desktop-bg">
 </head>
 
 
