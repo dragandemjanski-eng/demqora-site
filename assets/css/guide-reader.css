@@ -1,0 +1,100 @@
+/* DemQora MS 1.1 — PDF actions and always-visible Contents navigation. */
+.guide-page-shell .guide-pdf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 19px;
+}
+.guide-page-shell .guide-pdf-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 10px 17px;
+  gap: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(88,255,240,.45);
+  color: #bafff6;
+  font-size: .86rem;
+  font-weight: 700;
+  letter-spacing: .012em;
+  line-height: 1.25;
+  text-decoration: none;
+  background: rgba(5,29,30,.83);
+  box-shadow: 0 4px 20px rgba(0,0,0,.15);
+  transition: border-color .15s, background-color .15s;
+}
+.guide-page-shell .guide-pdf-actions a:last-child {
+  color: #051515;
+  border-color: #58fff0;
+  background: #58fff0;
+}
+.guide-page-shell .guide-pdf-actions a:hover,
+.guide-page-shell .guide-pdf-actions a:focus-visible {
+  border-color: #91fff6;
+  background: #12484a;
+  color: #fff;
+}
+.guide-page-shell .guide-pdf-actions a:last-child:hover,
+.guide-page-shell .guide-pdf-actions a:last-child:focus-visible {
+  color: #051515;
+  background: #9cfff7;
+}
+.guide-return-to-contents {
+  position: fixed !important;
+  right: max(20px,env(safe-area-inset-right)) !important;
+  bottom: calc(22px + env(safe-area-inset-bottom)) !important;
+  z-index: 999 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  padding: 13px 17px !important;
+  min-height: 47px !important;
+  box-sizing: border-box !important;
+  border: 1px solid #58fff0 !important;
+  border-radius: 12px !important;
+  color: #dffffb !important;
+  background: rgba(3,18,21,.94) !important;
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  box-shadow: 0 5px 24px rgba(0,0,0,.55),0 0 16px rgba(88,255,240,.12) !important;
+  font-size: 14px !important;
+  font-weight: 750 !important;
+  letter-spacing: .01em !important;
+  line-height: 1.15 !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.guide-return-to-contents:hover,
+.guide-return-to-contents:focus-visible {
+  background: #105055 !important;
+  border-color: #c5fffa !important;
+  color: #fff !important;
+  outline-offset: 3px;
+}
+.guide-page-shell .guide-page {
+  scroll-margin-top: 92px;
+}
+@media (max-width: 760px) {
+  .guide-return-to-contents {
+    right: 12px !important;
+    bottom: calc(14px + env(safe-area-inset-bottom)) !important;
+    min-height: 42px !important;
+    padding: 11px 12px !important;
+    font-size: 12px !important;
+  }
+  .guide-page-shell .guide-pdf-actions a {
+    font-size: .8rem;
+    padding: 9px 13px;
+  }
+  .guide-page-shell .guide-page { scroll-margin-top: 82px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .guide-return-to-contents,
+  .guide-page-shell .guide-pdf-actions a { transition: none !important; }
+}
