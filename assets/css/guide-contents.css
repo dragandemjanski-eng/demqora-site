@@ -1,0 +1,39 @@
+/* DemQora documentation: native hash-link navigation on Contents images. */
+.guide-page {
+  position: relative;
+  scroll-margin-top: 92px;
+}
+.guide-page:target {
+  border-color: rgba(88,255,240,.48);
+}
+.guide-toc-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.guide-toc-hotspot {
+  position: absolute;
+  box-sizing: border-box;
+  left: var(--toc-left);
+  width: var(--toc-width);
+  display: block;
+  overflow: hidden;
+  font-size: 0; /* Text is available to assistive technology, not overprinted on image. */
+  line-height: 0;
+  color: transparent;
+  background: transparent;
+  border-radius: 2px;
+  text-decoration: none;
+  cursor: pointer;
+  pointer-events: auto;
+}
+.guide-toc-hotspot:hover,
+.guide-toc-hotspot:focus-visible {
+  background: rgba(88,255,240,.13);
+  outline: 1px solid rgba(88,255,240,.62);
+  outline-offset: -1px;
+}
+@media (max-width:760px) {
+  .guide-page { scroll-margin-top: 82px; }
+}
