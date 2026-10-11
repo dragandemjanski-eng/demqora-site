@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#030909">
+  <meta name="description" content="MS 1.1 release notes and public-release scope: multi-timeframe market structure, display presets, alerts, Telegram and version history from DemQora Technologies.">
+  <title>MS 1.1 Release Notes | DemQora Technologies</title>
+  <link rel="icon" href="../../assets/img/favicon-96.png" sizes="96x96" type="image/png">
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <style>
+    :root { --bg:#030909; --ink:#effffb; --muted:#a0b9b4; --teal:#58fff0; --line:rgba(88,255,240,.18); --panel:#0a1718; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; min-height:100vh; color:var(--ink); font:16px/1.6 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; background:#030909; }
+    a { color:inherit; text-decoration:none; }
+    .skip-link { position:absolute; top:-100px; left:20px; z-index:10000; padding:10px 15px; border-radius:9px; background:#d8fffa; color:#030909; }
+    .skip-link:focus { top:16px; }
+    button { font:inherit; }
+    .site-header { position:sticky; top:0; z-index:100; background:rgba(3,10,11,.92); backdrop-filter:blur(18px); border-bottom:1px solid rgba(112,235,227,.14); }
+    .container { max-width:1224px; width:min(calc(100% - 56px),1224px); margin:auto; }
+    .site-header .navbar { display:flex; align-items:center; justify-content:space-between; min-height:75px; gap:24px; }
+    .brand { display:flex; align-items:center; gap:11px; }
+    .brand-mark { width:43px; height:43px; border:1px solid rgba(88,255,240,.34); background:rgba(4,18,19,.7); border-radius:50%; display:grid; place-items:center; position:relative; color:var(--teal); font-weight:850; font-size:13px; letter-spacing:-.1em; }
+    .brand-mark img { position:absolute; width:100%; height:100%; object-fit:contain; inset:0; }
+    .nav-links { display:flex; gap:9px; align-items:center; }
+    .nav-links > a, .nav-products > a { display:block; padding:10px 14px; border-radius:13px; color:#a8beba; font-size:14px; transition:color .2s,background .2s; }
+    .nav-links > a:hover, .nav-products > a:hover, .nav-links > a[aria-current="page"] { color:#e5fff9; background:rgba(73,223,205,.09); }
+    .nav-products { position:relative; }
+    .nav-products .submenu { display:none; position:absolute; min-width:265px; top:100%; left:0; padding:10px; border:1px solid rgba(88,255,240,.21); border-radius:15px; background:#071313; box-shadow:0 20px 45px rgba(0,0,0,.45); }
+    .nav-products:hover .submenu,.nav-products:focus-within .submenu { display:block; }
+    .nav-products .submenu a { display:block; padding:10px 11px; border-radius:9px; font-size:13px; color:#c6d8d4; }
+    .nav-products .submenu a:hover { background:rgba(88,255,240,.08); color:#effffb; }
+    .menu-toggle { display:none; color:var(--ink); background:#0b1b1a; border:1px solid var(--line); padding:8px 13px; border-radius:9px; }
+    .release-shell { overflow:hidden; }
+    .release-hero { position:relative; min-height:560px; display:flex; align-items:center; overflow:hidden; background:radial-gradient(ellipse at 73% 32%,rgba(18,159,149,.18),transparent 35%),radial-gradient(ellipse at 8% 0%,rgba(17,111,116,.16),transparent 40%),linear-gradient(155deg,#041011,#041012 60%,#020909); border-bottom:1px solid rgba(88,255,240,.13); }
+    .release-hero:before { content:""; position:absolute; inset:0; opacity:.42; pointer-events:none; background-image:linear-gradient(rgba(78,171,178,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(78,171,178,.10) 1px,transparent 1px); background-size:75px 75px; mask-image:linear-gradient(90deg,transparent,black 38%,black 100%); }
+    .release-hero:after { content:""; position:absolute; right:-15%; top:0; width:72%; height:100%; opacity:.45; pointer-events:none; background:radial-gradient(ellipse at 38% 78%,rgba(58,216,203,.17),transparent 38%); }
+    .hero-grid { position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr); gap:65px; align-items:center; padding:91px 0 86px; }
+    .eyebrow { display:flex; align-items:center; gap:13px; text-transform:uppercase; letter-spacing:.22em; font-size:11px; font-weight:850; color:#78f6ea; }
+    .eyebrow:before { content:""; display:block; width:31px; height:1px; background:#58fff0; }
+    h1,h2,h3,p { margin-top:0; }
+    .hero-title { margin:24px 0; font-size:clamp(68px,8vw,122px); font-weight:760; letter-spacing:-.075em; line-height:.91; }
+    .hero-title span { color:#58fff0; }
+    .hero-intro { max-width:585px; color:#bed4d1; line-height:1.8; font-size:16px; }
+    .hero-actions { margin-top:31px; display:flex; gap:12px; flex-wrap:wrap; }
+    .action { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:12px 17px; border-radius:11px; font-size:13px; font-weight:750; transition:transform .2s,background .2s; }
+    .action:hover { transform:translateY(-2px); }
+    .action.primary { background:#63e9dd; color:#061719; }
+    .action.secondary { color:#d3f9f2; border:1px solid rgba(88,255,240,.26); background:rgba(29,114,112,.09); }
+    .release-status { position:relative; overflow:hidden; padding:27px 28px 24px; border:1px solid rgba(95,241,225,.23); border-radius:23px; background:linear-gradient(155deg,rgba(14,37,39,.91),rgba(6,20,22,.96)); box-shadow:0 30px 100px rgba(0,0,0,.38), inset 0 1px 0 rgba(88,255,240,.05); }
+    .release-status:before { content:""; position:absolute; height:2px; inset:0 22px auto; background:linear-gradient(90deg,transparent,#58fff0,transparent); opacity:.75; }
+    .status-top { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:750; color:#b4dbd5; }
+    .status-pill { color:#b8e4dc; background:rgba(101,205,186,.09); border:1px solid rgba(116,241,215,.21); border-radius:999px; padding:6px 10px; font-size:10px; white-space:nowrap; letter-spacing:.075em; }
+    .release-no { font-size:clamp(67px,7vw,107px); font-weight:740; letter-spacing:-.09em; line-height:1.05; margin:25px 0 4px; color:#e6fffa; }
+    .release-no sup { vertical-align:top; font-size:19px; padding-top:16px; letter-spacing:0; margin-left:7px; color:#65eee1; }
+    .status-sub { color:#81d9d1; font-weight:740; font-size:13px; text-transform:uppercase; letter-spacing:.12em; margin-bottom:22px; }
+    .status-table { border-top:1px solid rgba(173,255,243,.12); }
+    .status-row { display:flex; justify-content:space-between; gap:18px; padding:13px 0; border-bottom:1px solid rgba(173,255,243,.10); font-size:13px; }
+    .status-row span:first-child { color:#8faeaa; }
+    .status-row span:last-child { color:#def1ed; text-align:right; font-weight:650; }
+    .status-note { margin:18px 0 0; font-size:12px; color:#8faeaa; line-height:1.65; }
+    .release-ribbon { border-bottom:1px solid rgba(88,255,240,.12); background:#071112; }
+    .ribbon-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); padding:23px 0; }
+    .ribbon-item { padding:1px 24px; border-left:1px solid rgba(88,255,240,.15); }
+    .ribbon-item:first-child { border-left:0; padding-left:0; }
+    .ribbon-item small { display:block; color:#73928f; font-size:10px; text-transform:uppercase; letter-spacing:.17em; font-weight:850; margin-bottom:6px; }
+    .ribbon-item strong { color:#d7f2ed; font-size:14px; font-weight:700; }
+    .main-layout { display:grid; grid-template-columns:232px minmax(0,1fr); align-items:start; gap:54px; padding:70px 0 94px; }
+    .side-index { position:sticky; top:102px; border-left:1px solid rgba(88,255,240,.22); padding:5px 0 4px 17px; }
+    .side-index h2 { color:#6dc5bf; letter-spacing:.18em; font-size:11px; font-weight:850; text-transform:uppercase; margin-bottom:19px; }
+    .side-index a { display:block; font-size:13px; padding:9px 12px; margin:3px 0 3px -12px; border-radius:8px; color:#8fa9a5; }
+    .side-index a:hover,.side-index a.active { color:#60eadd; background:rgba(88,255,240,.065); }
+    .side-index .aside-note { color:#667f7c; font-size:12px; border-top:1px solid rgba(88,255,240,.1); padding-top:20px; margin-top:20px; line-height:1.65; }
+    .content-top { display:flex; gap:20px; justify-content:space-between; align-items:flex-end; margin-bottom:35px; }
+    .section-kicker { text-transform:uppercase; font-size:10px; color:#60dccf; font-weight:850; letter-spacing:.2em; margin-bottom:12px; }
+    .section-title { margin:0; font-size:clamp(32px,3.1vw,46px); line-height:1.1; letter-spacing:-.045em; }
+    .section-sub { color:#9cb5b0; font-size:14px; max-width:680px; line-height:1.8; margin:18px 0 0; }
+    .small-status { padding:7px 12px; background:rgba(101,214,198,.07); border:1px solid rgba(101,214,198,.2); color:#9bded5; border-radius:99px; font-size:11px; font-weight:760; white-space:nowrap; }
+    section.note-block { scroll-margin-top:110px; margin-bottom:69px; }
+    .release-card { background:linear-gradient(180deg,rgba(9,28,29,.88),rgba(7,19,21,.88)); border:1px solid rgba(88,255,240,.16); border-radius:18px; overflow:hidden; }
+    .release-card-top { padding:26px 29px 24px; display:flex; align-items:flex-start; justify-content:space-between; gap:18px; border-bottom:1px solid rgba(88,255,240,.11); }
+    .release-card-top h3 { margin:0 0 7px; font-size:23px; letter-spacing:-.03em; }
+    .release-card-top p { margin:0; color:#92b0aa; font-size:13px; }
+    .release-card-content { padding:24px 29px 27px; }
+    .release-entry { display:grid; grid-template-columns:155px minmax(0,1fr); gap:25px; padding:18px 0; border-bottom:1px solid rgba(88,255,240,.105); }
+    .release-entry:first-child { padding-top:4px; }
+    .release-entry:last-child { border-bottom:0; padding-bottom:0; }
+    .release-entry .entry-label { font-size:11px; color:#6bf1e1; letter-spacing:.115em; text-transform:uppercase; font-weight:850; }
+    .release-entry p { color:#bed0cd; font-size:13px; line-height:1.8; margin:0; }
+    .feature-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; margin-top:26px; }
+    .feature { border-radius:14px; background:linear-gradient(160deg,rgba(10,30,31,.93),rgba(5,18,20,.90)); border:1px solid rgba(88,255,240,.12); padding:23px 21px; min-height:173px; }
+    .feature-index { font-size:10px; color:#54b6b3; font-weight:850; letter-spacing:.15em; margin-bottom:15px; }
+    .feature h3 { font-size:16px; margin:0 0 8px; letter-spacing:-.02em; }
+    .feature p { font-size:12.5px; line-height:1.7; color:#90aaa5; margin:0; }
+    .notes-table { width:100%; border-collapse:collapse; margin-top:25px; font-size:13px; }
+    .notes-table th { text-align:left; color:#58eee2; text-transform:uppercase; font-size:10px; letter-spacing:.13em; font-weight:800; border-bottom:1px solid rgba(88,255,240,.26); padding:13px 14px 14px 0; }
+    .notes-table td { border-bottom:1px solid rgba(88,255,240,.11); padding:17px 14px 17px 0; color:#bdd3cf; vertical-align:top; }
+    .notes-table td:first-child { color:#e0f3ef; font-weight:650; white-space:nowrap; }
+    .notice { background:rgba(20,60,57,.16); border:1px solid rgba(88,255,240,.16); border-left:3px solid #5ae5d6; border-radius:0 14px 14px 0; padding:21px 23px; color:#b0cbc5; font-size:13px; line-height:1.8; margin-top:25px; }
+    .notice strong { color:#e4fff9; }
+    .document-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-top:28px; }
+    .document-link { display:flex; flex-direction:column; justify-content:space-between; gap:32px; padding:22px; border-radius:14px; border:1px solid rgba(88,255,240,.17); background:#081a1c; min-height:168px; transition:transform .2s,border-color .2s; }
+    .document-link:hover { transform:translateY(-3px); border-color:rgba(88,255,240,.58); }
+    .document-link span { display:block; color:#62bfb9; font-size:10px; letter-spacing:.12em; text-transform:uppercase; font-weight:850; margin-bottom:10px; }
+    .document-link strong { font-size:16px; color:#e7fff9; letter-spacing:-.02em; }
+    .document-link .arrow { color:#55e5d9; align-self:flex-end; font-size:22px; line-height:1; }
+    .history-card { border-radius:16px; padding:32px; background:linear-gradient(115deg,rgba(14,41,40,.7),rgba(5,17,20,.91)); border:1px dashed rgba(95,245,225,.25); }
+    .history-card .history-marker { display:inline-block; padding:6px 10px; color:#70ddd3; background:rgba(71,188,176,.09); border-radius:7px; font-size:10px; text-transform:uppercase; letter-spacing:.14em; font-weight:800; margin-bottom:18px; }
+    .history-card h3 { font-size:22px; margin-bottom:10px; }
+    .history-card p { color:#9bb8b1; font-size:13px; line-height:1.8; max-width:570px; margin:0; }
+    .release-footer { background:#030b0c; border-top:1px solid rgba(88,255,240,.16); }
+    .site-footer > .container { max-width:none; width:100%; padding:0 32px; }
+    .footer-row { min-height:75px; display:flex; align-items:center; justify-content:space-between; gap:22px; }
+    .footer-copy strong { font-size:12px; font-weight:750; display:block; }
+    .footer-copy small { color:#879e99; display:block; font-size:10px; }
+    .social-grid { display:flex; gap:16px; flex-wrap:wrap; }
+    .social-card { display:inline-flex; align-items:center; justify-content:center; width:31px; height:31px; color:#5faaa4; font-size:11px; transition:color .2s; }
+    .social-card:hover { color:#58fff0; }
+    .back-top { position:fixed; bottom:21px; right:21px; z-index:80; display:flex; align-items:center; gap:9px; border:1px solid rgba(88,255,240,.27); background:rgba(8,28,28,.93); color:#bde8e0; padding:12px 15px; font-weight:800; border-radius:11px; backdrop-filter:blur(16px); font-size:11px; box-shadow:0 9px 35px rgba(0,0,0,.23); }
+    .back-top:hover { color:#fff; border-color:#58fff0; }
+    @media(max-width:940px) { .hero-grid{gap:28px} .main-layout{grid-template-columns:1fr;gap:24px} .side-index{position:static;display:flex;flex-wrap:wrap;gap:2px;padding:0 0 20px;border-left:0;border-bottom:1px solid rgba(88,255,240,.16);} .side-index h2{width:100%;margin-bottom:7px;} .side-index a{margin:0;padding:8px 11px;} .side-index .aside-note{display:none;} }
+    @media(max-width:760px) { .container{width:min(calc(100% - 34px),1224px);} .site-header .navbar{min-height:72px;} .menu-toggle{display:block;} .nav-links{display:none; position:absolute;top:72px;left:15px;right:15px;z-index:100;flex-direction:column;align-items:stretch;padding:12px;background:#061515;border:1px solid rgba(88,255,240,.23);border-radius:14px;max-height:75vh;overflow:auto;} .nav-links.open{display:flex;} .nav-products .submenu{position:static;display:block;box-shadow:none;border:0;background:none;padding:0 0 0 18px;} .nav-products .submenu a{font-size:12px;padding:8px 12px;} .release-hero{min-height:auto;} .hero-grid{grid-template-columns:1fr;padding:65px 0 55px;gap:38px;} .hero-title{font-size:clamp(65px,15vw,94px);} .release-status{max-width:530px;} .ribbon-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 0;} .ribbon-item{padding:0 16px!important;border-left:1px solid rgba(88,255,240,.14);} .ribbon-item:nth-child(odd){padding-left:0!important;border-left:0;} .main-layout{padding:43px 0 64px;} .feature-grid{grid-template-columns:1fr;} .document-grid{grid-template-columns:1fr;} .release-entry{grid-template-columns:1fr;gap:6px;} .content-top{align-items:flex-start;flex-direction:column;} .release-card-top{flex-direction:column;} .footer-row{padding:20px 0;flex-direction:column;align-items:flex-start;} .site-footer > .container{padding:0 19px;} .back-top{right:10px;bottom:10px;padding:10px 12px;} .ribbon-item strong{font-size:12px;} }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto;}*{transition:none!important;}}
+  </style>
+  <link rel="stylesheet" href="../../assets/css/mobile.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="../../" aria-label="DemQora Technologies Home"><span class="brand-mark">DQ<img src="../../assets/img/demqora-logo.png" alt="" onerror="this.remove()"></span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav id="main-nav" class="nav-links" aria-label="Primary navigation">
+        <a href="../../">Home</a>
+        <div class="nav-products"><a href="../../products/">Products</a><div class="submenu"><a href="../../products/ms-1-1/">MS 1.1 — Market Structure Multi-Timeframe Chart</a></div></div>
+        <a href="../" aria-current="page">Documentation</a><a href="../../about/">About</a><a href="../../contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="release-shell">
+    <section class="release-hero" id="overview">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">DemQora Technologies <span style="opacity:.38">/</span> MS 1.1</div>
+          <h1 class="hero-title">Release<br><span>Notes.</span></h1>
+          <p class="hero-intro">A clear record of MS 1.1 product scope, release information and future updates. Learn what is included, what remains outside the initial release, and where to find the full documentation.</p>
+          <div class="hero-actions">
+            <a class="action primary" href="#release-1">Explore Release 1 <span aria-hidden="true">↗</span></a>
+            <a class="action secondary" href="../user-manual/">Read User Manual <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <aside class="release-status" aria-label="Current release status">
+          <div class="status-top"><span>Release overview</span><span class="status-pill">Publication pending</span></div>
+          <div class="release-no">MS 1.1<sup>MT5</sup></div>
+          <div class="status-sub">Initial public release scope</div>
+          <div class="status-table">
+            <div class="status-row"><span>Product</span><span>Market Structure Multi-TF Chart</span></div>
+            <div class="status-row"><span>Versions</span><span>Expert Advisor + Indicator</span></div>
+            <div class="status-row"><span>Platform</span><span>MetaTrader 5</span></div>
+            <div class="status-row"><span>Public build</span><span>Not announced</span></div>
+            <div class="status-row"><span>Release date</span><span>To be confirmed</span></div>
+          </div>
+          <p class="status-note">The product page currently states “Coming Soon on MQL5 Market”. This page describes the documented Release 1 scope; it does not announce an official publication date.</p>
+        </aside>
+      </div>
+    </section>
+    <section class="release-ribbon" aria-label="Release highlights">
+      <div class="container ribbon-grid">
+        <div class="ribbon-item"><small>Structure</small><strong>BOL / POI / SM</strong></div>
+        <div class="ribbon-item"><small>Context</small><strong>Trend + Range + MTF</strong></div>
+        <div class="ribbon-item"><small>Display</small><strong>5 Preset Modes</strong></div>
+        <div class="ribbon-item"><small>Notifications</small><strong>Pattern + Structure Alerts</strong></div>
+      </div>
+    </section>
+    <div class="container main-layout">
+      <aside class="side-index" aria-label="On this page">
+        <h2>On this page</h2>
+        <a href="#release-1">Release 1 overview</a>
+        <a href="#capabilities">Included features</a>
+        <a href="#alerts">Alerts &amp; notifications</a>
+        <a href="#scope">Scope &amp; limitations</a>
+        <a href="#documentation">Documentation</a>
+        <a href="#history">Version history</a>
+        <p class="aside-note">Technical details should be checked against the current product build and its User Manual.</p>
+      </aside>
+      <div class="main-content">
+        <section class="note-block" id="release-1">
+          <div class="content-top"><div><div class="section-kicker">01 / Current release overview</div><h2 class="section-title">MS 1.1 · Release 1</h2><p class="section-sub">The first public release is focused on visualization, configurable market structure, notifications and manual decision support.</p></div><span class="small-status">Scope documented</span></div>
+          <article class="release-card">
+            <div class="release-card-top"><div><h3>Initial product baseline</h3><p>The features and operating principles documented for Release 1.</p></div><span class="small-status">EA + Indicator</span></div>
+            <div class="release-card-content">
+              <div class="release-entry"><div class="entry-label">Market structure</div><p>Multi-timeframe BOL, POI and SM levels and zones, supported by Trend arrows and Range context on one MT5 chart.</p></div>
+              <div class="release-entry"><div class="entry-label">Display controls</div><p>Basic, Performance, Standard, Full and Custom presets. Three optional reference-timeframe slots allow a selected amount of additional structure.</p></div>
+              <div class="release-entry"><div class="entry-label">Pattern analysis</div><p>Candlestick-pattern identification and scoring are included as analytical assistance alongside structural chart information.</p></div>
+              <div class="release-entry"><div class="entry-label">Alerts</div><p>Separate Pattern and Structure alert categories, controlled by MS 1.1 Inputs and the panel's Master ALERTS switch. Telegram notifications are optional.</p></div>
+              <div class="release-entry"><div class="entry-label">Diagnostics</div><p>The Report Diagnostics workflow helps collect information when investigating a persistent or difficult-to-reproduce issue.</p></div>
+            </div>
+          </article>
+        </section>
+        <section class="note-block" id="capabilities">
+          <div class="section-kicker">02 / Included in Release 1</div><h2 class="section-title">Built around clarity.</h2><p class="section-sub">Core features work together to provide a structured view of market activity across selected timeframes.</p>
+          <div class="feature-grid">
+            <article class="feature"><div class="feature-index">01 — Structure</div><h3>BOL / POI / SM</h3><p>Lines and zones for key structural levels, points of interest and smart-money structures.</p></article>
+            <article class="feature"><div class="feature-index">02 — Context</div><h3>Trend &amp; Range</h3><p>Directional structure and current range conditions alongside the active chart.</p></article>
+            <article class="feature"><div class="feature-index">03 — Multi-timeframe</div><h3>Main + Reference TFs</h3><p>View the active timeframe with up to three optional reference-timeframe slots.</p></article>
+            <article class="feature"><div class="feature-index">04 — Control</div><h3>Five Display Presets</h3><p>Basic, Performance, Standard, Full and Custom for different chart densities.</p></article>
+            <article class="feature"><div class="feature-index">05 — Pattern context</div><h3>Candlestick Patterns</h3><p>Pattern identification, directional context and detection scoring for supported formations.</p></article>
+            <article class="feature"><div class="feature-index">06 — Usability</div><h3>Chart Tools &amp; Themes</h3><p>Light, Dark and High Contrast themes, chart loading feedback and interaction controls.</p></article>
+          </div>
+        </section>
+        <section class="note-block" id="alerts">
+          <div class="section-kicker">03 / Notifications</div><h2 class="section-title">Alerts, with clear control.</h2><p class="section-sub">Alerts are assistance, not a trade instruction. Pattern and Structure notifications can be enabled independently in MS 1.1 Inputs.</p>
+          <table class="notes-table"><thead><tr><th>Control</th><th>Purpose</th></tr></thead><tbody>
+            <tr><td>Pattern Alerts</td><td>Allow or suppress supported candlestick-pattern notifications.</td></tr>
+            <tr><td>Structure Alerts</td><td>Allow or suppress BOL, POI, SM and supported Range event notifications.</td></tr>
+            <tr><td>Panel ALERTS</td><td>Global Master switch for alert delivery. It must be ON for enabled categories to notify.</td></tr>
+            <tr><td>Telegram Alerts</td><td>Optional remote notification channel; requires separate configuration and an allowed WebRequest URL in MT5.</td></tr>
+          </tbody></table>
+          <div class="notice"><strong>Important:</strong> Disabling Pattern or Structure alert delivery does not turn off the underlying chart analysis or market-structure visualization. See the relevant guides for event-specific conditions and setup.</div>
+        </section>
+        <section class="note-block" id="scope">
+          <div class="section-kicker">04 / Release scope</div><h2 class="section-title">What to expect.</h2><p class="section-sub">The distinctions below are essential for users evaluating MS 1.1 Release 1.</p>
+          <table class="notes-table"><thead><tr><th>Area</th><th>Release 1 information</th></tr></thead><tbody>
+            <tr><td>Product versions</td><td>Expert Advisor and Indicator versions for MetaTrader 5 are documented.</td></tr>
+            <tr><td>Trading automation</td><td>Auto Trading and automatic order execution are not part of Release 1.</td></tr>
+            <tr><td>Telegram</td><td>Optional. MS 1.1 can be used without connecting a Telegram account.</td></tr>
+            <tr><td>Market decisions</td><td>Chart objects, breakout information and pattern states are analytical aids, not guarantees or trading recommendations.</td></tr>
+            <tr><td>Release date / build</td><td>Not yet confirmed on the current product page; will be recorded here when officially published.</td></tr>
+          </tbody></table>
+          <div class="notice"><strong>Release history policy:</strong> Actual bug fixes, improvements and known issues will be listed only after they have been verified for a specific published build. This draft does not claim that any particular fix is already released.</div>
+        </section>
+        <section class="note-block" id="documentation">
+          <div class="section-kicker">05 / Learn more</div><h2 class="section-title">Product documentation.</h2><p class="section-sub">Read the full reference, use the quick onboarding workflow or configure Telegram notifications.</p>
+          <div class="document-grid"><a href="../user-manual/" class="document-link"><div><span>Complete reference</span><strong>User Manual</strong></div><span class="arrow" aria-hidden="true">↗</span></a><a href="../quick-start/" class="document-link"><div><span>First steps</span><strong>Quick Start Guide</strong></div><span class="arrow" aria-hidden="true">↗</span></a><a href="../telegram-alerts/" class="document-link"><div><span>Optional notifications</span><strong>Telegram Alerts Guide</strong></div><span class="arrow" aria-hidden="true">↗</span></a></div>
+        </section>
+        <section class="note-block" id="history" style="margin-bottom:0">
+          <div class="section-kicker">06 / Future releases</div><h2 class="section-title">Version history.</h2><p class="section-sub" style="margin-bottom:27px">Future public builds will be listed here in reverse chronological order, with verified additions, improvements, fixes and known limitations.</p>
+          <div class="history-card"><span class="history-marker">Next update</span><h3>Awaiting first public build.</h3><p>When MS 1.1 is officially published, this section will include its exact build identifier and release date. Subsequent entries will describe changes compared with the previous public build.</p></div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="site-footer release-footer"><div class="container footer-row"><div class="footer-copy"><strong>DemQora Technologies</strong><small>Advanced Market Intelligence</small><small>© <span data-year></span> All rights reserved.</small></div><div class="social-grid footer-social"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener" aria-label="Facebook">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener" aria-label="X">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener" aria-label="YouTube">YouTube</a></div></div></footer>
+  <a href="#overview" class="back-top">↑ Back to top</a>
+  <script src="../../assets/js/main.js"></script>
+  <script>
+  (()=>{ const y=document.querySelector('[data-year]');if(y)y.textContent=new Date().getFullYear();
+    const sections=[...document.querySelectorAll('section.note-block[id]')]; const navLinks=[...document.querySelectorAll('.side-index a')];
+    if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(entry.isIntersecting){navLinks.forEach(a=>a.classList.toggle('active',a.hash==='#'+entry.target.id));}}},{rootMargin:'-16% 0px -68% 0px',threshold:0});sections.forEach(s=>observer.observe(s));}
+  })();
+  </script>
+</body>
+</html>

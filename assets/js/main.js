@@ -39,7 +39,8 @@
         guides: [
           ['User Manual', 'user-manual/'],
           ['Quick Start Guide', 'quick-start/'],
-          ['Telegram Alerts Guide', 'telegram-alerts/']
+          ['Telegram Alerts Guide', 'telegram-alerts/'],
+          ['Release Notes', 'release-notes/']
         ]
       }
     ];
