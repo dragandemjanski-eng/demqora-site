@@ -40,7 +40,7 @@
   background: rgba(22,234,215,.09);
 }
 
-@media (min-width: 761px) {
+@media (min-width: 901px) {
   .site-header .nav-links .nav-documentation > .doc-product-list {
     min-width: 320px;
   }
@@ -63,7 +63,7 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   .site-header .nav-links .nav-documentation {
     width: 100%;
   }
