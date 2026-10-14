@@ -117,3 +117,64 @@
     installDocumentationProductMenu();
   }
 })();
+
+/* DEMQORA_MOBILE_COLLAPSED_NAV_V4
+   Products and Documentation are collapsed when the mobile menu opens.
+   Existing desktop hover behaviour and nested MS 1.1 guide links are preserved.
+*/
+(() => {
+  'use strict';
+  function initMobileNav() {
+    const nav = document.querySelector('.site-header .nav-links');
+    if (!nav) return;
+
+    const sections = Array.from(nav.children).filter(element =>
+      element.classList && element.classList.contains('nav-products'));
+
+    function closeSection(section) {
+      section.classList.remove('mobile-submenu-open');
+      const toggle = section.querySelector(':scope > .nav-section-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      section.querySelectorAll('.doc-product-open').forEach(row => {
+        row.classList.remove('doc-product-open');
+        const guideToggle = row.querySelector('.doc-product-toggle');
+        if (guideToggle) guideToggle.setAttribute('aria-expanded', 'false');
+      });
+    }
+
+    sections.forEach((section, index) => {
+      const link = section.querySelector(':scope > a');
+      const submenu = section.querySelector(':scope > .submenu');
+      if (!link || !submenu || section.querySelector(':scope > .nav-section-toggle')) return;
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'nav-section-toggle';
+      toggle.textContent = '⌄';
+      const name = link.textContent.trim();
+      if (!submenu.id) submenu.id = 'dq-mobile-submenu-' + index;
+      toggle.setAttribute('aria-label', 'Toggle ' + name + ' submenu');
+      toggle.setAttribute('aria-controls', submenu.id);
+      toggle.setAttribute('aria-expanded', 'false');
+      link.insertAdjacentElement('afterend', toggle);
+      toggle.addEventListener('click', () => {
+        const willOpen = !section.classList.contains('mobile-submenu-open');
+        sections.forEach(closeSection);
+        if (willOpen) {
+          section.classList.add('mobile-submenu-open');
+          toggle.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    sections.forEach(closeSection);
+    const menuButton = document.querySelector('.site-header .menu-toggle');
+    if (menuButton) {
+      menuButton.addEventListener('click', () => sections.forEach(closeSection));
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileNav, { once: true });
+  } else {
+    initMobileNav();
+  }
+})();

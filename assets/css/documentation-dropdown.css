@@ -134,3 +134,39 @@
     white-space: normal !important;
   }
 }
+
+/* DEMQORA_MOBILE_COLLAPSED_NAV_V4
+   Mobile arrows control the top-level submenus. Desktop is unchanged.
+*/
+.site-header .nav-links > .nav-products > .nav-section-toggle { display: none; }
+@media (max-width: 900px) {
+  .site-header .nav-links > .nav-products { padding-right: 42px; }
+  .site-header .nav-links > .nav-products > a { display: block; }
+  .site-header .nav-links > .nav-products > .nav-section-toggle {
+    display: grid !important;
+    place-items: center;
+    position: absolute;
+    top: 3px;
+    right: 0;
+    width: 34px;
+    height: 36px;
+    padding: 0;
+    border: 1px solid rgba(88,255,240,.28);
+    border-radius: 8px;
+    background: rgba(22,234,215,.06);
+    color: #58fff0;
+    font-size: 1.25rem;
+    cursor: pointer;
+  }
+  .site-header .nav-links > .nav-products > .nav-section-toggle[aria-expanded="true"] {
+    background: rgba(22,234,215,.15);
+  }
+  .site-header .nav-links > .nav-products > .submenu,
+  .site-header .nav-links .nav-documentation > .doc-product-list {
+    display: none !important;
+  }
+  .site-header .nav-links > .nav-products.mobile-submenu-open > .submenu,
+  .site-header .nav-links .nav-documentation.mobile-submenu-open > .doc-product-list {
+    display: block !important;
+  }
+}
