@@ -178,3 +178,19 @@
     initMobileNav();
   }
 })();
+
+/* DEMQORA_TAWK_CHAT_BEGIN */
+(function () {
+  if (window.__demqoraTawkChatLoaded) return;
+  window.__demqoraTawkChatLoaded = true;
+  window.Tawk_API = window.Tawk_API || {};
+  window.Tawk_LoadStart = new Date();
+
+  var script = document.createElement('script');
+  script.async = true;
+  script.src = 'https://embed.tawk.to/6ad4d1b8b2e7a834cef0783d/1k57l6e5v';
+  script.charset = 'UTF-8';
+  script.setAttribute('crossorigin', '*');
+  (document.head || document.documentElement).appendChild(script);
+})();
+/* DEMQORA_TAWK_CHAT_END */
