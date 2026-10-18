@@ -1024,6 +1024,42 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer { margin: 
   margin: 16px auto 0 !important;
 }
 </style>
+<style id="contact-email-channels">
+/* DemQora Contact: two clearly differentiated email channels */
+.contact-page .contact-channels {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px; width: min(720px, calc(100% - 32px));
+  margin: 22px auto 25px; text-align: left;
+}
+.contact-page .contact-channel {
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: 19px 18px; border: 1px solid rgba(88,255,240,.20);
+  border-radius: 18px; background: rgba(3,14,14,.70);
+  backdrop-filter: blur(12px);
+}
+.contact-page .contact-channel h2 {
+  margin: 0 0 8px; color: var(--cyan-2);
+  font-size: .88rem; font-weight: 700; letter-spacing: .035em;
+}
+.contact-page .contact-channel p {
+  margin: 0; color: var(--muted);
+  font-size: .82rem; line-height: 1.55; flex: 1;
+}
+.contact-page .contact-channel .contact-email {
+  margin: 16px 0 0 !important; font-size: .79rem;
+  padding: 9px 12px; max-width: 100%; overflow-wrap: anywhere;
+}
+@media (max-width: 640px) {
+  .contact-page .contact-channels {
+    grid-template-columns: 1fr; gap: 12px;
+    width: min(440px, calc(100% - 24px));
+    margin: 16px auto 21px;
+  }
+  .contact-page .contact-channel { padding: 15px 17px; }
+  .contact-page .contact-channel .contact-email { margin-top: 11px !important; }
+}
+</style>
 <style id="contact-footer-flush">
 /* Keep the Contact footer flush with the bottom of the viewport */
 html, body { min-height: 100%; }
@@ -1064,4 +1100,15 @@ body > main.contact-page { flex: 1; width: 100%; }
 <meta name="twitter:description" content="Official contact channels for DemQora Technologies.">
 <meta name="twitter:image" content="https://www.demqora.com/assets/img/home-desktop.png">
 <!-- DEMQORA_SEO_STAGE2_END -->
-</head><body><header class="site-header"><div class="container navbar"><a class="brand" href="../"><img src="../assets/img/demqora-logo.png" alt="DemQora DQ logo"></a><button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button><nav id="main-nav" class="nav-links"><a href="../">Home</a><div class="nav-products"><a href="../products/">Products</a><div class="submenu"><a href="../products/ms-1-1/">MS 1.1 — Market Structure Multi-Timeframe Chart</a></div></div><a href="../documentation/">Documentation</a><a href="../about/">About</a><a href="./" aria-current="page">Contact</a></nav></div></header><main class="contact-page"><section class="contact-panel"><h1><span style="font-size: 0.5em;">Contact</span> <span style="font-size: 1em;">DemQora</span></h1><a class="contact-email" href="mailto:info@demqora.com" aria-label="Email DemQora Technologies at info@demqora.com">info@demqora.com</a><div class="social-grid"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener" aria-label="X" title="X">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">YouTube</a></div><p class="contact-intro">Official channels for DemQora Technologies.</p></section></main><footer class="site-footer"><div class="container footer-row"><div><strong>DemQora Technologies</strong><div>Advanced Market Intelligence</div><div class="small">© <span data-year></span> All rights reserved.</div></div><div class="social-grid footer-social"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener">YouTube</a></div></div></footer><script src="../assets/js/main.js"></script></body></html>
+</head><body><header class="site-header"><div class="container navbar"><a class="brand" href="../"><img src="../assets/img/demqora-logo.png" alt="DemQora DQ logo"></a><button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button><nav id="main-nav" class="nav-links"><a href="../">Home</a><div class="nav-products"><a href="../products/">Products</a><div class="submenu"><a href="../products/ms-1-1/">MS 1.1 — Market Structure Multi-Timeframe Chart</a></div></div><a href="../documentation/">Documentation</a><a href="../about/">About</a><a href="./" aria-current="page">Contact</a></nav></div></header><main class="contact-page"><section class="contact-panel"><h1><span style="font-size: 0.5em;">Contact</span> <span style="font-size: 1em;">DemQora</span></h1><div class="contact-channels" aria-label="Email contact options">
+    <section class="contact-channel">
+      <h2>General Enquiries</h2>
+      <p>Business enquiries, partnerships and general information.</p>
+      <a class="contact-email" href="mailto:info@demqora.com" aria-label="Email DemQora for general enquiries at info@demqora.com">info@demqora.com</a>
+    </section>
+    <section class="contact-channel">
+      <h2>Technical Support</h2>
+      <p>MS 1.1 installation, troubleshooting and product-related issues.</p>
+      <a class="contact-email" href="mailto:support@demqora.com" aria-label="Email DemQora technical support at support@demqora.com">support@demqora.com</a>
+    </section>
+  </div><div class="social-grid"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener" aria-label="X" title="X">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">YouTube</a></div><p class="contact-intro">Official channels for DemQora Technologies.</p></section></main><footer class="site-footer"><div class="container footer-row"><div><strong>DemQora Technologies</strong><div>Advanced Market Intelligence</div><div class="small">© <span data-year></span> All rights reserved.</div></div><div class="social-grid footer-social"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener">YouTube</a></div></div></footer><script src="../assets/js/main.js"></script></body></html>
