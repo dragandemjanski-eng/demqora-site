@@ -184,6 +184,14 @@
   if (window.__demqoraTawkChatLoaded) return;
   window.__demqoraTawkChatLoaded = true;
   window.Tawk_API = window.Tawk_API || {};
+/* DEMQORA_TAWK_POSITION_BEGIN */
+  window.Tawk_API.customStyle = {
+    visibility: {
+      desktop: { position: 'br', xOffset: 20, yOffset: 120 },
+      mobile:  { position: 'br', xOffset: 12, yOffset: 90 }
+    }
+  };
+/* DEMQORA_TAWK_POSITION_END */
   window.Tawk_LoadStart = new Date();
 
   var script = document.createElement('script');
