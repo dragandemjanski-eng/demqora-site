@@ -1025,39 +1025,40 @@ body:has(.about-reference-layout) .site-footer.about-reference-footer { margin: 
 }
 </style>
 <style id="contact-email-channels">
-/* DemQora Contact: two clearly differentiated email channels */
+/* DemQora Contact: two clean email sections without panels */
 .contact-page .contact-channels {
   position: relative; z-index: 1;
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px; width: min(720px, calc(100% - 32px));
-  margin: 22px auto 25px; text-align: left;
+  gap: 24px; width: min(760px, calc(100% - 32px));
+  margin: 22px auto 24px; text-align: left;
 }
 .contact-page .contact-channel {
   display: flex; flex-direction: column; align-items: flex-start;
-  padding: 19px 18px; border: 1px solid rgba(88,255,240,.20);
-  border-radius: 18px; background: rgba(3,14,14,.70);
-  backdrop-filter: blur(12px);
+  padding: 0; border: 0; border-radius: 0; background: transparent;
+  backdrop-filter: none; box-shadow: none;
 }
 .contact-page .contact-channel h2 {
   margin: 0 0 8px; color: var(--cyan-2);
-  font-size: .88rem; font-weight: 700; letter-spacing: .035em;
+  font-size: .92rem; font-weight: 700; letter-spacing: .02em;
 }
 .contact-page .contact-channel p {
-  margin: 0; color: var(--muted);
-  font-size: .82rem; line-height: 1.55; flex: 1;
+  margin: 0 0 10px; color: var(--muted);
+  font-size: .84rem; line-height: 1.6;
 }
 .contact-page .contact-channel .contact-email {
-  margin: 16px 0 0 !important; font-size: .79rem;
-  padding: 9px 12px; max-width: 100%; overflow-wrap: anywhere;
+  margin: 0 !important; padding: 0 !important; border: 0 !important;
+  border-radius: 0 !important; background: transparent !important;
+  box-shadow: none !important; color: var(--cyan-2);
+  font-size: .84rem; line-height: 1.5; text-decoration: none;
+  white-space: normal; overflow-wrap: anywhere;
 }
+.contact-page .contact-channel .contact-email:hover { text-decoration: underline; }
 @media (max-width: 640px) {
   .contact-page .contact-channels {
-    grid-template-columns: 1fr; gap: 12px;
+    grid-template-columns: 1fr; gap: 18px;
     width: min(440px, calc(100% - 24px));
-    margin: 16px auto 21px;
+    margin: 18px auto 22px;
   }
-  .contact-page .contact-channel { padding: 15px 17px; }
-  .contact-page .contact-channel .contact-email { margin-top: 11px !important; }
 }
 </style>
 <style id="contact-footer-flush">
@@ -1111,4 +1112,5 @@ body > main.contact-page { flex: 1; width: 100%; }
       <p>MS 1.1 installation, troubleshooting and product-related issues.</p>
       <a class="contact-email" href="mailto:support@demqora.com" aria-label="Email DemQora technical support at support@demqora.com">support@demqora.com</a>
     </section>
-  </div><div class="social-grid"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener" aria-label="X" title="X">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">YouTube</a></div><p class="contact-intro">Official channels for DemQora Technologies.</p></section></main><footer class="site-footer"><div class="container footer-row"><div><strong>DemQora Technologies</strong><div>Advanced Market Intelligence</div><div class="small">© <span data-year></span> All rights reserved.</div></div><div class="social-grid footer-social"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener">YouTube</a></div></div></footer><script src="../assets/js/main.js"></script></body></html>
+  </div>
+<div class="social-grid"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener" aria-label="X" title="X">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">YouTube</a></div><p class="contact-intro">Official channels for DemQora Technologies.</p></section></main><footer class="site-footer"><div class="container footer-row"><div><strong>DemQora Technologies</strong><div>Advanced Market Intelligence</div><div class="small">© <span data-year></span> All rights reserved.</div></div><div class="social-grid footer-social"><a class="social-card" href="https://www.facebook.com/DemQora" target="_blank" rel="noopener">Facebook</a><a class="social-card" href="https://www.instagram.com/demqora/" target="_blank" rel="noopener">Instagram</a><a class="social-card" href="https://www.linkedin.com/company/145012898/" target="_blank" rel="noopener">LinkedIn</a><a class="social-card" href="https://x.com/DemQora" target="_blank" rel="noopener">X</a><a class="social-card" href="https://www.youtube.com/@DemQora" target="_blank" rel="noopener">YouTube</a></div></div></footer><script src="../assets/js/main.js"></script></body></html>
